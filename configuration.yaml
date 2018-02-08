@@ -7,7 +7,7 @@ homeassistant:
   time_zone: Europe/Moscow
 
   # Customization file
-  customize: !include customize.yaml
+  customize: !include_dir_merge_named customize
 
 # Show links to resources in log and frontend
 #introduction:
@@ -73,15 +73,6 @@ map:
 
 logger: !include logger.yaml
 
-automation: !include automations.yaml
-group: !include groups.yaml
-script: !include scripts.yaml
-
-#sensor: !include sensors.yaml
-#binary_sensor: !include binary_sensors.yaml
-#switch: !include switches.yaml
-
-
 #MQTT
 mqtt:
   broker: 192.168.1.101
@@ -96,62 +87,20 @@ mqtt:
     payload: 'Offline'
     
     
-sensor:
-  #- platform: version
-  #- platform: uptime
-  #  unit_of_measurement: minutes
-  #- platform: time_date
-  #  display_options:
-  #    - 'time_date'    
-  #Weather prediction
-  - platform: yr
-  #sonof-pow -------------------------------------
-  - platform: mqtt
-    name: "sonoff-pow energy"
-    state_topic: "tele/sonoff_26575D/SENSOR"
-    value_template: "{{ value_json.ENERGY.Today }}"
-    unit_of_measurement: "kWh"
-  - platform: mqtt
-    name: "sonoff-pow power"
-    state_topic: "tele/sonoff_26575D/SENSOR"
-    value_template: "{{ value_json.ENERGY.Power }}"
-    unit_of_measurement: "W"
-  - platform: mqtt
-    name: "sonoff-pow voltage"
-    state_topic: "tele/sonoff_26575D/SENSOR"
-    value_template: "{{ value_json.ENERGY.Voltage }}"
-    unit_of_measurement: "V"
-    
-binary_sensor:
-  #sonof-pow -------------------------------------
-  - platform: mqtt
-    name: "sonoff-pow lwt"
-    state_topic: "tele/sonoff_26575D/LWT"
-    value_template: "{{ value }}"
-    payload_on: "Online"
-    payload_off: "Offline"
-    device_class: connectivity
+sensor: !include_dir_merge_list sensor
+binary_sensor: !include_dir_merge_named binary_sensor
+switch: !include_dir_merge_list switch
+device_tracker: !include_dir_merge_list device_tracker
+input_boolean: !include_dir_merge_named input_boolean
+group: !include_dir_merge_named group
 
-switch:
-  #sonof-pow -------------------------------------
-  - platform: mqtt
-    name: "sonoff-pow"
-    state_topic: "stat/sonoff_26575D/POWER"
-    command_topic: "cmnd/sonoff_26575D/POWER"
-    availability_topic: "tele/sonoff_26575D/LWT"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    payload_available: "Online"
-    payload_not-available: "Offline"
-    optimistic: false
-    #retain: false
+shell_command: !include_dir_merge_named shell_command
+automation: !include_dir_merge_list automation
+#scene: !include_dir_merge_list scene
+#script: !include_dir_merge_named script
 
-    
-device_tracker:
-  - platform: nmap_tracker
-    #home_interval: 10
-    hosts:
-      - 192.168.1.0/24
+#automation: !include automations.yaml
+#group: !include groups.yaml
+#script: !include scripts.yaml
 
       

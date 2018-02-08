@@ -1,11 +1,11 @@
 
-sonoff_pow:
+sonoff_26575D:
   hide_if_away: false
   icon:
   mac: 2C:3A:E8:26:57:5D
   name: sonoff_26575d
   picture:
-  track: false
+  track: true
   vendor: Espressif Inc.
 
 router:
@@ -33,5 +33,5 @@ bbb:
   mac: 6C:EC:EB:A5:22:81
   name: bbb
   picture:
-  track: false
+  track: true
   vendor: Texas Instruments

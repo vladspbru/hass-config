@@ -1,0 +1,5 @@
+Family:
+  entities:
+    - device_tracker.vlad
+    - device_tracker.eva
+    - device_tracker.valery

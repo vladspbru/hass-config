@@ -1,0 +1,15 @@
+
+#sonof-pow -------------------------------------
+- platform: mqtt
+  name: "sonoff_26575D"
+  state_topic: "stat/sonoff_26575D/POWER"
+  command_topic: "cmnd/sonoff_26575D/POWER"
+  availability_topic: "tele/sonoff_26575D/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not-available: "Offline"
+  optimistic: false
+  #retain: false
+

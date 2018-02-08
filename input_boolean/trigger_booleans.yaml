@@ -1,0 +1,24 @@
+#triggers
+good_night:
+  name: Good Night
+  initial: off
+
+good_morning:
+  name: Good Morning
+  initial: off
+
+tv_time:
+  name: TV Time
+  initial: off
+
+work:
+  name: Work
+  initial: off
+
+color_tornado:
+  name: Color Tornado!
+  initial: off
+
+guard_dog:
+  name: Guard Dog
+  initial: off
