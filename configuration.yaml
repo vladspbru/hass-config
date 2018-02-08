@@ -1,0 +1,157 @@
+homeassistant:
+  name: Cottage
+  latitude:  !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
+  unit_system: metric
+  time_zone: Europe/Moscow
+
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  # api_password: !secret homeassistant_http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time
+history:
+  include:
+    domains:
+      - sensor
+      - switch
+      - media_player
+      - light
+      - binary_sensor
+  exclude:
+    entities:
+     - sensor.last_boot
+     - sensor.date
+     - sensor.ha_uptime
+     - sensor.time
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+#sun:
+
+# Text to speech
+#tts:
+#  - platform: google
+
+# Cloud
+#cloud:
+
+logger: !include logger.yaml
+
+automation: !include automations.yaml
+group: !include groups.yaml
+script: !include scripts.yaml
+
+#sensor: !include sensors.yaml
+#binary_sensor: !include binary_sensors.yaml
+#switch: !include switches.yaml
+
+
+#MQTT
+mqtt:
+  broker: 192.168.1.101
+  client_id: homeassistant-vx
+  #username: !secret MQTT_username
+  #password: !secret MQTT_password
+  birth_message:
+    topic: 'hass/LWT'
+    payload: 'Online'
+  will_message:
+    topic: 'hass/LWT'
+    payload: 'Offline'
+    
+    
+sensor:
+  #- platform: version
+  #- platform: uptime
+  #  unit_of_measurement: minutes
+  #- platform: time_date
+  #  display_options:
+  #    - 'time_date'    
+  #Weather prediction
+  - platform: yr
+  #sonof-pow -------------------------------------
+  - platform: mqtt
+    name: "sonoff-pow energy"
+    state_topic: "tele/sonoff_26575D/SENSOR"
+    value_template: "{{ value_json.ENERGY.Today }}"
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: "sonoff-pow power"
+    state_topic: "tele/sonoff_26575D/SENSOR"
+    value_template: "{{ value_json.ENERGY.Power }}"
+    unit_of_measurement: "W"
+  - platform: mqtt
+    name: "sonoff-pow voltage"
+    state_topic: "tele/sonoff_26575D/SENSOR"
+    value_template: "{{ value_json.ENERGY.Voltage }}"
+    unit_of_measurement: "V"
+    
+binary_sensor:
+  #sonof-pow -------------------------------------
+  - platform: mqtt
+    name: "sonoff-pow lwt"
+    state_topic: "tele/sonoff_26575D/LWT"
+    value_template: "{{ value }}"
+    payload_on: "Online"
+    payload_off: "Offline"
+    device_class: connectivity
+
+switch:
+  #sonof-pow -------------------------------------
+  - platform: mqtt
+    name: "sonoff-pow"
+    state_topic: "stat/sonoff_26575D/POWER"
+    command_topic: "cmnd/sonoff_26575D/POWER"
+    availability_topic: "tele/sonoff_26575D/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not-available: "Offline"
+    optimistic: false
+    #retain: false
+
+    
+device_tracker:
+  - platform: nmap_tracker
+    #home_interval: 10
+    hosts:
+      - 192.168.1.0/24
+
+      

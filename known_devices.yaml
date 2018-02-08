@@ -1,0 +1,37 @@
+
+sonoff_pow:
+  hide_if_away: false
+  icon:
+  mac: 2C:3A:E8:26:57:5D
+  name: sonoff_26575d
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+router:
+  hide_if_away: true
+  icon:
+  mac: 54:A0:50:CC:70:B6
+  name: ASUSTek_router
+  picture:
+  track: false
+  vendor: ASUSTek COMPUTER INC.
+
+vlad:
+  hide_if_away: false
+  icon:
+  mac: 8C:3A:E3:99:43:19
+  name: vlad_device
+  picture:
+  track: true
+  vendor: LG Electronics (Mobile Communications)
+
+
+bbb:
+  hide_if_away: true
+  icon:
+  mac: 6C:EC:EB:A5:22:81
+  name: bbb
+  picture:
+  track: false
+  vendor: Texas Instruments
