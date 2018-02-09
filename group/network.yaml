@@ -1,13 +1,19 @@
-net:
+Net:
+  view: yes
+  icon: mdi:router-wireless
+  entities:
+    - group.net_mqtt
+    - group.net_nmap
+      
+net_mqtt:
   entities:
     - binary_sensor.sonoff_26575D_lwt
-    - device_traker.bbb    
-    - device_traker.sonoff_26575D
     
-hass:
+net_nmap:
   entities:
-    - sensor.ha_installed_version
-    - sensor.external_ip
-    - sensor.ha_uptime
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
+    - device_tracker.sonoff_26575D
+    - device_tracker.bbb
+    - device_tracker.vlad
+    - device_tracker.eva
+    - device_tracker.valery
+    

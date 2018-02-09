@@ -87,12 +87,12 @@ mqtt:
     payload: 'Offline'
     
     
-sensor: !include_dir_merge_list sensor
-binary_sensor: !include_dir_merge_named binary_sensor
-switch: !include_dir_merge_list switch
+sensor:         !include_dir_merge_list sensor
+binary_sensor:  !include_dir_merge_list binary_sensor
+switch:         !include_dir_merge_list switch
 device_tracker: !include_dir_merge_list device_tracker
-input_boolean: !include_dir_merge_named input_boolean
-group: !include_dir_merge_named group
+#input_boolean:  !include_dir_merge_named input_boolean
+group:          !include_dir_merge_named group
 
 shell_command: !include_dir_merge_named shell_command
 automation: !include_dir_merge_list automation

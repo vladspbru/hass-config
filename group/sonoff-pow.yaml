@@ -1,7 +1,0 @@
-Sonoff-POW:
-  entities:
-    - sensor.voltage
-    - sensor.power
-    - sensor.energy
-    - switch.sonoff_26575D
-    

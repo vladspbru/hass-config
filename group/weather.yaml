@@ -1,3 +1,13 @@
+Weather:
+  view: yes
+  icon: mdi:thermometer
+  entities:
+    - group.weather_darksky
+    - group.weather_yr
+    - sensor.moon
+    - camera.wu_doppler_weather
+
+
 Weather_DarkSky:
   entities:
     - sensor.dark_sky_temperature
@@ -20,11 +30,4 @@ Weather_YR:
     - sensor.weather_yr_wind_direction
     - sensor.weather_yr_fog
 
-Weather:
-  view: yes
-  entities:
-    - group.weather_darksky
-    - group.weather_yr
-    - sensor.moon
-    - camera.wu_doppler_weather
     

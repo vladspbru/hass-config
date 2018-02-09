@@ -1,7 +1,5 @@
-
-#sonof-pow -------------------------------------
 - platform: mqtt
-  name: "sonoff_26575D lwt"
+  name: "sonoff_26575D_lwt"
   state_topic: "tele/sonoff_26575D/LWT"
   value_template: "{{ value }}"
   payload_on: "Online"

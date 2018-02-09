@@ -1,0 +1,27 @@
+Devices:
+  view: yes
+  icon: mdi:chip
+  entities:
+    - group.sonoff_26575D
+    - group.hass
+    
+hass:
+  entities:
+    - sensor.date
+    - sensor.time
+    - sensor.ha_installed_version
+    - sensor.ha_uptime
+    #- sensor.external_ip
+    #- sensor.speedtest_download
+    #- sensor.speedtest_upload
+    #- sensor.since_last_boot_templated
+
+sonoff_26575D:
+  entities:
+    - sensor.sonoff_26575D_voltage
+    - sensor.sonoff_26575D_power
+    - sensor.sonoff_26575D_energy
+    - switch.sonoff_26575D
+    - sensor.sonoff_26575D_wifi
+    - sensor.sonoff_26575D_uptime
+    
