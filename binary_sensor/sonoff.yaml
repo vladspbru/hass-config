@@ -1,6 +1,14 @@
 - platform: mqtt
-  name: "sonoff_26575D_lwt"
+  name: "sonoff_26575D LWT"
   state_topic: "tele/sonoff_26575D/LWT"
+  value_template: "{{ value }}"
+  payload_on: "Online"
+  payload_off: "Offline"
+  device_class: connectivity
+
+- platform: mqtt
+  name: "sonoff_F4BC40 LWT"
+  state_topic: "tele/sonoff_F4BC40/LWT"
   value_template: "{{ value }}"
   payload_on: "Online"
   payload_off: "Offline"

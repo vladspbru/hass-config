@@ -2,7 +2,8 @@ Devices:
   view: yes
   icon: mdi:chip
   entities:
-    - group.sonoff_26575D
+    - group.sonoff_f4bc40
+    - group.sonoff_26575d
     - group.hass
     
 hass:
@@ -16,12 +17,18 @@ hass:
     #- sensor.speedtest_upload
     #- sensor.since_last_boot_templated
 
-sonoff_26575D:
+sonoff_26575d:
   entities:
-    - sensor.sonoff_26575D_voltage
-    - sensor.sonoff_26575D_power
-    - sensor.sonoff_26575D_energy
-    - switch.sonoff_26575D
-    - sensor.sonoff_26575D_wifi
-    - sensor.sonoff_26575D_uptime
+    - sensor.sonoff_26575d_voltage
+    - sensor.sonoff_26575d_power
+    - sensor.sonoff_26575d_energy
+    - switch.sonoff_26575d
+    - sensor.sonoff_26575d_wifi
+    - sensor.sonoff_26575d_uptime
+
+sonoff_f4bc40:
+  entities:
+    - switch.sonoff_f4bc40
+    - sensor.sonoff_f4bc40_wifi
+    - sensor.sonoff_f4bc40_uptime
     

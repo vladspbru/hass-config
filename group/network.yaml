@@ -4,14 +4,18 @@ Net:
   entities:
     - group.net_mqtt
     - group.net_nmap
+    - group.family
+    - group.guests
       
 net_mqtt:
   entities:
-    - binary_sensor.sonoff_26575D_lwt
+    - binary_sensor.sonoff_26575d_lwt
+    - binary_sensor.sonoff_f4bc40_lwt
     
 net_nmap:
   entities:
-    - device_tracker.sonoff_26575D
+    - device_tracker.sonoff_26575d
+    - device_tracker.sonoff_f4bc40
     - device_tracker.bbb
     - device_tracker.vlad
     - device_tracker.eva
