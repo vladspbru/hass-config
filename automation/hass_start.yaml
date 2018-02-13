@@ -1,0 +1,11 @@
+- alias: "Home Assistant on start event"
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - service: notify.notify
+      data:
+        message: 'Home Assistant is started!'
+    - service: script.sonoff_get_states
+    - service: script.sonoff_get_state1
+    - service: script.sonoff_get_state2

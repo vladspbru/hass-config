@@ -21,7 +21,8 @@ sonoff_26575d:
   entities:
     - sensor.sonoff_26575d_voltage
     - sensor.sonoff_26575d_power
-    - sensor.sonoff_26575d_energy
+    - sensor.sonoff_26575d_today
+    - sensor.sonoff_26575d_total
     - switch.sonoff_26575d
     - sensor.sonoff_26575d_wifi
     - sensor.sonoff_26575d_uptime

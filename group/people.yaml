@@ -7,4 +7,5 @@ Family:
 Guests:
   entities:
     - device_tracker.syb
+    - device_tracker.andrey
     

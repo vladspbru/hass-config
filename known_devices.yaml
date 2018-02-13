@@ -27,7 +27,7 @@ sonoff_f4bc40:
 
 vlad:
   hide_if_away: false
-  icon:
+  icon: mdi:human-male
   mac: 8C:3A:E3:99:43:19
   name: vlad_device
   picture:
@@ -36,19 +36,37 @@ vlad:
 
 bbb:
   hide_if_away: false
-  icon: mdi:nest-protect
+  icon: mdi:raspberrypi
   mac: 6C:EC:EB:A5:22:81
   name: bbb
   picture:
   track: true
   vendor: Texas Instruments
 
-syb:
+gt-syb:
   hide_if_away: false
-  icon:
+  icon: mdi:server-network
   mac: 44:8A:5B:A0:78:91
-  name: syb
+  name: syb pc
   picture:
   track: true
   vendor: unknown
 
+
+syb:
+  hide_if_away: false
+  icon: mdi:github-face
+  mac: B0:E2:35:80:DB:17
+  name: syb phone
+  picture:
+  track: true
+  vendor: Xiaomi Communications Co Ltd
+
+andrey:
+  hide_if_away: false
+  icon: mdi:github-face
+  mac: B4:52:7E:8A:72:D0
+  name: andrey phone
+  picture:
+  track: true
+  vendor: Sony Mobile Communications AB

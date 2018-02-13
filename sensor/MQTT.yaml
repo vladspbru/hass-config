@@ -4,9 +4,14 @@
 
 #sonoff-pow----------------------------------------
 - platform: mqtt
-  name: "sonoff 26575D energy"
+  name: "sonoff 26575D today"
   state_topic: "tele/sonoff_26575D/SENSOR"
   value_template: "{{ value_json.ENERGY.Today }}"
+  unit_of_measurement: "kWh"
+- platform: mqtt
+  name: "sonoff 26575D total"
+  state_topic: "tele/sonoff_26575D/SENSOR"
+  value_template: "{{ value_json.ENERGY.Total }}"
   unit_of_measurement: "kWh"
 - platform: mqtt
   name: "sonoff 26575D power"

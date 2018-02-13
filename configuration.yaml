@@ -91,16 +91,13 @@ sensor:         !include_dir_merge_list sensor
 binary_sensor:  !include_dir_merge_list binary_sensor
 switch:         !include_dir_merge_list switch
 device_tracker: !include_dir_merge_list device_tracker
-#input_boolean:  !include_dir_merge_named input_boolean
+automation:     !include_dir_merge_list automation
 group:          !include_dir_merge_named group
+script:         !include_dir_merge_named script
 
-shell_command: !include_dir_merge_named shell_command
-automation: !include_dir_merge_list automation
+#shell_command: !include_dir_merge_named shell_command
 #scene: !include_dir_merge_list scene
-#script: !include_dir_merge_named script
+#input_boolean:  !include_dir_merge_named input_boolean
 
-#automation: !include automations.yaml
-#group: !include groups.yaml
-#script: !include scripts.yaml
 
       

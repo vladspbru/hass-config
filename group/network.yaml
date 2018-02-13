@@ -1,6 +1,6 @@
 Net:
   view: yes
-  icon: mdi:router-wireless
+  icon: mdi:lan
   entities:
     - group.net_mqtt
     - group.net_nmap
