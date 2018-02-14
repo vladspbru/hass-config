@@ -1,0 +1,98 @@
+##
+## query states
+##
+sonoff_qry_states:
+  sequence:
+    #-----------------------------------------------
+    - service: mqtt.publish
+      data:
+        topic: 'cmnd/sonoff_26575D/STATE'
+        payload: "?"
+    - service: mqtt.publish
+      data:
+        topic: 'cmnd/sonoff_26575D/POWER'
+        payload: "?"
+    #-----------------------------------------------
+    - service: mqtt.publish
+      data:
+        topic: 'cmnd/sonoff_F4BC40/STATE'
+        payload: "?"
+    - service: mqtt.publish
+      data:
+        topic: 'cmnd/sonoff_F4BC40/POWER'
+        payload: "?"
+    #-----------------------------------------------
+    
+
+sonoff_get_states:
+  sequence:
+    #- service: script.sonoff_setup_all
+    - service: script.sonoff_qry_states
+
+##
+## upgrade tasmota
+##
+sonoff_upgrade_cmd:
+  sequence:
+    #setup RESULT to cmnd
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/SetOption4'
+        payload: "1"
+    #queryFW
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/status'
+        payload: "2"
+    #upgrade
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/otaurl'
+        payload: "http://sonoff.maddox.co.uk/tasmota/sonoff.ino.bin"
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/upgrade'
+        payload: "1"
+    #restart
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/restart'
+        payload: "1"
+    
+            
+            
+##
+## setup tasmota
+##
+sonoff_setup_cmd:
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/SetOption4'
+        payload: "1"
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/SwitchRetain'
+        payload: "1"
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/PowerRetain'
+        payload: "1"
+    #queryFW
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/status'
+        payload: "0"
+
+
+
+sonoff_setup_all:
+  sequence:
+    - service: script.sonoff_setup_cmd
+      data:
+        id: "sonoff_26575D"
+    - service: script.sonoff_setup_cmd
+      data:
+        id: "sonoff_F4BC40"
+            
+            

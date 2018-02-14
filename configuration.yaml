@@ -75,10 +75,13 @@ logger: !include logger.yaml
 
 #MQTT
 mqtt:
-  broker: 192.168.1.101
-  client_id: homeassistant-vx
-  #username: !secret MQTT_username
-  #password: !secret MQTT_password
+  broker:    !secret mqtt_address
+  port:      !secret mqtt_port
+  client_id: !secret mqtt_clientid
+  keepalive: 30
+  #protocol: 3.1
+  #username: !secret mqtt_username
+  #password: !secret mqtt_password
   birth_message:
     topic: 'hass/LWT'
     payload: 'Online'
