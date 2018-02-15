@@ -71,7 +71,20 @@ map:
 # Cloud
 #cloud:
 
+telegram_bot:
+  - platform: broadcast
+    api_key: !secret telegramapi_key
+    allowed_chat_ids:
+      #- 549554808
+      - 129789477
+
+notify:
+  - name: telegram2me
+    platform: telegram
+    chat_id: 129789477
+    
 logger: !include logger.yaml
+
 
 #MQTT
 mqtt:
