@@ -24,10 +24,10 @@ sonoff_qry_states:
     #-----------------------------------------------
     
 
-sonoff_get_states:
-  sequence:
+#sonoff_get_states:
+#  sequence:
     #- service: script.sonoff_setup_all
-    - service: script.sonoff_qry_states
+    #- service: script.sonoff_qry_states
 
 ##
 ## upgrade tasmota

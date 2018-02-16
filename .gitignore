@@ -1,3 +1,4 @@
 *.db
 *.log
 secrets.yaml
+__pycache__

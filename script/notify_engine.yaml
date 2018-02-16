@@ -21,4 +21,20 @@ notify_engine:
       data_template:
         title: '{{ title }}'
         message: "{{ message }}"
-    
+
+
+tweet_engine:
+   sequence:
+
+    - service: mqtt.publish
+      data_template:
+        topic: 'homeassistant/tweet'
+        payload: >-
+          "{{ tweet }}"
+        retain: true
+
+    - service: notify.telegram2me
+      data_template:
+        title: 'Tweet:'
+        message: "{{ tweet }}"
+
