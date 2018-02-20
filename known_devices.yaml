@@ -43,7 +43,7 @@ bbb:
   track: true
   vendor: Texas Instruments
 
-gt-syb:
+syb-pc:
   hide_if_away: false
   icon: mdi:server-network
   mac: 44:8A:5B:A0:78:91
@@ -51,7 +51,6 @@ gt-syb:
   picture:
   track: true
   vendor: unknown
-
 
 syb:
   hide_if_away: false
@@ -70,3 +69,12 @@ andrey:
   picture:
   track: true
   vendor: Sony Mobile Communications AB
+
+bareos:
+  hide_if_away: false
+  icon:
+  mac: 08:00:27:EA:F5:63
+  name: 080027eaf563
+  picture:
+  track: false
+  vendor: unknown

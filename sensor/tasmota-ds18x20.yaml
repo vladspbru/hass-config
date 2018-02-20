@@ -1,0 +1,11 @@
+###################################################
+## Various MQTT sensors
+###################################################
+
+#sonoff-base-1----------------------------------------
+- platform: mqtt
+  name: "DS18B20 1"
+  state_topic: "tele/sonoff_F4BC40/SENSOR"
+  value_template: "{{ value_json.DS18B20.Temperature }}"
+  unit_of_measurement: "C"
+
