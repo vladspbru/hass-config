@@ -1,6 +1,6 @@
 Weather:
   view: yes
-  icon: mdi:thermometer
+  icon: mdi:weather-partlycloudy
   entities:
     - group.weather_darksky
     - group.weather_yr

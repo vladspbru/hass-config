@@ -1,8 +1,8 @@
-router:
+router1:
   hide_if_away: true
   icon: mdi:router-wireless
   mac: 54:A0:50:CC:70:B6
-  name: ASUSTek_router
+  name: asus 4g n12 router
   picture:
   track: true
   vendor: ASUSTek COMPUTER INC.
@@ -29,7 +29,7 @@ vlad:
   hide_if_away: false
   icon: mdi:human-male
   mac: 8C:3A:E3:99:43:19
-  name: vlad_device
+  name: vlad phone
   picture:
   track: true
   vendor: LG Electronics (Mobile Communications)
@@ -43,9 +43,36 @@ bbb:
   track: true
   vendor: Texas Instruments
 
-syb-pc:
+bareos:
   hide_if_away: false
   icon: mdi:server-network
+  mac: 08:00:27:EA:F5:63
+  name: BareOS server
+  picture:
+  track: true
+  vendor: unknown
+
+webcam1:
+  hide_if_away: false
+  icon: mdi:webcam
+  mac: 90:C1:15:86:B3:6B
+  name: Ip WebCam1
+  picture:
+  track: true
+  vendor: Sony Mobile Communications AB
+
+andrey_pc:
+  hide_if_away: false
+  icon: mdi:laptop
+  mac: 44:6D:57:2C:0A:37
+  name: andrey pc
+  picture:
+  track: true
+  vendor: unknown
+
+syb_pc:
+  hide_if_away: false
+  icon: mdi:desktop-tower
   mac: 44:8A:5B:A0:78:91
   name: syb pc
   picture:
@@ -70,11 +97,3 @@ andrey:
   track: true
   vendor: Sony Mobile Communications AB
 
-bareos:
-  hide_if_away: false
-  icon:
-  mac: 08:00:27:EA:F5:63
-  name: 080027eaf563
-  picture:
-  track: false
-  vendor: unknown

@@ -1,0 +1,19 @@
+- alias: 'Send IP Cam photo'
+  trigger:
+    platform: time
+#    hours: '/1'
+    minutes: '/1'
+    seconds: '0'
+#  condition:
+#    condition: state
+#    entity_id: device_tracker.vlad
+#    state: 'not_home'
+  action:
+    service: notify.telegram2me
+    data:
+      title: 'WebCam1'
+      message: 'Photo'
+      data:
+        photo:
+          url: http://192.168.1.35:8080/photo.jpg
+          caption: Live picture

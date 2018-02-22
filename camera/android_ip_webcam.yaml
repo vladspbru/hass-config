@@ -1,0 +1,10 @@
+- host: 192.168.1.35
+  port: 8080
+  sensors:
+    - battery_level
+    - battery_temp
+    - motion
+  switches:
+    - video_recording
+ 
+

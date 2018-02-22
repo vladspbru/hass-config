@@ -1,0 +1,16 @@
+alarm:
+  sequence:
+    - service: script.notify_engine
+      data_template:
+        title: 'Alarm'
+        message: 'Test Alarm !!!'
+    
+    - service: notify.telegram2me
+      data:
+        title: 'Alarm'
+        message: 'Test Alarm'
+        data:
+          photo:
+            url: http://192.168.1.35:8080/photo.jpg
+            caption: 'WebCam1'
+ 

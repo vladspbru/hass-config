@@ -7,8 +7,8 @@
   monitored_conditions:
 #    - summary
 #    - precip_type
-    - precip_intensity
-    - precip_intensity_max
+#    - precip_intensity
+#    - precip_intensity_max
     - temperature
 #    - dew_point
     - wind_speed
@@ -20,7 +20,7 @@
 #    - pressure
 #    - visibility
 #    - ozone
-    - uv_index
+#    - uv_index
 
 
 - platform: yr
@@ -29,12 +29,12 @@
   monitored_conditions:
     - symbol
     - temperature
-    - precipitation
+#    - precipitation
     - windSpeed
     - pressure
     - windDirection
     - humidity
-    - fog
+#    - fog
 #    - cloudiness
 #    - lowClouds
 #    - mediumClouds

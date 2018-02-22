@@ -74,6 +74,8 @@ map:
 # Cloud
 #cloud:
 
+android_ip_webcam: !include camera/android_ip_webcam.yaml
+
 telegram_bot:
   - platform: broadcast
     api_key: !secret telegramapi_key
@@ -87,7 +89,6 @@ notify:
     chat_id: 129789477
     
 logger: !include logger.yaml
-
 
 #MQTT
 mqtt:

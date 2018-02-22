@@ -16,8 +16,10 @@ net_nmap:
   entities:
     - device_tracker.sonoff_26575d
     - device_tracker.sonoff_f4bc40
-    - device_tracker.bbb
     - device_tracker.vlad
     - device_tracker.eva
     - device_tracker.valery
+    - device_tracker.webcam1
+    - device_tracker.bbb
+    
     

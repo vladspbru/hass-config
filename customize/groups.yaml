@@ -73,5 +73,5 @@ group.weather_yr:
 #  hidden: False
 
 group.hass:
-  friendly_name: 'Home Assistant App'
+  friendly_name: 'HAss Application'
   hidden: False
