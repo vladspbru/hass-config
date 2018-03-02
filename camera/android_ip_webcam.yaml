@@ -1,10 +1,15 @@
-- host: 192.168.1.35
-  port: 8080
+- name: Camera 01
+  host: !secret camera01_address
+  port: !secret camera01_port
+  scan_interval: 5
+  motion_sensor: true
   sensors:
     - battery_level
     - battery_temp
     - motion
   switches:
     - video_recording
+    - torch
+  
  
 

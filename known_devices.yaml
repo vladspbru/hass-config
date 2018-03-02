@@ -97,3 +97,12 @@ andrey:
   track: true
   vendor: Sony Mobile Communications AB
 
+
+anton:
+  hide_if_away: false
+  icon:
+  mac: 38:A4:ED:D1:2A:54
+  name: Anton?
+  picture:
+  track: true
+  vendor: Xiaomi Communications Co Ltd

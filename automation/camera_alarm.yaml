@@ -1,19 +1,52 @@
-- alias: 'Send IP Cam photo'
+#--------------------------------------------------------
+- alias: 'Camera01 capture photos to telegam'
   trigger:
     platform: time
-#    hours: '/1'
-    minutes: '/1'
-    seconds: '0'
+    minutes: '0'
+    seconds: '/1'
+  action:
+    service: notify.telegram2me
+    data:
+      title: 'Camera01'
+      message: 'Photo'
+      data:
+        photo:
+          url: http://192.168.1.35:8080/photo.jpg
+          caption: 'Snapshot'
+
+#--------------------------------------------------------
+- alias: 'Camera01 motion detection'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.camera_01_motion_active
+    to: 'on'
 #  condition:
 #    condition: state
 #    entity_id: device_tracker.vlad
 #    state: 'not_home'
   action:
-    service: notify.telegram2me
-    data:
-      title: 'WebCam1'
-      message: 'Photo'
+    - service: notify.telegram2me
       data:
-        photo:
-          url: http://192.168.1.35:8080/photo.jpg
-          caption: Live picture
+        title: 'Camera01'
+        message: 'Live picture'
+        data:
+          photo:
+            url: http://192.168.1.35:8080/photo.jpg
+            caption: 'Motion detected'
+              
+#    - service: camera.snapshot
+#      data:
+#        entity_id: camera.camera01
+#        filename: ‘/tmp/photo_camera01.jpg’
+#    - service: notify.telegram2me
+#      data:
+#        title: 'Camera01'
+#        message: 'Snapshot'
+#        data:
+#          photo:
+#            - file: ‘/tmp/photo_camera01.jpg’
+#              caption: 'Snapshot. Motion detected'
+#--------------------------------------------------------
+
+
+      

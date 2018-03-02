@@ -2,12 +2,14 @@ Camera:
   view: yes
   icon: mdi:camcorder
   entities:
-    - group.camera_sony
+    - group.camera_01
     
-camera_sony:
+camera_01:
   entities:
-    - camera.ip_webcam
-    - sensor.ip_webcam_battery_level
-    - sensor.ip_webcam_battery_temperature
-    - sensor.ip_webcam_motion
-    - switch.ip_webcam_video_recording
+    - camera.camera_01
+    - sensor.camera_01_battery_level
+    - sensor.camera_01_battery_temperature
+    - sensor.camera_01_motion
+    - switch.camera_01_video_recording
+    - switch.camera_01_torch
+    - binary_sensor.camera_01_motion_active

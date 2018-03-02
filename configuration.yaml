@@ -11,6 +11,9 @@ homeassistant:
   customize_glob: !include customize_glob.yaml
   # Packages
   packages: !include_dir_named packages
+  
+  whitelist_external_dirs: 
+    - /tmp
 
 # Show links to resources in log and frontend
 #introduction:
