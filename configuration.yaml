@@ -92,6 +92,7 @@ notify:
     chat_id: 129789477
     
 logger: !include logger.yaml
+zone:   !include zone.yaml 
 
 #MQTT
 mqtt:

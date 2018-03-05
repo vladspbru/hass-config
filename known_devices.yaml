@@ -106,3 +106,12 @@ anton:
   picture:
   track: true
   vendor: Xiaomi Communications Co Ltd
+
+vlad_zanzito:
+  hide_if_away: false
+  icon:
+  mac:
+  name: vlad zanzito
+  picture:
+  track: true
+  vendor:

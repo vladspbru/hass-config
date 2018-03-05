@@ -1,0 +1,5 @@
+- platform: mqtt_json
+  devices:
+    vlad_zanzito: "zanzito/vlad_zanzito/location"
+
+ 
