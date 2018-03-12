@@ -6,6 +6,19 @@
 - platform: mqtt
   name: "DS18B20 1"
   state_topic: "tele/sonoff_F4BC40/SENSOR"
-  value_template: "{{ value_json.DS18B20.Temperature }}"
-  unit_of_measurement: "C"
+  #value_template:"{{ value_json.DS18B20.Temperature }}" # когда один датчик
+  value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'
+  unit_of_measurement: "°C"
+
+- platform: mqtt
+  name: "DS18B20 2"
+  state_topic: "tele/sonoff_F4BC40/SENSOR"
+  value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
+  unit_of_measurement: "°C"
+
+- platform: mqtt
+  name: "DS18B20 3"
+  state_topic: "tele/sonoff_F4BC40/SENSOR"
+  value_template: '{{ value_json["DS18B20-3"]["Temperature"] }}'
+  unit_of_measurement: "°C"
 

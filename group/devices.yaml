@@ -4,22 +4,7 @@ Devices:
   entities:
     - group.sonoff_f4bc40
     - group.sonoff_26575d
-    - group.hass
     
-hass:
-  entities:
-    - sensor.date
-    - sensor.time
-    - sensor.ha_installed_version
-    - sensor.ha_uptime
-    #- sensor.external_ip
-    #- sensor.speedtest_download
-    #- sensor.speedtest_upload
-    #- sensor.since_last_boot_templated
-    - sensor.disk_use_percent_
-    - sensor.database_sensor
-    - sensor.since_last_boot
-
 sonoff_26575d:
   entities:
     - sensor.sonoff_26575d_voltage
@@ -34,6 +19,8 @@ sonoff_f4bc40:
   entities:
     - switch.sonoff_f4bc40
     - sensor.ds18b20_1
+    - sensor.ds18b20_2
+    - sensor.ds18b20_3
     - sensor.sonoff_f4bc40_wifi
     - sensor.sonoff_f4bc40_uptime
     

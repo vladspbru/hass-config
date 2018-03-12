@@ -115,3 +115,12 @@ vlad_zanzito:
   picture:
   track: true
   vendor:
+
+0018f361010a:
+  hide_if_away: false
+  icon:
+  mac: 00:18:F3:61:01:0A
+  name: 0018f361010a
+  picture:
+  track: true
+  vendor: ASUSTek COMPUTER INC.

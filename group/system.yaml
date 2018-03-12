@@ -1,0 +1,20 @@
+System:
+  view: yes
+  icon: mdi:clippy
+  entities:
+    - group.hass
+    
+hass:
+  entities:
+    - sensor.date
+    - sensor.time
+    - sensor.ha_installed_version
+    - sensor.ha_uptime
+    #- sensor.external_ip
+    #- sensor.speedtest_download
+    #- sensor.speedtest_upload
+    #- sensor.since_last_boot_templated
+    - sensor.disk_use_percent_
+    - sensor.database_sensor
+    - sensor.since_last_boot
+

@@ -1,6 +1,7 @@
 Family:
   entities:
     - device_tracker.vlad
+    - device_tracker.vlad_zanzito
     - device_tracker.eva
     - device_tracker.valery
 
