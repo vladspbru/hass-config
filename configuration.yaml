@@ -61,6 +61,8 @@ history:
       - sensor.ds18b20_1
   exclude:
     entities:
+     - switch.camera_01_torch
+     - switch.camera_01_video_recording
      - sensor.ha_uptime
      - sensor.last_boot
      - sensor.date
