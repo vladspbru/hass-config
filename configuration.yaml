@@ -49,16 +49,21 @@ discovery:
 history:
   include:
     domains:
-      - sensor
       - switch
-      - media_player
-      - light
-      - binary_sensor
+#      - sensor
+#      - light
+#      - binary_sensor
+    entities:
+      - sensor.weather_yr_temperature
+      - sensor.dark_sky_temperature
+      - sensor.sonoff_26575d_power
+      - sensor.sonoff_26575d_voltage
+      - sensor.ds18b20_1
   exclude:
     entities:
+     - sensor.ha_uptime
      - sensor.last_boot
      - sensor.date
-     - sensor.ha_uptime
      - sensor.time
 
 # View all events in a logbook
