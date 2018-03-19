@@ -79,7 +79,7 @@ syb_pc:
   track: true
   vendor: unknown
 
-syb:
+syb_phone:
   hide_if_away: false
   icon: mdi:github-face
   mac: B0:E2:35:80:DB:17
@@ -88,11 +88,20 @@ syb:
   track: true
   vendor: Xiaomi Communications Co Ltd
 
-andrey:
+andrey_sony1:
   hide_if_away: false
   icon: mdi:github-face
   mac: B4:52:7E:8A:72:D0
-  name: andrey phone
+  name: andrey_sony1
+  picture:
+  track: true
+  vendor: Sony Mobile Communications AB
+  
+andrey_sony2:
+  hide_if_away: false
+  icon: mdi:github-face
+  mac: 00:EB:2D:13:1C:66
+  name: andrey_sony2
   picture:
   track: true
   vendor: Sony Mobile Communications AB
@@ -108,7 +117,7 @@ anton:
 
 vlad_zanzito:
   hide_if_away: true
-  icon:
+  icon: mdi:github-face
   mac:
   name: vlad zanzito
   picture:
@@ -117,9 +126,19 @@ vlad_zanzito:
 
 0018f361010a:
   hide_if_away: false
-  icon:
+  icon: mdi:router-wireless
   mac: 00:18:F3:61:01:0A
-  name: 0018f361010a
+  name: wl50gp?
   picture:
   track: true
   vendor: ASUSTek COMPUTER INC.
+
+68fb7e8bab7a:
+  hide_if_away: false
+  icon: mdi:github-face
+  mac: 68:FB:7E:8B:AB:7A
+  name: alexa?
+  picture:
+  track: true
+  vendor: Apple, Inc.
+

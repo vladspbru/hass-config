@@ -1,27 +1,36 @@
 ##
 ## query states
 ##
+sonoff_qry_state:
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/STATE'
+        payload: "?"
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/POWER'
+        payload: "?"
+    #-----------------------------------------------
+    #hak query tele
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/TelePeriod'
+        payload: "0"
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/TelePeriod'
+        payload: "300"
+            
+
 sonoff_qry_states:
   sequence:
-    #-----------------------------------------------
-    - service: mqtt.publish
+    - service: script.sonoff_qry_state
       data:
-        topic: 'cmnd/sonoff_26575D/STATE'
-        payload: "?"
-    - service: mqtt.publish
+        id: "sonoff_26575D"
+    - service: script.sonoff_qry_state
       data:
-        topic: 'cmnd/sonoff_26575D/POWER'
-        payload: "?"
-    #-----------------------------------------------
-    - service: mqtt.publish
-      data:
-        topic: 'cmnd/sonoff_F4BC40/STATE'
-        payload: "?"
-    - service: mqtt.publish
-      data:
-        topic: 'cmnd/sonoff_F4BC40/POWER'
-        payload: "?"
-    #-----------------------------------------------
+        id: "sonoff_F4BC40"
     
 
 #sonoff_get_states:
@@ -68,14 +77,17 @@ sonoff_setup_cmd:
   sequence:
     - service: mqtt.publish
       data_template:
+        #Return response as Command topic  
         topic: 'cmnd/{{id}}/SetOption4'
         payload: "1"
     - service: mqtt.publish
       data_template:
+        #Set ButtonTopic to Topic and enable MQTT retain flag on button press 
         topic: 'cmnd/{{id}}/SwitchRetain'
         payload: "1"
     - service: mqtt.publish
       data_template:
+        #Enable MQTT power retain on status update  
         topic: 'cmnd/{{id}}/PowerRetain'
         payload: "1"
     #queryFW
