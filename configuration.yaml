@@ -24,11 +24,9 @@ frontend:
 # Enables configuration UI
 config:
 
-http:
-  # Secrets are defined in the file secrets.yaml
-  # api_password: !secret homeassistant_http_password
-  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-  # base_url: example.duckdns.org:8123
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -40,33 +38,13 @@ updater:
   # include_used_components: true
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 #conversation:
 
 # Enables support for tracking state changes over time
-history:
-  include:
-    domains:
-      - switch
-#      - sensor
-#      - light
-#      - binary_sensor
-    entities:
-      - sensor.weather_yr_temperature
-      - sensor.dark_sky_temperature
-      - sensor.sonoff_26575d_power
-      - sensor.sonoff_26575d_voltage
-      - sensor.ds18b20_1
-  exclude:
-    entities:
-     - switch.camera_01_torch
-     - switch.camera_01_video_recording
-     - sensor.ha_uptime
-     - sensor.last_boot
-     - sensor.date
-     - sensor.time
+#history:
 
 # View all events in a logbook
 logbook:
@@ -75,7 +53,7 @@ logbook:
 map:
 
 # Track the sun
-#sun:
+sun:
 
 # Text to speech
 #tts:
@@ -116,8 +94,8 @@ mqtt:
   will_message:
     topic: 'hass/LWT'
     payload: 'Offline'
-    
-    
+
+
 sensor:         !include_dir_merge_list sensor
 binary_sensor:  !include_dir_merge_list binary_sensor
 switch:         !include_dir_merge_list switch
