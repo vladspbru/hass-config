@@ -1,0 +1,17 @@
+- alias: "Person is now home"
+  hide_entity: False
+  trigger:
+    platform: state
+    entity_id: 
+      - device_tracker.vlad
+      - device_tracker.vlad_zanzito
+      - device_tracker.eva
+      - device_tracker.valery
+    from: 'not_home'
+    to: 'home'
+  action:
+    - service: script.notify_engine
+      data_template:
+        title: 'Person'
+        message: " {{ trigger.to_state.attributes.friendly_name }} -> {{ states(trigger.entity_id) }}"
+

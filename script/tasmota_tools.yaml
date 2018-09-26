@@ -1,4 +1,4 @@
-##
+##--------------------------------------------
 ## query states
 ##
 sonoff_qry_state:
@@ -11,7 +11,6 @@ sonoff_qry_state:
       data_template:
         topic: 'cmnd/{{id}}/POWER'
         payload: "?"
-    #-----------------------------------------------
     #hak query tele
     - service: mqtt.publish
       data_template:
@@ -22,7 +21,6 @@ sonoff_qry_state:
         topic: 'cmnd/{{id}}/TelePeriod'
         payload: "300"
             
-
 sonoff_qry_states:
   sequence:
     - service: script.sonoff_qry_state
@@ -31,14 +29,46 @@ sonoff_qry_states:
     - service: script.sonoff_qry_state
       data:
         id: "sonoff_F4BC40"
+#---------------------------------------------
     
 
-#sonoff_get_states:
-#  sequence:
-    #- service: script.sonoff_setup_all
-    #- service: script.sonoff_qry_states
-
+##--------------------------------------------
+## setup tasmota
 ##
+sonoff_setup_cmd:
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        #Return response as Command topic  
+        topic: 'cmnd/{{id}}/SetOption4'
+        payload: "1"
+    - service: mqtt.publish
+      data_template:
+        #Set ButtonTopic to Topic and enable MQTT retain flag on button press 
+        topic: 'cmnd/{{id}}/SwitchRetain'
+        payload: "1"
+    - service: mqtt.publish
+      data_template:
+        #Enable MQTT power retain on status update  
+        topic: 'cmnd/{{id}}/PowerRetain'
+        payload: "1"
+    #queryFW
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/status'
+        payload: "0"
+
+sonoff_setup_all:
+  sequence:
+    - service: script.sonoff_setup_cmd
+      data:
+        id: "sonoff_26575D"
+    - service: script.sonoff_setup_cmd
+      data:
+        id: "sonoff_F4BC40"
+##--------------------------------------------
+            
+##--------------------------------------------
 ## upgrade tasmota
 ##
 sonoff_upgrade_cmd:
@@ -69,42 +99,5 @@ sonoff_upgrade_cmd:
         payload: "1"
     
             
-            
-##
-## setup tasmota
-##
-sonoff_setup_cmd:
-  sequence:
-    - service: mqtt.publish
-      data_template:
-        #Return response as Command topic  
-        topic: 'cmnd/{{id}}/SetOption4'
-        payload: "1"
-    - service: mqtt.publish
-      data_template:
-        #Set ButtonTopic to Topic and enable MQTT retain flag on button press 
-        topic: 'cmnd/{{id}}/SwitchRetain'
-        payload: "1"
-    - service: mqtt.publish
-      data_template:
-        #Enable MQTT power retain on status update  
-        topic: 'cmnd/{{id}}/PowerRetain'
-        payload: "1"
-    #queryFW
-    - service: mqtt.publish
-      data_template:
-        topic: 'cmnd/{{id}}/status'
-        payload: "0"
-
-
-
-sonoff_setup_all:
-  sequence:
-    - service: script.sonoff_setup_cmd
-      data:
-        id: "sonoff_26575D"
-    - service: script.sonoff_setup_cmd
-      data:
-        id: "sonoff_F4BC40"
             
             

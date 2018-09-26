@@ -4,16 +4,19 @@ Devices:
   entities:
     - group.sonoff_f4bc40
     - group.sonoff_26575d
+    - group.tasmota_utils
+    
     
 sonoff_26575d:
   entities:
+    - switch.sonoff_26575d
     - sensor.sonoff_26575d_voltage
     - sensor.sonoff_26575d_power
     - sensor.sonoff_26575d_today
     - sensor.sonoff_26575d_total
-    - switch.sonoff_26575d
     - sensor.sonoff_26575d_wifi
     - sensor.sonoff_26575d_uptime
+    - binary_sensor.sonoff_26575d_lwt
 
 sonoff_f4bc40:
   entities:
@@ -23,4 +26,9 @@ sonoff_f4bc40:
     - sensor.ds18b20_3
     - sensor.sonoff_f4bc40_wifi
     - sensor.sonoff_f4bc40_uptime
+    - binary_sensor.sonoff_f4bc40_lwt
+    
+tasmota_utils:
+  entities:
+    - script.sonoff_qry_states
     
