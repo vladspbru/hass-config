@@ -37,21 +37,36 @@ sonoff_qry_states:
 ##
 sonoff_setup_cmd:
   sequence:
+    #Return response as Command topic  
     - service: mqtt.publish
       data_template:
-        #Return response as Command topic  
         topic: 'cmnd/{{id}}/SetOption4'
         payload: "1"
-    - service: mqtt.publish
+    #Set ButtonTopic to Topic and enable MQTT retain flag on button press 
+    - service: mqtt.publish 
       data_template:
-        #Set ButtonTopic to Topic and enable MQTT retain flag on button press 
         topic: 'cmnd/{{id}}/SwitchRetain'
         payload: "1"
-    - service: mqtt.publish
+    #Enable MQTT power retain on status update  
+    - service: mqtt.publish 
       data_template:
-        #Enable MQTT power retain on status update  
         topic: 'cmnd/{{id}}/PowerRetain'
         payload: "1"
+    #set Timezone  
+    - service: mqtt.publish 
+      data_template:
+        topic: 'cmnd/{{id}}/Timezone'
+        payload: "3"
+    #set Geo
+    - service: mqtt.publish 
+      data_template:
+        topic: 'cmnd/{{id}}/Latitude'
+        payload: "60.1808"
+    - service: mqtt.publish 
+      data_template:
+        topic: 'cmnd/{{id}}/Longitude'
+        payload: "29.3935"
+            
     #queryFW
     - service: mqtt.publish
       data_template:
