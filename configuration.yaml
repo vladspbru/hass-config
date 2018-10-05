@@ -64,17 +64,17 @@ sun:
 
 #android_ip_webcam: !include camera/android_ip_webcam.yaml
 
-telegram_bot:
-  - platform: broadcast
-    api_key: !secret telegramapi_key
-    allowed_chat_ids:
-      #- 549554808
-      - 129789477
+#telegram_bot:
+#  - platform: broadcast
+#    api_key: !secret telegramapi_key
+#    allowed_chat_ids:
+#      #- 549554808
+#      - 129789477
 
-notify:
-  - name: telegram2me
-    platform: telegram
-    chat_id: 129789477
+#notify:
+#  - name: telegram2me
+#    platform: telegram
+#    chat_id: 129789477
     
 logger: !include logger.yaml
 zone:   !include zone.yaml 

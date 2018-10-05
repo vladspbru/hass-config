@@ -143,3 +143,59 @@ vlad_zanzito:
   vendor: Apple, Inc.
 
 
+
+e8de27988d1b:
+  hide_if_away: false
+  icon:
+  mac: E8:DE:27:98:8D:1B
+  name: e8de27988d1b
+  picture:
+  track: true
+
+5ccf7f68ac8d:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:68:AC:8D
+  name: 5ccf7f68ac8d
+  picture:
+  track: true
+
+503eaa65c61b:
+  hide_if_away: false
+  icon:
+  mac: 50:3E:AA:65:C6:1B
+  name: 503eaa65c61b
+  picture:
+  track: true
+
+dc4f22801e75:
+  hide_if_away: false
+  icon:
+  mac: DC:4F:22:80:1E:75
+  name: dc4f22801e75
+  picture:
+  track: true
+
+68c63a95b510:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:95:B5:10
+  name: 68c63a95b510
+  picture:
+  track: true
+
+5ccf7f68b5c7:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:68:B5:C7
+  name: 5ccf7f68b5c7
+  picture:
+  track: true
+
+bcaec5c4d814:
+  hide_if_away: false
+  icon:
+  mac: BC:AE:C5:C4:D8:14
+  name: bcaec5c4d814
+  picture:
+  track: true

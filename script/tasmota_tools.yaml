@@ -66,6 +66,12 @@ sonoff_setup_cmd:
       data_template:
         topic: 'cmnd/{{id}}/Longitude'
         payload: "29.3935"
+    #set no reboot on nonetwork
+    - service: mqtt.publish 
+      data_template:
+        topic: 'cmnd/{{id}}/WifiConfig'
+        payload: "5"
+    
             
     #queryFW
     - service: mqtt.publish
