@@ -44,4 +44,16 @@
   state_topic: "tele/sonoff_F4BC40/STATE"
   value_template: "{{ value_json.Uptime }}"
   unit_of_measurement: ""
+#sonoff-mainswitch----------------------------------------
+- platform: mqtt
+  name: "sonoff 95B510 wifi"
+  state_topic: "tele/sonoff_95B510/STATE"
+  value_template: "{{ value_json.Wifi.RSSI }}"
+  unit_of_measurement: "%"
+- platform: mqtt
+  name: "sonoff 95B510 uptime"
+  state_topic: "tele/sonoff_95B510/STATE"
+  value_template: "{{ value_json.Uptime }}"
+  unit_of_measurement: ""
+
 
