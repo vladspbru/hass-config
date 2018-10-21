@@ -41,15 +41,32 @@ updater:
 #discovery:
 
 # Enables support for tracking state changes over time
-#history:
-
+history:
+  include:
+    entities:
+       - sensor.temp_out
+       - sensor.temp_in
+       - sensor.temp_x
+       - sensor.temp_water
+       - switch.sonoff_F4BC40
+       - switch.sonoff_95B510
+       - sensor.weather_yr_temperature
+       - sensor.weather_yr_humidity
+ 
 # View all events in a logbook
 logbook:
   include:
     domains:
       - sensor
       - switch
-      
+
+recorder:
+  purge_keep_days: 10
+  include:
+    domains:
+      - sensor
+      - switch
+        
 # Enables a map showing the location of tracked devices
 #map:
 
