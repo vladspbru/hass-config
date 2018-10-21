@@ -6,4 +6,6 @@
 "sensor.ds18b20*":  
   icon: mdi:thermometer
 
+"sensor.temp_*":  
+  icon: mdi:thermometer
       

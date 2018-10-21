@@ -3,7 +3,8 @@ Devices:
   icon: mdi:chip
   entities:
     - group.sonoff_f4bc40
-    - group.sonoff_26575d
+    - group.sonoff_95b510
+#    - group.sonoff_26575d
     - group.tasmota_utils
     
     
@@ -21,12 +22,20 @@ sonoff_26575d:
 sonoff_f4bc40:
   entities:
     - switch.sonoff_f4bc40
-    - sensor.ds18b20_1
-    - sensor.ds18b20_2
-    - sensor.ds18b20_3
+    - sensor.temp_water
     - sensor.sonoff_f4bc40_wifi
     - sensor.sonoff_f4bc40_uptime
     - binary_sensor.sonoff_f4bc40_lwt
+
+sonoff_95b510:
+  entities:
+    - switch.sonoff_95b510
+    - sensor.temp_out
+    - sensor.temp_in
+    - sensor.temp_x
+    - sensor.sonoff_95b510_wifi
+    - sensor.sonoff_95b510_uptime
+    - binary_sensor.sonoff_95b510_lwt
     
 tasmota_utils:
   entities:

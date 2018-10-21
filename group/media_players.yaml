@@ -1,5 +1,0 @@
-media_players:
-  entities:
-    - media_player.whole_house
-    - media_player.living_room_tv
-    - media_player.alarm_clock

@@ -6,25 +6,23 @@ router1:
   picture:
   track: true
   vendor: ASUSTek COMPUTER INC.
-
-sonoff_26575d:
+ 
+sonoff_95b510:
   hide_if_away: false
   icon: mdi:chip
-  mac: 2C:3A:E8:26:57:5D
-  name: Sonoff 26575d
+  mac: 68:C6:3A:95:B5:10
+  name: sonoff_95B510-5392.local
   picture:
   track: true
-  vendor: Espressif Inc.
   
 sonoff_f4bc40:
   hide_if_away: false
   icon: mdi:chip
   mac: 5C:CF:7F:F4:BC:40
-  name: Sonoff f4bc40
+  name: sonoff_F4BC40-7232.local
   picture:
   track: true
-  vendor: Espressif Inc.
-
+  
 vlad:
   hide_if_away: false
   icon: mdi:human-male
@@ -34,12 +32,13 @@ vlad:
   track: true
   vendor: LG Electronics (Mobile Communications)
 
-bbb:
-  hide_if_away: false
-  icon: mdi:raspberrypi
-  mac: 6C:EC:EB:A5:22:81
-  name: bbb
-  picture:
-  track: true
-  vendor: Texas Instruments
 
+
+
+access_point:
+  hide_if_away: false
+  icon:
+  mac:
+  name: access point
+  picture:
+  track: false

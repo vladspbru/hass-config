@@ -1,7 +1,0 @@
-NNet:
-  entities:
-    - device_tracker.vlad
-    - device_tracker.sonoff_26575D
-    - binary_sensor.sonoff_26575D_lwt
-    - device_tracker.bbb    
- 

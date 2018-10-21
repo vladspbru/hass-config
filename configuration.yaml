@@ -40,27 +40,38 @@ updater:
 # Discover some devices automatically
 #discovery:
 
-# Allows you to issue voice commands from the frontend in enabled browsers
-#conversation:
-
 # Enables support for tracking state changes over time
 #history:
 
 # View all events in a logbook
 logbook:
-
+  include:
+    domains:
+      - sensor
+      - switch
+      
 # Enables a map showing the location of tracked devices
-map:
+#map:
 
 # Track the sun
 sun:
 
-# Text to speech
-#tts:
-#  - platform: google
-
-# Cloud
-#cloud:
+influxdb:
+  host: localhost
+  database: hass
+  include:
+    entities:
+       - sensor.temp_out
+       - sensor.temp_in
+       - sensor.temp_x
+       - sensor.temp_water
+       - switch.sonoff_F4BC40
+       - switch.sonoff_95B510
+       - sensor.weather_yr_temperature
+       - sensor.weather_yr_humidity
+       
+       
+       
 
 #android_ip_webcam: !include camera/android_ip_webcam.yaml
 
@@ -76,8 +87,8 @@ sun:
 #    platform: telegram
 #    chat_id: 129789477
     
-logger: !include logger.yaml
-zone:   !include zone.yaml 
+#logger: !include logger.yaml
+#zone:   !include zone.yaml 
 
 #MQTT
 mqtt:
@@ -100,9 +111,9 @@ sensor:         !include_dir_merge_list sensor
 binary_sensor:  !include_dir_merge_list binary_sensor
 switch:         !include_dir_merge_list switch
 device_tracker: !include_dir_merge_list device_tracker
-automation:     !include_dir_merge_list automation
+#automation:     !include_dir_merge_list automation
 group:          !include_dir_merge_named group
-script:         !include_dir_merge_named script
+#script:         !include_dir_merge_named script
 
 #shell_command: !include_dir_merge_named shell_command
 #scene: !include_dir_merge_list scene

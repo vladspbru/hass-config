@@ -33,7 +33,7 @@
   state_topic: "tele/sonoff_26575D/STATE"
   value_template: "{{ value_json.Uptime }}"
   unit_of_measurement: ""
-#sonoff-base-1----------------------------------------
+#sonoff-water----------------------------------------
 - platform: mqtt
   name: "sonoff F4BC40 wifi"
   state_topic: "tele/sonoff_F4BC40/STATE"
