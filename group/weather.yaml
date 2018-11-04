@@ -2,22 +2,11 @@ Weather:
   view: yes
   icon: mdi:weather-partlycloudy
   entities:
-    - group.weather_darksky
     - group.weather_yr
     - sensor.moon
+    - sensor.sun
     - camera.wu_doppler_weather
 
-
-Weather_DarkSky:
-  entities:
-    - sensor.dark_sky_temperature
-    - sensor.dark_sky_cloud_coverage
-    - sensor.dark_sky_minutely_summary
-    - sensor.dark_sky_precip_intensity
-    - sensor.dark_sky_daily_max_precip_intensity
-    - sensor.dark_sky_wind_speed
-    - sensor.dark_sky_humidity
-    - sensor.dark_sky_uv_index
 
 Weather_YR:
   entities:

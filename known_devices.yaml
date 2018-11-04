@@ -42,3 +42,11 @@ access_point:
   name: access point
   picture:
   track: false
+
+karelialan:
+  hide_if_away: false
+  icon:
+  mac: 90:21:81:FB:B9:FB
+  name: karelia.lan
+  picture:
+  track: false
