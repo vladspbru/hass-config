@@ -4,7 +4,7 @@ Net:
   entities:
     - group.net_mqtt
     - group.net_nmap
-#    - group.family
+    - group.family
 #    - group.guests
       
 net_mqtt:
