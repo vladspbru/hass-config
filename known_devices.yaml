@@ -22,6 +22,14 @@ sonoff_f4bc40:
   name: sonoff_F4BC40-7232.local
   picture:
   track: true
+
+sonoff_26575d:
+  hide_if_away: false
+  icon: mdi:chip
+  mac: 2C:3A:E8:26:57:5D
+  name: sonoff_26575D-5981.local
+  picture:
+  track: true
   
 vlad:
   hide_if_away: false
@@ -50,3 +58,4 @@ karelialan:
   name: karelia.lan
   picture:
   track: false
+

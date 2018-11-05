@@ -4,7 +4,7 @@ Devices:
   entities:
     - group.sonoff_f4bc40
     - group.sonoff_95b510
-#    - group.sonoff_26575d
+    - group.sonoff_26575d
     - group.tasmota_utils
     
     
