@@ -40,3 +40,7 @@
       {%- endif -%}
     {%- endif -%}
 
+- platform: filesize
+  scan_interval: 120
+  file_paths:
+    - /config/home-assistant_v2.db

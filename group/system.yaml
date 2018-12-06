@@ -9,12 +9,9 @@ hass:
     - sensor.date
     - sensor.time
     - sensor.ha_installed_version
-    - sensor.ha_uptime
     #- sensor.external_ip
-    #- sensor.speedtest_download
-    #- sensor.speedtest_upload
-    #- sensor.since_last_boot_templated
     - sensor.disk_use_percent_
-    - sensor.database_sensor
+    - sensor.homeassistant_v2db
+    - sensor.ha_uptime
     - sensor.since_last_boot
 
