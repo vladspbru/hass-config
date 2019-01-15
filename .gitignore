@@ -1,4 +1,8 @@
 *.db
 *.log
 secrets.yaml
+.storage
+.directory
+.uuid
+.HA_VERSION
 __pycache__
