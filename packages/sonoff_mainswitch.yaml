@@ -1,0 +1,73 @@
+#sonoff-mainswitch -------------------------------------
+switch:
+  - platform: mqtt
+    name: "sonoff_mainswitch"
+    state_topic: "stat/sonoff_95B510/POWER"
+    command_topic: "cmnd/sonoff_95B510/POWER"
+    availability_topic: "tele/sonoff_95B510/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not-available: "Offline"
+    optimistic: false
+    #retain: false
+    
+sensor:
+  - platform: mqtt
+    name: "sonoff 95B510 wifi"
+    state_topic: "tele/sonoff_95B510/STATE"
+    value_template: "{{ value_json.Wifi.RSSI }}"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: "sonoff 95B510 uptime"
+    state_topic: "tele/sonoff_95B510/STATE"
+    value_template: "{{ value_json.Uptime }}"
+    unit_of_measurement: ""
+
+  - platform: mqtt
+    name: "temp_out"
+    state_topic: "tele/sonoff_95B510/SENSOR"
+    #value_template:"{{ value_json.DS18B20.Temperature }}" # когда один датчик
+    value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "temp_x"
+    state_topic: "tele/sonoff_95B510/SENSOR"
+    value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "temp_in"
+    state_topic: "tele/sonoff_95B510/SENSOR"
+    value_template: '{{ value_json["DS18B20-3"]["Temperature"] }}'
+    unit_of_measurement: "°C"
+
+
+group:
+  sonoff_mainswitch:
+    entities:
+        - switch.sonoff_mainswitch
+        - sensor.temp_out
+        - sensor.temp_in
+        - sensor.temp_x
+        - sensor.sonoff_95b510_wifi
+        - sensor.sonoff_95b510_uptime
+
+
+homeassistant:
+  customize:
+    sensor.temp_out:
+      icon: mdi:thermometer
+      friendly_name: 'Температура снаружи'
+    sensor.temp_in:
+      icon: mdi:thermometer
+      friendly_name: 'Температура внутри'
+    sensor.temp_x:
+      icon: mdi:thermometer
+      friendly_name: 'Температура в углу'
+    switch.sonoff_mainswitch:
+#      icon: mdi:flash-circle
+      friendly_name: 'Рубильник'
+    group.sonoff_mainswitch:
+      friendly_name: 'Основной выключатель'
+

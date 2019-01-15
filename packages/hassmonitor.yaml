@@ -1,0 +1,59 @@
+#-------------------------------------------
+sensor:
+  - platform: version
+    name: HA Installed Version
+    scan_interval: 86400
+    
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_use_percent
+      - type: last_boot
+
+  - platform: time_date
+    display_options:
+        - 'time'
+        - 'date'
+
+##############################################################################
+###  Automations - Detect when things are not right. Like any Good Watchdog.
+##############################################################################
+automation:
+
+  - alias: "Disk Use Alarm"
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.disk_use_percent_home
+        above: 80
+    action:
+#      - service: script.notify_engine
+#        data_template:
+#          title: 'Hard Drive Monitor:'
+#          message: "Your harddrive is running out of Space! /dev/root:{{ states.sensor.disk_use_percent_home.state }}%!"
+
+      - service: persistent_notification.create
+        data:
+          title: "Hard Drive Monitor:"
+          message: "Your harddrive is running out of Space! /dev/root:{{ states.sensor.disk_use_percent_home.state }}%!"
+          notification_id: "Critical Alert"
+
+
+#-------------------------------------------
+group:
+  hass:
+    entities:
+        - sensor.ha_installed_version
+        #- sensor.external_ip
+        - sensor.disk_use_percent_home
+        - sensor.memory_use_percent
+        - sensor.last_boot
+        - sensor.date
+        - sensor.time
+        
+#-------------------------------------------
+homeassistant:
+  customize:
+    group.hass:
+      friendly_name: 'HAss Application'
+

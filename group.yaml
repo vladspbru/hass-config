@@ -1,0 +1,58 @@
+#Views --------------------------------------------
+Devices:
+  view: yes
+  icon: mdi:chip
+  entities:
+    - group.sonoff_mainswitch
+    - group.sonoff_water
+    - group.sonoff_pow
+    - group.sonoff_4pro
+    - group.sonoff_bridge
+    - group.tasmota_utils
+    
+Presence:
+  view: yes
+  icon: mdi:switch
+  entities:
+    - group.net_nmap
+    - group.family
+
+Weather:
+  view: yes
+  icon: mdi:weather-partlycloudy
+  entities:
+    - group.weather_yr
+    - group.today
+    - camera.wu_doppler_weather
+
+System:
+  view: yes
+  icon: mdi:clippy
+  entities:
+    - group.hass
+#--------------------------------------------
+
+family:
+  entities:
+    - device_tracker.vlad_nexus
+
+today:
+  entities:
+    - sun.sun
+    - sensor.temp_out
+    - sensor.temp_in
+
+    
+net_nmap:
+  entities:
+    - device_tracker.sonoff_95b510
+    - device_tracker.sonoff_26575d
+    - device_tracker.sonoff_f4bc40
+    - device_tracker.sonoff_801E75
+    - device_tracker.sonoff_B2DF94
+    
+
+tasmota_utils:
+  entities:
+    - script.sonoff_qry_states
+    

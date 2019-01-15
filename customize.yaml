@@ -1,0 +1,39 @@
+group.family:
+  friendly_name: 'СемьЯ'
+
+group.today:
+  friendly_name: 'Сегодня'
+
+group.net_nmap:
+  friendly_name: 'Сеть'
+
+group.all_automations:
+  friendly_name: 'All Automations'
+  hidden: True
+
+group.all_devices:
+  friendly_name: 'All Devices'
+  hidden: True
+
+group.all_lights:
+  friendly_name: 'All Lights'
+  hidden: True
+
+group.all_scripts:
+  friendly_name: 'All Scripts'
+  hidden: True
+
+group.all_switches:
+  friendly_name: 'All Switches'
+  hidden: True
+
+script.sonoff_qry_state:
+  hidden: true 
+
+script.sonoff_setup_cmd:
+  hidden: true 
+
+script.sonoff_upgrade_cmd:
+  hidden: true 
+
+

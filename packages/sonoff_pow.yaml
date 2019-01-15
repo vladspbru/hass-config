@@ -1,0 +1,76 @@
+#sonoff-pow -------------------------------------
+
+switch:
+  - platform: mqtt
+    name: "sonoff_26575D"
+    state_topic: "stat/sonoff_26575D/POWER"
+    command_topic: "cmnd/sonoff_26575D/POWER"
+    availability_topic: "tele/sonoff_26575D/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not-available: "Offline"
+    optimistic: false
+    retain: false
+    
+sensor:
+  - platform: mqtt
+    name: "sonoff 26575D today"
+    state_topic: "tele/sonoff_26575D/SENSOR"
+    value_template: "{{ value_json.ENERGY.Today }}"
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: "sonoff 26575D total"
+    state_topic: "tele/sonoff_26575D/SENSOR"
+    value_template: "{{ value_json.ENERGY.Total }}"
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: "sonoff 26575D power"
+    state_topic: "tele/sonoff_26575D/SENSOR"
+    value_template: "{{ value_json.ENERGY.Power }}"
+    unit_of_measurement: "W"
+  - platform: mqtt
+    name: "sonoff 26575D voltage"
+    state_topic: "tele/sonoff_26575D/SENSOR"
+    value_template: "{{ value_json.ENERGY.Voltage }}"
+    unit_of_measurement: "V"
+  - platform: mqtt
+    name: "sonoff 26575D wifi"
+    state_topic: "tele/sonoff_26575D/STATE"
+    value_template: "{{ value_json.Wifi.RSSI }}"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: "sonoff 26575D uptime"
+    state_topic: "tele/sonoff_26575D/STATE"
+    value_template: "{{ value_json.Uptime }}"
+    unit_of_measurement: ""
+
+group:
+  sonoff_pow:
+    entities:
+        - switch.sonoff_26575d
+        - sensor.sonoff_26575d_voltage
+        - sensor.sonoff_26575d_power
+        - sensor.sonoff_26575d_today
+        - sensor.sonoff_26575d_total
+        - sensor.sonoff_26575d_wifi
+        - sensor.sonoff_26575d_uptime
+
+homeassistant:
+  customize:
+    sensor.sonoff_26575d_power:
+      icon: mdi:scale
+      friendly_name: 'Мощьность'
+    sensor.sonoff_26575d_voltage:
+      friendly_name: 'Напряжение'
+      icon: mdi:flash-circle
+    sensor.sonoff_26575d_today:
+      icon: mdi:chart-timeline
+      friendly_name: 'Сегодня'
+    sensor.sonoff_26575d_total:
+      icon: mdi:counter
+      friendly_name: 'Всего'
+    group.sonoff_pow:
+      friendly_name: 'Розетка-счетчик'
+

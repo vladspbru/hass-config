@@ -1,0 +1,51 @@
+
+sensor:
+  - platform: yr
+    name: weather_yr
+    forecast: 24
+    monitored_conditions:
+        - symbol
+        - temperature
+        - pressure
+        - humidity
+        - windSpeed
+        - windDirection
+    #    - precipitation
+    #    - fog
+    #    - cloudiness
+    #    - lowClouds
+    #    - mediumClouds
+    #    - highClouds
+    #    - dewpointTemperature
+
+
+
+group:
+  Weather_YR:
+    entities:
+        - sensor.weather_yr_symbol
+        - sensor.weather_yr_temperature
+        - sensor.weather_yr_pressure
+        - sensor.weather_yr_humidity
+        - sensor.weather_yr_wind_speed
+        - sensor.weather_yr_wind_direction
+
+
+homeassistant:
+  customize:
+    group.weather_yr:
+      friendly_name: 'Weather YR'
+    sensor.weather_yr_symbol:
+      friendly_name: ''
+    sensor.weather_yr_temperature:
+      friendly_name: 'Температура'
+    sensor.weather_yr_pressure:
+      friendly_name: 'Давление'
+    sensor.weather_yr_humidity:
+      friendly_name: 'Влажность'
+      icon: mdi:water-percent
+    sensor.weather_yr_wind_speed:
+      friendly_name: 'Скорость ветра'
+    sensor.weather_yr_wind_direction:
+      friendly_name: 'Направление ветра'
+

@@ -1,0 +1,92 @@
+#sonoff-4pro -------------------------------------
+
+switch:
+  - platform: mqtt
+    name: "sonoff_801E75 ch1"
+    state_topic: "stat/sonoff_801E75/POWER1"
+    command_topic: "cmnd/sonoff_801E75/POWER1"
+    availability_topic: "tele/sonoff_801E75/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not-available: "Offline"
+    optimistic: false
+    retain: false
+  - platform: mqtt
+    name: "sonoff_801E75 ch2"
+    state_topic: "stat/sonoff_801E75/POWER2"
+    command_topic: "cmnd/sonoff_801E75/POWER2"
+    availability_topic: "tele/sonoff_801E75/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not-available: "Offline"
+    optimistic: false
+    retain: false
+  - platform: mqtt
+    name: "sonoff_801E75 ch3"
+    state_topic: "stat/sonoff_801E75/POWER3"
+    command_topic: "cmnd/sonoff_801E75/POWER3"
+    availability_topic: "tele/sonoff_801E75/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not-available: "Offline"
+    optimistic: false
+    retain: false
+  - platform: mqtt
+    name: "sonoff_801E75 ch4"
+    state_topic: "stat/sonoff_801E75/POWER4"
+    command_topic: "cmnd/sonoff_801E75/POWER4"
+    availability_topic: "tele/sonoff_801E75/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not-available: "Offline"
+    optimistic: false
+    retain: false
+    
+sensor:
+  - platform: mqtt
+    name: "sonoff_801E75 wifi"
+    state_topic: "tele/sonoff_801E75/STATE"
+    value_template: "{{ value_json.Wifi.RSSI }}"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: "sonoff_801E75 uptime"
+    state_topic: "tele/sonoff_801E75/STATE"
+    value_template: "{{ value_json.Uptime }}"
+    unit_of_measurement: ""
+
+group:
+  sonoff_4pro:
+    entities:
+      - switch.sonoff_801e75_ch1
+      - switch.sonoff_801e75_ch2
+      - switch.sonoff_801e75_ch3
+      - switch.sonoff_801e75_ch4
+      - sensor.sonoff_801e75_wifi
+      - sensor.sonoff_801e75_uptime
+
+
+homeassistant:
+  customize:
+    switch.sonoff_801e75_ch1:
+      friendly_name: 'Папа'
+      icon: mdi:lamp
+    switch.sonoff_801e75_ch2:
+      friendly_name: 'Мама'
+      icon: mdi:lamp
+    switch.sonoff_801e75_ch3:
+      friendly_name: 'Toilet'
+      icon: mdi:white-balance-incandescent
+    switch.sonoff_801e75_ch4:
+      friendly_name: 'Зал'
+      icon: mdi:white-balance-iridescent
+    group.sonoff_4pro:
+      friendly_name: 'Свет/Выключатели'
+

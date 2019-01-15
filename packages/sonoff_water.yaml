@@ -1,0 +1,54 @@
+#sonoff-water -------------------------------------
+switch:
+  - platform: mqtt
+    name: "sonoff_water"
+    state_topic: "stat/sonoff_F4BC40/POWER"
+    command_topic: "cmnd/sonoff_F4BC40/POWER"
+    availability_topic: "tele/sonoff_F4BC40/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not-available: "Offline"
+    optimistic: false
+    #retain: false
+    
+sensor:
+  - platform: mqtt
+    name: "sonoff F4BC40 wifi"
+    state_topic: "tele/sonoff_F4BC40/STATE"
+    value_template: "{{ value_json.Wifi.RSSI }}"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: "sonoff F4BC40 uptime"
+    state_topic: "tele/sonoff_F4BC40/STATE"
+    value_template: "{{ value_json.Uptime }}"
+    unit_of_measurement: ""
+        
+  - platform: mqtt
+    name: "temp_water"
+    state_topic: "tele/sonoff_F4BC40/SENSOR"
+    value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
+    unit_of_measurement: "°C"
+
+
+group:
+  sonoff_water:
+    entities:
+        - switch.sonoff_water
+        - sensor.temp_water
+        - sensor.sonoff_f4bc40_wifi
+        - sensor.sonoff_f4bc40_uptime
+
+
+homeassistant:
+  customize:
+    sensor.temp_water:
+      friendly_name: 'Температура трубы'
+      icon: mdi:oil-temperature
+    switch.sonoff_water:
+      icon: mdi:power-plug
+      friendly_name: 'Эл.кабель'
+    group.sonoff_water:
+      friendly_name: 'Подогрев трубы'
+

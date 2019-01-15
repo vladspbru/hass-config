@@ -1,0 +1,26 @@
+#sonoff-bridge -------------------------------------
+sensor:
+  - platform: mqtt
+    name: "sonoff_B2DF94 wifi"
+    state_topic: "tele/sonoff_B2DF94/STATE"
+    value_template: "{{ value_json.Wifi.RSSI }}"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: "sonoff_B2DF94 uptime"
+    state_topic: "tele/sonoff_B2DF94/STATE"
+    value_template: "{{ value_json.Uptime }}"
+    unit_of_measurement: ""
+
+
+group:
+  sonoff_bridge:
+    entities:
+        - sensor.sonoff_B2DF94_wifi
+        - sensor.sonoff_B2DF94_uptime
+
+
+homeassistant:
+  customize:
+    group.sonoff_bridge:
+      friendly_name: 'Шлюз 433'
+
