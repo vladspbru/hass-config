@@ -42,6 +42,14 @@ sensor:
     value_template: '{{ value_json["DS18B20-3"]["Temperature"] }}'
     unit_of_measurement: "°C"
 
+binary_sensor:
+  - platform: mqtt
+    name: "sonoff_95B510 LWT"
+    state_topic: "tele/sonoff_95B510/LWT"
+    value_template: "{{ value }}"
+    payload_on: "Online"
+    payload_off: "Offline"
+    device_class: connectivity
 
 group:
   sonoff_mainswitch:
@@ -52,6 +60,7 @@ group:
         - sensor.temp_x
         - sensor.sonoff_95b510_wifi
         - sensor.sonoff_95b510_uptime
+        #- binary_sensor.sonoff_95b510_lwt
 
 
 homeassistant:

@@ -9,6 +9,7 @@ Devices:
     - group.sonoff_4pro
     - group.sonoff_bridge
     - group.tasmota_utils
+    - group.sonoff_lwt
     
 Presence:
   view: yes
@@ -16,7 +17,9 @@ Presence:
   entities:
     - group.net_nmap
     - group.family
-
+    - group.motion_detection
+    - group.sonoff_lwt
+    
 Weather:
   view: yes
   icon: mdi:weather-partlycloudy
@@ -41,7 +44,6 @@ today:
     - sun.sun
     - sensor.temp_out
     - sensor.temp_in
-
     
 net_nmap:
   entities:
@@ -50,7 +52,15 @@ net_nmap:
     - device_tracker.sonoff_f4bc40
     - device_tracker.sonoff_801E75
     - device_tracker.sonoff_B2DF94
-    
+
+sonoff_lwt:
+  entities:
+    - binary_sensor.sonoff_95b510_lwt
+    - binary_sensor.sonoff_26575d_lwt
+    - binary_sensor.sonoff_f4bc40_lwt
+    - binary_sensor.sonoff_801e75_lwt
+    - binary_sensor.sonoff_B2DF94_lwt
+
 
 tasmota_utils:
   entities:

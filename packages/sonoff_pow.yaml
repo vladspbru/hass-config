@@ -46,6 +46,16 @@ sensor:
     value_template: "{{ value_json.Uptime }}"
     unit_of_measurement: ""
 
+binary_sensor:
+  - platform: mqtt
+    name: "sonoff_26575D LWT"
+    state_topic: "tele/sonoff_26575D/LWT"
+    value_template: "{{ value }}"
+    payload_on: "Online"
+    payload_off: "Offline"
+    device_class: connectivity
+
+
 group:
   sonoff_pow:
     entities:
@@ -56,6 +66,7 @@ group:
         - sensor.sonoff_26575d_total
         - sensor.sonoff_26575d_wifi
         - sensor.sonoff_26575d_uptime
+        #- binary_sensor.sonoff_26575d_lwt
 
 homeassistant:
   customize:

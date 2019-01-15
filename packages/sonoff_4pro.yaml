@@ -61,6 +61,16 @@ sensor:
     state_topic: "tele/sonoff_801E75/STATE"
     value_template: "{{ value_json.Uptime }}"
     unit_of_measurement: ""
+        
+binary_sensor:
+  - platform: mqtt
+    name: "sonoff_801E75 LWT"
+    state_topic: "tele/sonoff_801E75/LWT"
+    value_template: "{{ value }}"
+    payload_on: "Online"
+    payload_off: "Offline"
+    device_class: connectivity
+
 
 group:
   sonoff_4pro:
@@ -71,6 +81,7 @@ group:
       - switch.sonoff_801e75_ch4
       - sensor.sonoff_801e75_wifi
       - sensor.sonoff_801e75_uptime
+      #- binary_sensor.sonoff_801e75_lwt
 
 
 homeassistant:

@@ -31,6 +31,14 @@ sensor:
     value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
     unit_of_measurement: "°C"
 
+binary_sensor:
+  - platform: mqtt
+    name: "sonoff_F4BC40 LWT"
+    state_topic: "tele/sonoff_F4BC40/LWT"
+    value_template: "{{ value }}"
+    payload_on: "Online"
+    payload_off: "Offline"
+    device_class: connectivity
 
 group:
   sonoff_water:
@@ -39,6 +47,7 @@ group:
         - sensor.temp_water
         - sensor.sonoff_f4bc40_wifi
         - sensor.sonoff_f4bc40_uptime
+        #- binary_sensor.sonoff_f4bc40_lwt
 
 
 homeassistant:

@@ -7,6 +7,9 @@ group.today:
 group.net_nmap:
   friendly_name: 'Сеть'
 
+group.sonoff_lwt
+  friendly_name: 'LWT'
+
 group.all_automations:
   friendly_name: 'All Automations'
   hidden: True

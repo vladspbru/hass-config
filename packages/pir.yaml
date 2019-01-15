@@ -1,0 +1,26 @@
+#PIR -------------------------------------
+
+sensor:
+  - platform: mqtt
+    name: "Hall PIR"
+    state_topic: "tele/sonoff_bridge1/RESULT"
+    value_template: "{{value_json.RfReceived.Data}}"
+    payload_on: "D6C286"
+    payload_off: "D6C286_off"
+    optimistic: false
+    qos: 1
+    retain: false
+
+group:
+  motion_detection:
+    entities:
+        - sensor.hall_pir
+
+homeassistant:
+  customize:
+    sensor.hall_pir:
+      friendly_name: 'Детектор'
+      icon: mdi:paw
+    group.motion_detection:
+      friendly_name: 'Движение/Присутствие'
+
