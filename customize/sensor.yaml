@@ -1,8 +1,0 @@
-sensor.sonoff_26575d_power:
-  icon: mdi:gauge
-sensor.sonoff_26575d_voltage:
-  icon: mdi:flash-circle
-sensor.sonoff_26575d_today:
-  icon: mdi:chart-timeline
-sensor.sonoff_26575d_total:
-  icon: mdi:counter

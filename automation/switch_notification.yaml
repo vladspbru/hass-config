@@ -5,6 +5,7 @@
       entity_id:
         - switch.sonoff_26575d
         - switch.sonoff_f4bc40
+        - switch.sonoff_95B510
   action:
     - service: script.notify_engine
       data_template:

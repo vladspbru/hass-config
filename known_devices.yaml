@@ -31,11 +31,11 @@ sonoff_26575d:
   picture:
   track: true
   
-vlad:
+vlad_nexus:
   hide_if_away: false
   icon: mdi:human-male
   mac: 8C:3A:E3:99:43:19
-  name: vlad phone
+  name: vlad_nexus
   picture:
   track: true
   vendor: LG Electronics (Mobile Communications)

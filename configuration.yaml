@@ -1,20 +1,15 @@
 homeassistant:
   name: Cottage
+  unit_system: metric
+  time_zone:   Europe/Moscow
   latitude:  !secret homeassistant_latitude
   longitude: !secret homeassistant_longitude
   elevation: !secret homeassistant_elevation
-  unit_system: metric
-  time_zone: Europe/Moscow
-
-  # Customization file
-  customize: !include_dir_merge_named customize
+  customize:      !include customize.yaml
   customize_glob: !include customize_glob.yaml
-  # Packages
-  packages: !include_dir_named packages
-  
+  packages:       !include_dir_named packages
   whitelist_external_dirs: 
     - /tmp
-    - /config
 
 # Show links to resources in log and frontend
 #introduction:
@@ -34,7 +29,7 @@ config:
 # the developers to assist with development of Home Assistant.
 # For more information, please see:
 # https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
-updater:
+#updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
 
@@ -43,56 +38,12 @@ updater:
 
 #Zeroconf/Avahi/Bonjour
 #zeroconf:
-
-# Enables support for tracking state changes over time
-history:
-  include:
-    entities:
-       - sensor.temp_out
-       - sensor.temp_in
-       - sensor.temp_x
-       - sensor.temp_water
-       - switch.sonoff_F4BC40
-       - switch.sonoff_95B510
-       - sensor.weather_yr_temperature
-       - sensor.weather_yr_humidity
- 
-# View all events in a logbook
-#logbook:
-#  include:
-#    domains:
-#      - sensor
-#      - switch
-
-recorder:
-  purge_keep_days: 20
-  purge_interval: 1
-  include:
-    domains:
-      - sensor
-      - switch
-        
+       
 # Enables a map showing the location of tracked devices
 #map:
 
 # Track the sun
 sun:
-
-#influxdb:
-#  host: localhost
-#  database: hass
-#  include:
-#    entities:
-#       - sensor.temp_out
-#       - sensor.temp_in
-#       - sensor.temp_x
-#       - sensor.temp_water
-#       - switch.sonoff_F4BC40
-#       - switch.sonoff_95B510
-#       - sensor.weather_yr_temperature
-       
-
-#android_ip_webcam: !include camera/android_ip_webcam.yaml
 
 #telegram_bot:
 #  - platform: broadcast
@@ -106,18 +57,15 @@ sun:
 #    platform: telegram
 #    chat_id: 129789477
     
-logger: !include logger.yaml
-#zone:   !include zone.yaml 
-
 #MQTT
 mqtt:
   broker:    !secret mqtt_address
   port:      !secret mqtt_port
   client_id: !secret mqtt_clientid
+  username:  !secret mqtt_username
+  password:  !secret mqtt_password
   keepalive: 30
   protocol: 3.1
-  username: !secret mqtt_username
-  password: !secret mqtt_password
   birth_message:
     topic: 'hass/LWT'
     payload: 'Online'
@@ -126,17 +74,39 @@ mqtt:
     payload: 'Offline'
 
 
-sensor:         !include_dir_merge_list sensor
-binary_sensor:  !include_dir_merge_list binary_sensor
-switch:         !include_dir_merge_list switch
+#sensor:         !include_dir_merge_list sensor
+#switch:         !include_dir_merge_list switch
+#group:          !include_dir_merge_named group
+group:          !include group.yaml
 device_tracker: !include_dir_merge_list device_tracker
-#automation:     !include_dir_merge_list automation
-group:          !include_dir_merge_named group
 script:         !include_dir_merge_named script
-
-#shell_command: !include_dir_merge_named shell_command
-#scene: !include_dir_merge_list scene
+#automation:     !include_dir_merge_list automation
+#shell_command:  !include_dir_merge_named shell_command
+#binary_sensor:  !include_dir_merge_list binary_sensor
 #input_boolean:  !include_dir_merge_named input_boolean
+#android_ip_webcam: !include camera/android_ip_webcam.yaml
+#scene:          !include_dir_merge_list scene
+#zone:           !include zone.yaml 
+#logger:         !include logger.yaml
 
 
       
+# Enables support for tracking state changes over time
+#history:
+#  include:
+#    entities:
+#       - sensor.temp_out
+#       - sensor.temp_in
+#       - sensor.temp_x
+#       - switch.sonoff_F4BC40
+#       - switch.sonoff_95B510
+#       - sensor.weather_yr_temperature
+#       - sensor.weather_yr_humidity
+ 
+#recorder:
+#  purge_keep_days: 20
+#  purge_interval: 1
+#  include:
+#    domains:
+#      - sensor
+#      - switch

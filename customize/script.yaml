@@ -1,6 +1,0 @@
-script.sonoff_qry_state:
-  hidden: true 
-script.sonoff_setup_cmd:
-  hidden: true 
-script.sonoff_upgrade_cmd:
-  hidden: true 

@@ -12,10 +12,10 @@ sonoff_qry_state:
         topic: 'cmnd/{{id}}/POWER'
         payload: "?"
     #hak query tele
-    - service: mqtt.publish
-      data_template:
-        topic: 'cmnd/{{id}}/TelePeriod'
-        payload: "0"
+    #- service: mqtt.publish
+    #  data_template:
+    #    topic: 'cmnd/{{id}}/TelePeriod'
+    #    payload: "0"
     - service: mqtt.publish
       data_template:
         topic: 'cmnd/{{id}}/TelePeriod'
@@ -32,6 +32,11 @@ sonoff_qry_states:
     - service: script.sonoff_qry_state
       data:
         id: "sonoff_95B510"
+    - service: script.sonoff_qry_state
+      data:
+        id: "sonoff_801E75"
+            
+            
             
             
 #---------------------------------------------
