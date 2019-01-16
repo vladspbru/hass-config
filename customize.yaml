@@ -7,10 +7,15 @@ group.today:
 group.net_nmap:
   friendly_name: 'NMap'
 
-group.sonoff_lwt:
-  friendly_name: 'LWT'
+group.sonoff_workplace:
+  friendly_name: 'Sonoff/Tasmota workplace'
+
 
 script.sonoff_qry_state:
+  hidden: true 
+script.notify_engine:
+  hidden: true 
+script.tweet_engine:
   hidden: true 
 
 

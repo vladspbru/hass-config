@@ -12,6 +12,7 @@ logs:
   aiohttp.server: critical
   homeassistant.core: error
   homeassistant.exceptions: info
+  homeassistant.loader: info
   homeassistant.components.automation: warn
   homeassistant.components.binary_sensor: error
   homeassistant.components.device_tracker: error

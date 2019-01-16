@@ -53,7 +53,7 @@ net_nmap:
     - device_tracker.sonoff_801E75
     - device_tracker.sonoff_B2DF94
 
-sonoff_lwt:
+sonoff_workplace:
   entities:
     - script.sonoff_qry_states
     - binary_sensor.sonoff_95b510_lwt
