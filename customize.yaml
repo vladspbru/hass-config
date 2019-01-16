@@ -10,33 +10,8 @@ group.net_nmap:
 group.sonoff_lwt:
   friendly_name: 'LWT'
 
-group.all_automations:
-  friendly_name: 'All Automations'
-  hidden: True
-
-group.all_devices:
-  friendly_name: 'All Devices'
-  hidden: True
-
-group.all_lights:
-  friendly_name: 'All Lights'
-  hidden: True
-
-group.all_scripts:
-  friendly_name: 'All Scripts'
-  hidden: True
-
-group.all_switches:
-  friendly_name: 'All Switches'
-  hidden: True
-
 script.sonoff_qry_state:
   hidden: true 
 
-script.sonoff_setup_cmd:
-  hidden: true 
-
-script.sonoff_upgrade_cmd:
-  hidden: true 
 
 
