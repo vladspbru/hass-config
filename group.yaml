@@ -18,7 +18,6 @@ Presence:
     - group.net_nmap
     - group.family
     - group.motion_detection
-    - group.sonoff_lwt
     
 Weather:
   view: yes
@@ -28,11 +27,12 @@ Weather:
     - group.today
     - camera.wu_doppler_weather
 
-System:
+System/Debug:
   view: yes
   icon: mdi:clippy
   entities:
     - group.hass
+    - group.sonoff_lwt
 #--------------------------------------------
 
 family:
@@ -55,14 +55,14 @@ net_nmap:
 
 sonoff_lwt:
   entities:
+    - script.sonoff_qry_states
     - binary_sensor.sonoff_95b510_lwt
     - binary_sensor.sonoff_26575d_lwt
     - binary_sensor.sonoff_f4bc40_lwt
     - binary_sensor.sonoff_801e75_lwt
     - binary_sensor.sonoff_B2DF94_lwt
 
-
-tasmota_utils:
-  entities:
-    - script.sonoff_qry_states
+#tasmota_utils:
+  #entities:
+    #- script.sonoff_qry_states
     

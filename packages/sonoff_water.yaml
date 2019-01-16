@@ -19,17 +19,20 @@ sensor:
     state_topic: "tele/sonoff_F4BC40/STATE"
     value_template: "{{ value_json.Wifi.RSSI }}"
     unit_of_measurement: "%"
+    expire_after: 200
   - platform: mqtt
     name: "sonoff F4BC40 uptime"
     state_topic: "tele/sonoff_F4BC40/STATE"
     value_template: "{{ value_json.Uptime }}"
     unit_of_measurement: ""
+    expire_after: 200
         
   - platform: mqtt
     name: "temp_water"
     state_topic: "tele/sonoff_F4BC40/SENSOR"
     value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
     unit_of_measurement: "°C"
+    icon: mdi:thermometer
 
 binary_sensor:
   - platform: mqtt
@@ -61,3 +64,29 @@ homeassistant:
     group.sonoff_water:
       friendly_name: 'Подогрев трубы'
 
+
+##############################################################################
+###  Automations 
+##############################################################################
+automation:
+    
+  - alias: Automatic winter heating the water pipe
+    trigger:
+      - platform: state
+        entity_id: sensor.temp_water
+    action:
+      - condition: template
+        value_template: "{{ states('sensor.temp_water') | float != 10 }}"
+      - service_template: >-
+            {% if states("sensor.temp_water") | float < 10 %}
+            switch.turn_on
+            {% elif states("sensor.temp_water") | float > 10 %}
+            switch.turn_off
+            {% endif %}
+        entity_id: switch.sonoff_water
+        
+      
+      
+      
+      
+      

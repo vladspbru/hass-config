@@ -1,7 +1,7 @@
 - platform: nmap_tracker
   hosts: 192.168.2.0/24
   track_new_devices: no
-#  home_interval: 30
+  home_interval: 15
   exclude:
     - 192.168.2.1
   scan_options: " -sP "

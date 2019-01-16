@@ -19,11 +19,13 @@ sensor:
     state_topic: "tele/sonoff_95B510/STATE"
     value_template: "{{ value_json.Wifi.RSSI }}"
     unit_of_measurement: "%"
+    expire_after: 200
   - platform: mqtt
     name: "sonoff 95B510 uptime"
     state_topic: "tele/sonoff_95B510/STATE"
     value_template: "{{ value_json.Uptime }}"
     unit_of_measurement: ""
+    expire_after: 200
 
   - platform: mqtt
     name: "temp_out"
@@ -31,16 +33,19 @@ sensor:
     #value_template:"{{ value_json.DS18B20.Temperature }}" # когда один датчик
     value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'
     unit_of_measurement: "°C"
+    icon: mdi:thermometer
   - platform: mqtt
     name: "temp_x"
     state_topic: "tele/sonoff_95B510/SENSOR"
     value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
     unit_of_measurement: "°C"
+    icon: mdi:thermometer
   - platform: mqtt
     name: "temp_in"
     state_topic: "tele/sonoff_95B510/SENSOR"
     value_template: '{{ value_json["DS18B20-3"]["Temperature"] }}'
     unit_of_measurement: "°C"
+    icon: mdi:thermometer
 
 binary_sensor:
   - platform: mqtt
@@ -66,13 +71,10 @@ group:
 homeassistant:
   customize:
     sensor.temp_out:
-      icon: mdi:thermometer
       friendly_name: 'Температура снаружи'
     sensor.temp_in:
-      icon: mdi:thermometer
       friendly_name: 'Температура внутри'
     sensor.temp_x:
-      icon: mdi:thermometer
       friendly_name: 'Температура в углу'
     switch.sonoff_mainswitch:
 #      icon: mdi:flash-circle

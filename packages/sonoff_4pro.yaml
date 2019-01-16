@@ -56,11 +56,13 @@ sensor:
     state_topic: "tele/sonoff_801E75/STATE"
     value_template: "{{ value_json.Wifi.RSSI }}"
     unit_of_measurement: "%"
+    expire_after: 200
   - platform: mqtt
     name: "sonoff_801E75 uptime"
     state_topic: "tele/sonoff_801E75/STATE"
     value_template: "{{ value_json.Uptime }}"
     unit_of_measurement: ""
+    expire_after: 200
         
 binary_sensor:
   - platform: mqtt

@@ -87,7 +87,7 @@ script:         !include_dir_merge_named script
 #android_ip_webcam: !include camera/android_ip_webcam.yaml
 #scene:          !include_dir_merge_list scene
 #zone:           !include zone.yaml 
-#logger:         !include logger.yaml
+logger:         !include logger.yaml
 
 
       

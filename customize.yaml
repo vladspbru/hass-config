@@ -5,9 +5,9 @@ group.today:
   friendly_name: 'Сегодня'
 
 group.net_nmap:
-  friendly_name: 'Сеть'
+  friendly_name: 'NMap'
 
-group.sonoff_lwt
+group.sonoff_lwt:
   friendly_name: 'LWT'
 
 group.all_automations:

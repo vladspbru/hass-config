@@ -41,11 +41,14 @@ homeassistant:
       friendly_name: 'Температура'
     sensor.weather_yr_pressure:
       friendly_name: 'Давление'
+      icon: mdi:gauge
     sensor.weather_yr_humidity:
       friendly_name: 'Влажность'
       icon: mdi:water-percent
     sensor.weather_yr_wind_speed:
       friendly_name: 'Скорость ветра'
+      icon: mdi:weather-windy
     sensor.weather_yr_wind_direction:
       friendly_name: 'Направление ветра'
+      icon: mdi:weather-windy
 
