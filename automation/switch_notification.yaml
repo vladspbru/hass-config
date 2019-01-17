@@ -1,11 +1,11 @@
-- alias: "Main switches notification"
+- alias: "Notification of main switches"
   hide_entity: False
   trigger:
     - platform: state
       entity_id:
-        - switch.sonoff_26575d
-        - switch.sonoff_f4bc40
-        - switch.sonoff_95B510
+        - switch.sonoff_mainswitch
+        - switch.sonoff_water
+        - switch.sonoff_pow
   action:
     - service: script.notify_engine
       data_template:

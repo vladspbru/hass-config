@@ -15,7 +15,7 @@ sensor:
 
     # RF Bridge as sensor - "Data" is the truncated (unique) hex address of the transmitter
   - platform: mqtt
-    name: "sonoff_bridge 433"
+    name: "sonoff_bridge_433"
     state_topic: 'tele/sonoff_B2DF94/RESULT'
     value_template: "{{ value_json.RfReceived.Data }}"
     expire_after: 10
@@ -43,7 +43,7 @@ group:
 homeassistant:
   customize:
     sensor.sonoff_bridge_433:
-      friendly_name: 'Last data'
+      friendly_name: 'Last cod'
     group.sonoff_bridge:
       friendly_name: 'Шлюз RF433'
         

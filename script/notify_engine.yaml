@@ -15,10 +15,10 @@ notify_engine:
         payload: >-
           "{{ title }}: {{ message }}"
         retain: true
-    - service: notify.telegram2me
-      data_template:
-        title: '{{ title }}'
-        message: "{{ message }}"
+    #- service: notify.telegram2me
+      #data_template:
+        #title: '{{ title }}'
+        #message: "{{ message }}"
 
 
 tweet_engine:
@@ -29,9 +29,9 @@ tweet_engine:
         payload: >-
           "{{ tweet }}"
         retain: true
-    - service: notify.telegram2me
-      data_template:
-        title: 'Tweet:'
-        message: "{{ tweet }}"
+    #- service: notify.telegram2me
+      #data_template:
+        #title: 'Tweet:'
+        #message: "{{ tweet }}"
 
  

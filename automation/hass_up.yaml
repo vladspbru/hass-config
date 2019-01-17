@@ -12,6 +12,7 @@
     - service: script.sonoff_qry_states
     
 
+
 - alias: "Database Purge"
   #hide_entity: True
   trigger:
