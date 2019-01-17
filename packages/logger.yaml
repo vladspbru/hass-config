@@ -30,6 +30,7 @@ input_select:
 ###################################
 automation:
   - alias: Log Level
+    hide_entity: true
     trigger:
       platform: state
       entity_id:

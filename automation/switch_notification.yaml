@@ -1,5 +1,6 @@
 - alias: "Notification of main switches"
   hide_entity: False
+  initial_state: 'off'
   trigger:
     - platform: state
       entity_id:
