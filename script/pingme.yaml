@@ -1,0 +1,9 @@
+#Test notification chanels
+
+notify_ping_me:
+  sequence:
+    - service: notify.pushover
+      data:
+        title: "Home Assistant"
+        message: 'Ping notification'
+ 

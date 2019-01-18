@@ -11,21 +11,24 @@ notify_engine:
    sequence:
     - service: mqtt.publish
       data_template:
-        topic: 'homeassistant/notify'
+        topic: "homeassistant/notify"
         payload: >-
           "{{ title }}: {{ message }}"
         retain: true
-    #- service: notify.telegram2me
-      #data_template:
-        #title: '{{ title }}'
-        #message: "{{ message }}"
+    - service: notify.pushover
+      data_template:
+        title: "{{ title }}"
+        message: "{{ message }}"
+        data:
+          device: pixel
+          sound:  falling
 
 
 tweet_engine:
    sequence:
     - service: mqtt.publish
       data_template:
-        topic: 'homeassistant/tweet'
+        topic: "homeassistant/tweet"
         payload: >-
           "{{ tweet }}"
         retain: true

@@ -18,5 +18,8 @@ script.notify_engine:
 script.tweet_engine:
   hidden: true 
 
+script.notify_ping_me:
+  friendly_name: 'Тест. уведомление / Ping me'
+
 
 

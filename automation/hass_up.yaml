@@ -6,8 +6,8 @@
   action:
     - service: script.notify_engine
       data_template:
-        title: 'HASS:'
-        message: "Home Assistant Application is Up and Running !\nVersion: {{ states('sensor.ha_installed_version') }}"
+        title: 'HASS'
+        message: "Home Assistant is Up and Running !\nVersion: {{ states('sensor.ha_installed_version') }}"
             
     - service: script.sonoff_qry_states
     
