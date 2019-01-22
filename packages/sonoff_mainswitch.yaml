@@ -35,13 +35,13 @@ sensor:
     unit_of_measurement: "°C"
     icon: mdi:thermometer
   - platform: mqtt
-    name: "temp_x"
+    name: "temp_in"
     state_topic: "tele/sonoff_95B510/SENSOR"
     value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
   - platform: mqtt
-    name: "temp_in"
+    name: "temp_x"
     state_topic: "tele/sonoff_95B510/SENSOR"
     value_template: '{{ value_json["DS18B20-3"]["Temperature"] }}'
     unit_of_measurement: "°C"
