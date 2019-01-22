@@ -89,13 +89,13 @@ group:
 homeassistant:
   customize:
     switch.sonoff_801e75_ch1:
-      friendly_name: 'Папа'
+      friendly_name: 'Туалет'
       icon: mdi:lamp
     switch.sonoff_801e75_ch2:
       friendly_name: 'Мама'
       icon: mdi:lamp
     switch.sonoff_801e75_ch3:
-      friendly_name: 'Toilet'
+      friendly_name: 'Папа'
       icon: mdi:white-balance-incandescent
     switch.sonoff_801e75_ch4:
       friendly_name: 'Зал'
