@@ -71,6 +71,8 @@ homeassistant:
 automation:
     
   - alias: Automatic winter heating the water pipe
+    hide_entity: False
+    initial_state: 'off'
     trigger:
       - platform: state
         entity_id: sensor.temp_water
@@ -78,9 +80,9 @@ automation:
       - condition: template
         value_template: "{{ states('sensor.temp_water') | float != 10 }}"
       - service_template: >-
-            {% if states("sensor.temp_water") | float < 10 %}
+            {% if states("sensor.temp_water") | float < 5 %}
             switch.turn_on
-            {% elif states("sensor.temp_water") | float > 10 %}
+            {% elif states("sensor.temp_water") | float > 12 %}
             switch.turn_off
             {% endif %}
         entity_id: switch.sonoff_water
