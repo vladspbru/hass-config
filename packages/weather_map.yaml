@@ -1,0 +1,40 @@
+
+camera:
+  - platform: generic
+    still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_tmp2m_msk_pspb_9.jpg'
+    name: "weather radar temp"
+  - platform: generic
+    still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_wind_msk_pspb_9.jpg'
+    name: "weather radar wind"
+  - platform: generic
+    still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_press_msk_pspb_24.jpg'
+    name: "weather radar press"
+  - platform: generic
+    still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_apcp_msk_pspb_24.jpg'
+    name: "weather radar apcp"
+    
+    
+group:
+  Weather_Map:
+    entities:
+      - camera.weather_radar_temp
+      - camera.weather_radar_wind
+      - camera.weather_radar_press
+      - camera.weather_radar_apcp
+
+
+homeassistant:
+  customize:
+    group.weather_map:
+      friendly_name: 'Погодный радар'
+    camera.weather_radar_temp:
+      friendly_name: 'Температура'
+    camera.weather_radar_wind:
+      friendly_name: 'Ветер'
+      icon: mdi:weather-windy
+    camera.weather_radar_press:
+      friendly_name: 'Давление'
+      icon: mdi:gauge
+    camera.weather_radar_apcp:
+      friendly_name: 'Осадки'
+
