@@ -26,6 +26,7 @@ Weather:
   entities:
     - group.weather_yr
     - group.today
+    - group.weather_map
     - camera.wu_doppler_weather
 
 System:
