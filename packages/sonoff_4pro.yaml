@@ -10,7 +10,7 @@ switch:
     payload_on: "ON"
     payload_off: "OFF"
     payload_available: "Online"
-    payload_not-available: "Offline"
+    payload_not_available: "Offline"
     optimistic: false
     retain: false
   - platform: mqtt
@@ -22,7 +22,7 @@ switch:
     payload_on: "ON"
     payload_off: "OFF"
     payload_available: "Online"
-    payload_not-available: "Offline"
+    payload_not_available: "Offline"
     optimistic: false
     retain: false
   - platform: mqtt
@@ -34,7 +34,7 @@ switch:
     payload_on: "ON"
     payload_off: "OFF"
     payload_available: "Online"
-    payload_not-available: "Offline"
+    payload_not_available: "Offline"
     optimistic: false
     retain: false
   - platform: mqtt
@@ -46,7 +46,7 @@ switch:
     payload_on: "ON"
     payload_off: "OFF"
     payload_available: "Online"
-    payload_not-available: "Offline"
+    payload_not_available: "Offline"
     optimistic: false
     retain: false
     
