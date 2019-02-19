@@ -7,7 +7,7 @@
     - service: script.notify_engine
       data_template:
         title: 'HASS'
-        message: "Home Assistant is Up and Running !\nVersion: {{ states('sensor.ha_installed_version') }}"
+        message: "Home Assistant is Up and Running!\nVersion: {{ states('sensor.ha_installed_version') }} \n: {{states('sensor.date')}}  {{states('sensor.time')}} "
             
     - service: script.sonoff_qry_states
     
