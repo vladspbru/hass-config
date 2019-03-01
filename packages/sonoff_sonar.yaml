@@ -1,0 +1,82 @@
+#sonoff-sonar -------------------------------------
+switch:
+  - platform: mqtt
+    name: "sonoff_sonar"
+    state_topic: "stat/sonoff_68B5C7/POWER"
+    command_topic: "cmnd/sonoff_68B5C7/POWER"
+    availability_topic: "tele/sonoff_68B5C7/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    #retain: false
+    
+sensor:
+  - platform: mqtt
+    name: "sonoff_68B5C7 wifi"
+    state_topic: "tele/sonoff_68B5C7/STATE"
+    value_template: "{{ value_json.Wifi.RSSI }}"
+    unit_of_measurement: "%"
+    expire_after: 200
+  - platform: mqtt
+    name: "sonoff_68B5C7 uptime"
+    state_topic: "tele/sonoff_68B5C7/STATE"
+    value_template: "{{ value_json.Uptime }}"
+    unit_of_measurement: ""
+    expire_after: 200
+
+binary_sensor:
+  - platform: mqtt
+    name: "sonoff_68B5C7 LWT"
+    state_topic: "tele/sonoff_68B5C7/LWT"
+    value_template: "{{ value }}"
+    payload_on: "Online"
+    payload_off: "Offline"
+    device_class: connectivity
+
+group:
+  sonoff_sonar:
+    entities:
+        - switch.sonoff_sonar
+        - sensor.sonoff_68B5C7_wifi
+        - sensor.sonoff_68B5C7_uptime
+
+
+homeassistant:
+  customize:
+    switch.sonoff_sonar:
+      icon: mdi:power-plug
+      friendly_name: 'Сонар'
+    group.sonoff_sonar:
+      friendly_name: 'Чердак/Сонар'
+
+
+##############################################################################
+###  Automations 
+##############################################################################
+#automation:
+#    
+#  - alias: Automatic switch ON SONAR
+#    hide_entity: False
+#    initial_state: 'off'
+#    trigger:
+#      - platform: state
+#        entity_id: sensor.temp_water
+#    action:
+#      - condition: template
+#        value_template: "{{ states('sensor.temp_water') | float != 10 }}"
+#      - service_template: >-
+#            {% if states("sensor.temp_water") | float < 5 %}
+#            switch.turn_on
+#            {% elif states("sensor.temp_water") | float > 12 %}
+#            switch.turn_off
+#            {% endif %}
+#        entity_id: switch.sonoff_water
+        
+      
+      
+      
+      
+      
