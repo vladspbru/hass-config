@@ -28,6 +28,13 @@ sensor:
     expire_after: 200
 
   - platform: mqtt
+    name: "mqtt_net_datetime_control"
+    state_topic: "tele/sonoff_95B510/STATE"
+    value_template: "{{ value_json.Time }}"
+    unit_of_measurement: ""
+    icon: mdi:timer
+
+  - platform: mqtt
     name: "temp_out"
     state_topic: "tele/sonoff_95B510/SENSOR"
     #value_template:"{{ value_json.DS18B20.Temperature }}" # когда один датчик
@@ -60,6 +67,7 @@ group:
   sonoff_mainswitch:
     entities:
         - switch.sonoff_mainswitch
+        - sensor.mqtt_net_datetime_control
         - sensor.temp_out
         - sensor.temp_in
         - sensor.temp_x
@@ -70,6 +78,8 @@ group:
 
 homeassistant:
   customize:
+    sensor.mqtt_net_datetime_control:
+      friendly_name: 'Временная метка'
     sensor.temp_out:
       friendly_name: 'Температура снаружи'
     sensor.temp_in:

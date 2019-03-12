@@ -14,7 +14,7 @@ logs:
   homeassistant.exceptions: info
   homeassistant.loader: info
   homeassistant.setup: info
-  homeassistant.components.automation: warn
+  homeassistant.components.automation: warning
   homeassistant.components.binary_sensor: error
   homeassistant.components.device_tracker: error
   homeassistant.components.http: error

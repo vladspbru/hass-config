@@ -1,5 +1,5 @@
 homeassistant:
-  name: Cottage
+  name: Cottage61
   unit_system: metric
   time_zone:   Europe/Moscow
   latitude:  !secret homeassistant_latitude
