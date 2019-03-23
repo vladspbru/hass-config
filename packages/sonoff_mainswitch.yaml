@@ -12,6 +12,19 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     #retain: false
+
+switch:
+  - platform: mqtt
+    name: "sonoff_mainswitch_timers"
+    state_topic: "stat/sonoff_95B510/TIMERS"
+    command_topic: "cmnd/sonoff_95B510/TIMERS"
+    availability_topic: "tele/sonoff_95B510/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "+"
+    payload_not_available: "-"
+    optimistic: false
     
 sensor:
   - platform: mqtt
@@ -71,6 +84,7 @@ group:
         - sensor.temp_out
         - sensor.temp_in
         - sensor.temp_x
+        - switch.sonoff_mainswitch_timers
         - sensor.sonoff_95b510_wifi
         - sensor.sonoff_95b510_uptime
         #- binary_sensor.sonoff_95b510_lwt
@@ -89,6 +103,9 @@ homeassistant:
     switch.sonoff_mainswitch:
 #      icon: mdi:flash-circle
       friendly_name: 'Рубильник'
+    switch.sonoff_mainswitch_timers:
+      icon: mdi:flash-circle
+      friendly_name: 'Таймеры вкл/выкл'
     group.sonoff_mainswitch:
       friendly_name: 'Основной выключатель'
 
