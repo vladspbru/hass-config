@@ -12,8 +12,6 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     #retain: false
-
-switch:
   - platform: mqtt
     name: "sonoff_mainswitch_timers"
     state_topic: "stat/sonoff_95B510/TIMERS"
