@@ -75,6 +75,9 @@ script:
         data_template:
             topic: 'cmnd/sonoff_95B510/TIMERS'
             payload: "TOGGLE"
+            qos: 2
+            retain: false
+
 
 group:
   sonoff_mainswitch:
