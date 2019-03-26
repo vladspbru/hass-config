@@ -19,10 +19,22 @@ sonoff_qry_state:
     - service: mqtt.publish
       data_template:
         topic: 'cmnd/{{id}}/TelePeriod'
-        payload: "180"
+        payload: "?"
+    - service: mqtt.publish
+      data_template:
+        topic: 'cmnd/{{id}}/Timers'
+        payload: "?"
+
             
 sonoff_qry_states:
   sequence:
+    - service: script.sonoff_qry_state
+      data:
+        id: "sonoffs"
+
+    - service: script.sonoff_qry_state
+      data:
+        id: "sonoff_95B510"
     - service: script.sonoff_qry_state
       data:
         id: "sonoff_26575D"
@@ -31,10 +43,13 @@ sonoff_qry_states:
         id: "sonoff_F4BC40"
     - service: script.sonoff_qry_state
       data:
-        id: "sonoff_95B510"
+        id: "sonoff_801E75"
     - service: script.sonoff_qry_state
       data:
-        id: "sonoff_801E75"
+        id: "sonoff_68B5C7"
+    - service: script.sonoff_qry_state
+      data:
+        id: "sonoff_B2DF94"
             
             
             
