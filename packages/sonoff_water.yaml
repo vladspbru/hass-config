@@ -15,13 +15,13 @@ switch:
     
 sensor:
   - platform: mqtt
-    name: "sonoff F4BC40 wifi"
+    name: "sonoff_F4BC40 wifi"
     state_topic: "tele/sonoff_F4BC40/STATE"
     value_template: "{{ value_json.Wifi.RSSI }}"
     unit_of_measurement: "%"
     expire_after: 200
   - platform: mqtt
-    name: "sonoff F4BC40 uptime"
+    name: "sonoff_F4BC40 uptime"
     state_topic: "tele/sonoff_F4BC40/STATE"
     value_template: "{{ value_json.Uptime }}"
     unit_of_measurement: ""
@@ -42,12 +42,17 @@ binary_sensor:
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
+  - platform: mqtt
+    name: "sonoff_F4BC40 timers"
+    state_topic: "stat/sonoff_F4BC40/TIMERS"
+    value_template: "{{ value_json.Timers }}"
 
 group:
   sonoff_water:
     entities:
         - switch.sonoff_water
         - sensor.temp_water
+        - binary_sensor.sonoff_F4BC40_timers
         - sensor.sonoff_f4bc40_wifi
         - sensor.sonoff_f4bc40_uptime
         #- binary_sensor.sonoff_f4bc40_lwt
@@ -61,6 +66,9 @@ homeassistant:
     switch.sonoff_water:
       icon: mdi:power-plug
       friendly_name: 'Эл.кабель'
+    binary_sensor.sonoff_F4BC40_timers:
+      icon: mdi:flash-circle
+      friendly_name: 'Таймеры'
     group.sonoff_water:
       friendly_name: 'Подогрев трубы'
 
