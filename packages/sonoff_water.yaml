@@ -12,6 +12,18 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     #retain: false
+  - platform: mqtt
+    name: "sonoff_water_timers"
+    state_topic: "stat/sonoff_F4BC40/TIMERS"
+    command_topic: "cmnd/sonoff_F4BC40/TIMERS"
+    value_template: "{{ value_json.Timers }}"
+    availability_topic: "tele/sonoff_F4BC40/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
     
 sensor:
   - platform: mqtt
@@ -42,17 +54,13 @@ binary_sensor:
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
-  - platform: mqtt
-    name: "sonoff_F4BC40 timers"
-    state_topic: "stat/sonoff_F4BC40/TIMERS"
-    value_template: "{{ value_json.Timers }}"
 
 group:
   sonoff_water:
     entities:
         - switch.sonoff_water
         - sensor.temp_water
-        - binary_sensor.sonoff_F4BC40_timers
+        - switch.sonoff_water_timers
         - sensor.sonoff_f4bc40_wifi
         - sensor.sonoff_f4bc40_uptime
         #- binary_sensor.sonoff_f4bc40_lwt
@@ -60,14 +68,14 @@ group:
 
 homeassistant:
   customize:
-    sensor.temp_water:
-      friendly_name: 'Температура трубы'
-      icon: mdi:oil-temperature
     switch.sonoff_water:
       icon: mdi:power-plug
       friendly_name: 'Эл.кабель'
-    binary_sensor.sonoff_F4BC40_timers:
-      icon: mdi:flash-circle
+    sensor.temp_water:
+      friendly_name: 'Температура трубы'
+      icon: mdi:oil-temperature
+    switch.sonoff_water_timers:
+      icon: mdi:timer
       friendly_name: 'Таймеры'
     group.sonoff_water:
       friendly_name: 'Подогрев трубы'

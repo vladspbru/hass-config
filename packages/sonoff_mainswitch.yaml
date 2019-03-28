@@ -12,6 +12,18 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     #retain: false
+  - platform: mqtt
+    name: "sonoff_mainswitch_timers"
+    state_topic: "stat/sonoff_95B510/TIMERS"
+    command_topic: "cmnd/sonoff_95B510/TIMERS"
+    value_template: "{{ value_json.Timers }}"
+    availability_topic: "tele/sonoff_95B510/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
     
 sensor:
   - platform: mqtt
@@ -62,21 +74,29 @@ binary_sensor:
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
-  - platform: mqtt
-    name: "sonoff_mainswitch_timers"
-    state_topic: "stat/sonoff_95B510/TIMERS"
-    value_template: "{{ value_json.Timers }}"
+#  - platform: mqtt
+#    name: "sonoff_mainswitch_timers"
+#    state_topic: "stat/sonoff_95B510/TIMERS"
+#    value_template: "{{ value_json.Timers }}"
 
 
-script:
-  sonoff_mainswitch_timers_toggle:
-    sequence:
-      - service: mqtt.publish
-        data_template:
-            topic: 'cmnd/sonoff_95B510/TIMERS'
-            payload: "TOGGLE"
-            qos: 2
-            retain: false
+input_number:
+  sonoff_mainswitch_slider:
+    name: dT Interval
+    initial: 6
+    min: 0
+    max: 6
+    step: 0.5
+
+#script:
+#  sonoff_mainswitch_timers_toggle:
+#    sequence:
+#      - service: mqtt.publish
+#        data_template:
+#            topic: 'cmnd/sonoff_95B510/TIMERS'
+#            payload: "TOGGLE"
+#            qos: 2
+#            retain: false
 
 
 group:
@@ -87,14 +107,19 @@ group:
         - sensor.temp_out
         - sensor.temp_in
         - sensor.temp_x
-        - binary_sensor.sonoff_mainswitch_timers
-        - script.sonoff_mainswitch_timers_toggle
+        - switch.sonoff_mainswitch_timers
+#        - binary_sensor.sonoff_mainswitch_timers
+#        - script.sonoff_mainswitch_timers_toggle
+        - input_number.sonoff_mainswitch_slider
         - sensor.sonoff_95b510_wifi
         - sensor.sonoff_95b510_uptime
         #- binary_sensor.sonoff_95b510_lwt
 
 homeassistant:
   customize:
+    switch.sonoff_mainswitch:
+      icon: mdi:power
+      friendly_name: 'Рубильник'
     sensor.mqtt_net_datetime_control:
       friendly_name: 'Временная метка'
     sensor.temp_out:
@@ -103,14 +128,9 @@ homeassistant:
       friendly_name: 'Температура внутри'
     sensor.temp_x:
       friendly_name: 'Температура в углу'
-    switch.sonoff_mainswitch:
-#      icon: mdi:flash-circle
-      friendly_name: 'Рубильник'
-    binary_sensor.sonoff_mainswitch_timers:
-      icon: mdi:flash-circle
+    switch.sonoff_mainswitch_timers:
+      icon: mdi:timer
       friendly_name: 'Таймеры'
-    script.sonoff_mainswitch_timers_toggle:
-      friendly_name: 'Таймеры вкл/выкл'
     group.sonoff_mainswitch:
       friendly_name: 'Основной выключатель'
 

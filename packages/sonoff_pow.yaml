@@ -12,7 +12,19 @@ switch:
     payload_available: "Online"
     payload_not_available: "Offline"
     optimistic: false
-    retain: false
+#    retain: false
+  - platform: mqtt
+    name: "sonoff_pow_timers"
+    state_topic: "stat/sonoff_26575D/TIMERS"
+    command_topic: "cmnd/sonoff_26575D/TIMERS"
+    value_template: "{{ value_json.Timers }}"
+    availability_topic: "tele/sonoff_26575D/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
     
 sensor:
   - platform: mqtt
@@ -57,10 +69,6 @@ binary_sensor:
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
-  - platform: mqtt
-    name: "sonoff_26575D_timers"
-    state_topic: "stat/sonoff_26575D/TIMERS"
-    value_template: "{{ value_json.Timers }}"
 
 
 group:
@@ -71,13 +79,16 @@ group:
         - sensor.sonoff_pow_power
         - sensor.sonoff_pow_today
         - sensor.sonoff_pow_total
-        - binary_sensor.sonoff_26575D_timers
+        - switch.sonoff_pow_timers
         - sensor.sonoff_26575d_wifi
         - sensor.sonoff_26575d_uptime
         #- binary_sensor.sonoff_26575d_lwt
 
 homeassistant:
   customize:
+    switch.sonoff_pow:
+      icon: mdi:power-plug
+      friendly_name: 'Розетки'
     sensor.sonoff_pow_power:
       icon: mdi:scale
       friendly_name: 'Мощьность'
@@ -90,8 +101,8 @@ homeassistant:
     sensor.sonoff_pow_total:
       icon: mdi:counter
       friendly_name: 'Всего'
-    binary_sensor.sonoff_26575D_timers:
-      icon: mdi:flash-circle
+    switch.sonoff_pow_timers:
+      icon: mdi:timer
       friendly_name: 'Таймеры'
     group.sonoff_pow:
       friendly_name: 'Розетка-счетчик'
