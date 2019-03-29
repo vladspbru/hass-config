@@ -45,6 +45,7 @@ sensor:
     value_template: "{{ value_json.Time }}"
     unit_of_measurement: ""
     icon: mdi:timer
+    json_attributes_topic: "tele/sonoff_95B510/STATE"
 
   - platform: mqtt
     name: "temp_out"
@@ -131,6 +132,7 @@ homeassistant:
     switch.sonoff_mainswitch_timers:
       icon: mdi:timer
       friendly_name: 'Таймеры'
+      assumed_state: false
     group.sonoff_mainswitch:
       friendly_name: 'Основной выключатель'
 
