@@ -5,6 +5,7 @@ switch:
     state_topic: "stat/sonoff_F4BC40/POWER"
     command_topic: "cmnd/sonoff_F4BC40/POWER"
     availability_topic: "tele/sonoff_F4BC40/LWT"
+#    json_attributes_topic: "tele/sonoff_F4BC40/STATE"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -27,19 +28,6 @@ switch:
     
 sensor:
   - platform: mqtt
-    name: "sonoff_F4BC40 wifi"
-    state_topic: "tele/sonoff_F4BC40/STATE"
-    value_template: "{{ value_json.Wifi.RSSI }}"
-    unit_of_measurement: "%"
-    expire_after: 200
-  - platform: mqtt
-    name: "sonoff_F4BC40 uptime"
-    state_topic: "tele/sonoff_F4BC40/STATE"
-    value_template: "{{ value_json.Uptime }}"
-    unit_of_measurement: ""
-    expire_after: 200
-        
-  - platform: mqtt
     name: "temp_water"
     state_topic: "tele/sonoff_F4BC40/SENSOR"
     value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
@@ -54,6 +42,7 @@ binary_sensor:
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
+    json_attributes_topic: "tele/sonoff_F4BC40/STATE"
 
 group:
   sonoff_water:
@@ -61,8 +50,6 @@ group:
         - switch.sonoff_water
         - sensor.temp_water
         - switch.sonoff_water_timers
-        - sensor.sonoff_f4bc40_wifi
-        - sensor.sonoff_f4bc40_uptime
         #- binary_sensor.sonoff_f4bc40_lwt
 
 

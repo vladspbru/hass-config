@@ -5,6 +5,7 @@ switch:
     state_topic: "stat/sonoff_68B5C7/POWER"
     command_topic: "cmnd/sonoff_68B5C7/POWER"
     availability_topic: "tele/sonoff_68B5C7/LWT"
+#    json_attributes_topic: "tele/sonoff_68B5C7/STATE"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -25,19 +26,7 @@ switch:
     payload_not_available: "Offline"
     optimistic: false
     
-sensor:
-  - platform: mqtt
-    name: "sonoff_68B5C7 wifi"
-    state_topic: "tele/sonoff_68B5C7/STATE"
-    value_template: "{{ value_json.Wifi.RSSI }}"
-    unit_of_measurement: "%"
-    expire_after: 200
-  - platform: mqtt
-    name: "sonoff_68B5C7 uptime"
-    state_topic: "tele/sonoff_68B5C7/STATE"
-    value_template: "{{ value_json.Uptime }}"
-    unit_of_measurement: ""
-    expire_after: 200
+#sensor:
 
 binary_sensor:
   - platform: mqtt
@@ -47,15 +36,13 @@ binary_sensor:
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
+    json_attributes_topic: "tele/sonoff_68B5C7/STATE"
 
 group:
   sonoff_sonar:
     entities:
         - switch.sonoff_sonar
         - switch.sonoff_sonar_timers
-        - sensor.sonoff_68B5C7_wifi
-        - sensor.sonoff_68B5C7_uptime
-
 
 homeassistant:
   customize:

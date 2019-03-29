@@ -1,11 +1,11 @@
 #sonoff-pow -------------------------------------
-
 switch:
   - platform: mqtt
     name: "sonoff_pow"
     state_topic: "stat/sonoff_26575D/POWER"
     command_topic: "cmnd/sonoff_26575D/POWER"
     availability_topic: "tele/sonoff_26575D/LWT"
+#    json_attributes_topic: "tele/sonoff_26575D/STATE"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -27,19 +27,6 @@ switch:
     optimistic: false
     
 sensor:
-  - platform: mqtt
-    name: "sonoff 26575D wifi"
-    state_topic: "tele/sonoff_26575D/STATE"
-    value_template: "{{ value_json.Wifi.RSSI }}"
-    unit_of_measurement: "%"
-    expire_after: 200
-  - platform: mqtt
-    name: "sonoff 26575D uptime"
-    state_topic: "tele/sonoff_26575D/STATE"
-    value_template: "{{ value_json.Uptime }}"
-    unit_of_measurement: ""
-    expire_after: 200
-
   - platform: mqtt
     name: "sonoff_pow today"
     state_topic: "tele/sonoff_26575D/SENSOR"
@@ -69,6 +56,7 @@ binary_sensor:
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
+    json_attributes_topic: "tele/sonoff_26575D/STATE"
 
 
 group:
@@ -80,8 +68,6 @@ group:
         - sensor.sonoff_pow_today
         - sensor.sonoff_pow_total
         - switch.sonoff_pow_timers
-        - sensor.sonoff_26575d_wifi
-        - sensor.sonoff_26575d_uptime
         #- binary_sensor.sonoff_26575d_lwt
 
 homeassistant:

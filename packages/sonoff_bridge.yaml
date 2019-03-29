@@ -21,7 +21,6 @@ sensor:
     expire_after: 10
     icon: mdi:remote
 
-
 binary_sensor:
   - platform: mqtt
     name: "sonoff_B2DF94 LWT"
@@ -30,6 +29,7 @@ binary_sensor:
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
+    json_attributes_topic: "tele/sonoff_B2DF94/STATE"
 
 group:
   sonoff_bridge:

@@ -50,19 +50,7 @@ switch:
     optimistic: false
     retain: false
     
-sensor:
-  - platform: mqtt
-    name: "sonoff_801E75 wifi"
-    state_topic: "tele/sonoff_801E75/STATE"
-    value_template: "{{ value_json.Wifi.RSSI }}"
-    unit_of_measurement: "%"
-    expire_after: 200
-  - platform: mqtt
-    name: "sonoff_801E75 uptime"
-    state_topic: "tele/sonoff_801E75/STATE"
-    value_template: "{{ value_json.Uptime }}"
-    unit_of_measurement: ""
-    expire_after: 200
+#sensor:
         
 binary_sensor:
   - platform: mqtt
@@ -72,6 +60,7 @@ binary_sensor:
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
+    json_attributes_topic: "tele/sonoff_801E75/STATE"
 
 
 group:
@@ -81,8 +70,6 @@ group:
       - switch.sonoff_801e75_ch2
       - switch.sonoff_801e75_ch3
       - switch.sonoff_801e75_ch4
-      - sensor.sonoff_801e75_wifi
-      - sensor.sonoff_801e75_uptime
       #- binary_sensor.sonoff_801e75_lwt
 
 
