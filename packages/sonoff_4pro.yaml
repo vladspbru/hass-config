@@ -62,7 +62,6 @@ switch:
     payload_available: "Online"
     payload_not_available: "Offline"
     optimistic: false  
-    json_attributes_topic: "tele/sonoff_801E75/STATE"
     
 #sensor:
         
