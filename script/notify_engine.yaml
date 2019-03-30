@@ -11,7 +11,7 @@ notify_engine:
    sequence:
     - service: mqtt.publish
       data_template:
-        topic: "homeassistant/notify"
+        topic: "hass/notify"
         payload: >-
           "{{ title }}: {{ message }}"
         retain: true
@@ -28,7 +28,7 @@ tweet_engine:
    sequence:
     - service: mqtt.publish
       data_template:
-        topic: "homeassistant/tweet"
+        topic: "hass/tweet"
         payload: >-
           "{{ tweet }}"
         retain: true

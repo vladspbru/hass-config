@@ -64,13 +64,13 @@ binary_sensor:
     device_class: connectivity
     json_attributes_topic: "tele/sonoff_95B510/STATE"
 
-input_number:
-  sonoff_mainswitch_slider:
-    name: dT Interval
-    initial: 6
-    min: 0
-    max: 6
-    step: 0.5
+#input_number:
+#  sonoff_mainswitch_slider:
+#    name: dT Interval
+#    initial: 6
+#    min: 0
+#    max: 6
+#    step: 0.5
 
 group:
   sonoff_mainswitch:

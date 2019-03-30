@@ -50,6 +50,20 @@ switch:
     optimistic: false
     retain: false
     
+  - platform: mqtt
+    name: "sonoff_801E75_timers"
+    state_topic: "stat/sonoff_801E75/TIMERS"
+    command_topic: "cmnd/sonoff_801E75/TIMERS"
+    value_template: "{{ value_json.Timers }}"
+    availability_topic: "tele/sonoff_801E75/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false  
+    json_attributes_topic: "tele/sonoff_801E75/STATE"
+    
 #sensor:
         
 binary_sensor:
@@ -70,6 +84,7 @@ group:
       - switch.sonoff_801e75_ch2
       - switch.sonoff_801e75_ch3
       - switch.sonoff_801e75_ch4
+      - switch.sonoff_801e75_timers
       #- binary_sensor.sonoff_801e75_lwt
 
 
@@ -87,6 +102,9 @@ homeassistant:
     switch.sonoff_801e75_ch4:
       friendly_name: 'Зал'
       icon: mdi:white-balance-iridescent
+    switch.sonoff_801e75_timers:
+      icon: mdi:timer
+      friendly_name: 'Таймеры'
     group.sonoff_4pro:
       friendly_name: 'Свет/Выключатели'
 
