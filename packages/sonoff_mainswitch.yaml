@@ -81,7 +81,7 @@ group:
         - sensor.temp_in
         - sensor.temp_x
         - switch.sonoff_mainswitch_timers
-        - input_number.sonoff_mainswitch_slider
+#        - input_number.sonoff_mainswitch_slider
 
 homeassistant:
   customize:
