@@ -6,6 +6,7 @@ Devices:
   entities:
     - group.sonoff_mainswitch
     - group.sonoff_water
+    - group.sonoff_sauna
     - group.sonoff_pow
     - group.sonoff_4pro
     - group.sonoff_bridge
@@ -59,6 +60,8 @@ net_nmap:
     - device_tracker.sonoff_801E75
     - device_tracker.sonoff_B2DF94
     - device_tracker.sonoff_68B5C7
+    - device_tracker.sonoff_68AC8D
+    
 
 sonoff_workplace:
   entities:
@@ -69,6 +72,7 @@ sonoff_workplace:
     - binary_sensor.sonoff_801e75_lwt
     - binary_sensor.sonoff_B2DF94_lwt
     - binary_sensor.sonoff_68B5C7_lwt
+    - binary_sensor.sonoff_68AC8D_lwt
     
 
 

@@ -1,0 +1,107 @@
+#sonoff-sauna -------------------------------------
+switch:
+  - platform: mqtt
+    name: "sonoff_sauna"
+    state_topic: "stat/sonoff_68AC8D/POWER"
+    command_topic: "cmnd/sonoff_68AC8D/POWER"
+    availability_topic: "tele/sonoff_68AC8D/LWT"
+#    json_attributes_topic: "tele/sonoff_68AC8D/STATE"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    #retain: false
+  - platform: mqtt
+    name: "sonoff_sauna_timers"
+    state_topic: "stat/sonoff_68AC8D/TIMERS"
+    command_topic: "cmnd/sonoff_68AC8D/TIMERS"
+    value_template: "{{ value_json.Timers }}"
+    availability_topic: "tele/sonoff_68AC8D/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    
+sensor:
+  - platform: mqtt
+    name: "temp1_sauna"
+    state_topic: "tele/sonoff_68AC8D/SENSOR"
+    value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer
+  - platform: mqtt
+    name: "temp2_sauna"
+    state_topic: "tele/sonoff_68AC8D/SENSOR"
+    value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer
+
+binary_sensor:
+  - platform: mqtt
+    name: "sonoff_68AC8D LWT"
+    state_topic: "tele/sonoff_68AC8D/LWT"
+    value_template: "{{ value }}"
+    payload_on: "Online"
+    payload_off: "Offline"
+    device_class: connectivity
+    json_attributes_topic: "tele/sonoff_68AC8D/STATE"
+
+group:
+  sonoff_sauna:
+    entities:
+        - switch.sonoff_sauna
+        - sensor.temp1_sauna
+        - sensor.temp2_sauna
+        - switch.sonoff_sauna_timers
+        #- binary_sensor.sonoff_f4bc40_lwt
+
+
+homeassistant:
+  customize:
+    switch.sonoff_sauna:
+      icon: mdi:power-plug
+      friendly_name: 'Лампа сауна'
+    sensor.temp1_sauna:
+      friendly_name: 'Температура №1'
+      icon: mdi:oil-temperature
+    sensor.temp2_sauna:
+      friendly_name: 'Температура №2'
+      icon: mdi:oil-temperature
+    switch.sonoff_sauna_timers:
+      icon: mdi:timer
+      friendly_name: 'Таймеры'
+    group.sonoff_sauna:
+      friendly_name: 'Сауна'
+
+
+##############################################################################
+###  Automations 
+##############################################################################
+#automation:
+#    
+#  - alias: Automatic winter heating the sauna pipe
+#    hide_entity: False
+#    initial_state: 'off'
+#    trigger:
+#      - platform: state
+#        entity_id: sensor.temp_sauna
+#    action:
+#      - condition: template
+#        value_template: "{{ states('sensor.temp_sauna') | float != 10 }}"
+#      - service_template: >-
+#            {% if states("sensor.temp_sauna") | float < 5 %}
+#            switch.turn_on
+#            {% elif states("sensor.temp_sauna") | float > 12 %}
+#            switch.turn_off
+#            {% endif %}
+#        entity_id: switch.sonoff_sauna
+        
+      
+      
+      
+      
+      
