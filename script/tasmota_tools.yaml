@@ -50,6 +50,9 @@ sonoff_qry_states:
     - service: script.sonoff_qry_state
       data:
         id: "sonoff_B2DF94"
+    - service: script.sonoff_qry_state
+      data:
+        id: "sonoff_68AC8D"
             
             
             
