@@ -79,3 +79,11 @@ sonoff_68ac8d:
   name: sonoff 68AC8D-3213.lan
   picture:
   track: true
+
+galaxy_j7_2016_lan:
+  hide_if_away: false
+  icon:
+  mac: 88:83:22:C0:17:F4
+  name: Galaxy-J7-2016.lan
+  picture:
+  track: false
