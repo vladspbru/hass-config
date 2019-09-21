@@ -18,7 +18,7 @@ sensor:
     name: "sonoff_bridge_433"
     state_topic: 'tele/sonoff_B2DF94/RESULT'
     value_template: "{{ value_json.RfReceived.Data }}"
-    expire_after: 10
+    expire_after: 15
     icon: mdi:remote
 
 binary_sensor:
