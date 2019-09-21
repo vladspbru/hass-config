@@ -32,7 +32,7 @@ automation:
     trigger:
       - platform: state
         entity_id: binary_sensor.hall_pir
-        to: "on"
+        to: "off"
     action:
       - service: persistent_notification.create
         data:
