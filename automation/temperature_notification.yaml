@@ -1,0 +1,59 @@
+- alias: "Low temperature at home"
+    hide_entity: False
+    initial_state: 'on'
+    trigger:
+      - platform: numeric_state
+        entity_id:
+          - sensor.temp_in
+          - sensor.temp_water
+          - sensor.temp_x
+          - sensor.temp1_sauna
+          - sensor.temp2_sauna
+        below: 4
+        for: "00:10:01"
+    action:
+      - service: script.notify_engine
+        data_template:
+          title: 'The house freezes'
+          message: " {{ trigger.to_state.attributes.friendly_name }} -> {{ states(trigger.entity_id) }}"
+      - service: persistent_notification.create
+        data_template:
+          message: >
+            {{ trigger.to_state.name }} too low for {{ trigger.for }}!
+
+
+- alias: "Sauna heating"
+    hide_entity: False
+    initial_state: 'on'
+    trigger:
+      - platform: numeric_state
+        entity_id:
+          - sensor.temp1_sauna
+          - sensor.temp2_sauna
+        above: 45
+    action:
+      - service: script.notify_engine
+        data_template:
+          title: 'Сауна нагрета'
+          message: " {{ trigger.to_state.attributes.friendly_name }} -> {{ states(trigger.entity_id) }}"
+
+
+- alias: "Early frosts"
+    hide_entity: False
+    initial_state: 'on'
+    trigger:
+      - platform: numeric_state
+        entity_id:
+          - sensor.temp_out
+        below: 1
+        for: "00:10:00"
+    action:
+      - service: script.notify_engine
+        data_template:
+          title: 'Заморозки'
+          message: "На улице заморозки!"
+      - service: persistent_notification.create
+        data_template:
+          message: "На улице заморозки!"
+
+
