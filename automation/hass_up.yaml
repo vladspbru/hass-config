@@ -1,4 +1,4 @@
-- alias: "Home Assistant on start event"
+- alias: "Notification: Home Assistant on start event"
   hide_entity: True
   trigger:
     - platform: homeassistant

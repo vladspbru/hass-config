@@ -1,4 +1,4 @@
-- alias: "Low temperature at home"
+- alias: "Alarm: Low temperature at home"
   hide_entity: False
   initial_state: "on"
   trigger:
@@ -20,7 +20,7 @@
       data_template:
         message: "{{ trigger.to_state.name }} too low for {{ trigger.for }}!"
 
-- alias: "Sauna heating"
+- alias: "Notification: Sauna heating"
   hide_entity: False
   initial_state: "on"
   trigger:
@@ -35,7 +35,7 @@
         title: "Сауна нагрета"
         message: " {{ trigger.to_state.attributes.friendly_name }} -> {{ states(trigger.entity_id) }}"
 
-- alias: "Early frosts"
+- alias: "Notification: Early frosts"
   hide_entity: False
   initial_state: "on"
   trigger:

@@ -1,4 +1,4 @@
-- alias: "Motion alarm"
+- alias: "Alarm: Motion at home"
   hide_entity: False
   initial_state: 'on'
   trigger:

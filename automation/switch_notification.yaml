@@ -1,4 +1,4 @@
-- alias: "Notification of main switches"
+- alias: "Notification: of main switches"
   hide_entity: False
   initial_state: 'on'
   trigger:
