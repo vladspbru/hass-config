@@ -5,7 +5,7 @@
     - platform: state
       entity_id:
         - switch.sonoff_mainswitch
-        - switch.sonoff_water
+#        - switch.sonoff_water
         - switch.sonoff_pow
   action:
     - service: script.notify_engine

@@ -5,6 +5,9 @@
     - platform: state
       entity_id: binary_sensor.hall_pir
       to: "on"
+  condition:
+    - entity_id: device_tracker.vlad_nexus 
+      state: 'not_home'
   action:
     - service: script.notify_engine
       data_template:
