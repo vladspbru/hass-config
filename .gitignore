@@ -6,3 +6,4 @@ secrets.yaml
 .uuid
 .HA_VERSION
 __pycache__
+.vscode
