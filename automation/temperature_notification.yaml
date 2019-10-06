@@ -52,3 +52,10 @@
     - service: persistent_notification.create
       data_template:
         message: "На улице заморозки!"
+      data:
+        title: "Home"
+        data:
+          sound: falling
+          device: pixel
+          # url: "https://www.home-assistant.io/"
+          attachment: "/home/smarthome/hass-config/shared/icons/info.png"        
