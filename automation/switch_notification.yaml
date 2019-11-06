@@ -20,6 +20,8 @@
 
 - alias: Automatic Theme Change
   trigger: 
+  - platform: homeassistant 
+    event: start 
   - platform: state
     entity_id: switch.sonoff_mainswitch
   action: 
