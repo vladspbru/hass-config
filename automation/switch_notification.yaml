@@ -18,18 +18,18 @@
 #          {% endif %}
 
 
-- alias: Automatic Theme Change
-  trigger: 
-  - platform: homeassistant 
-    event: start 
-  - platform: state
-    entity_id: switch.sonoff_mainswitch
-  action: 
-  - service_template: frontend.set_theme 
-    data_template: 
-      name: >  
-        {% if is_state('switch.sonoff_mainswitch', 'on') %} 
-          light
-        {% else %} 
-          dark
-        {% endif %}
+# - alias: "Automatic Theme Change"
+#   trigger: 
+#     - platform: homeassistant 
+#       event: start 
+#     - platform: state
+#       entity_id: switch.sonoff_mainswitch
+#   action: 
+#     - service: frontend.set_theme
+#       data_template: 
+#         name: >  
+#           {% if is_state('switch.sonoff_mainswitch', 'on') %} 
+#             light
+#           {% else %} 
+#             dark
+#           {% endif %}
