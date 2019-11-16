@@ -16,3 +16,20 @@
 #          {% if trigger.entity_id == "switch.sonoff_26575d" %} shell_command.living_room
 #          {% elif trigger.entity_id == "switch.sonoff_f4bc40" %} shell_command.another_room
 #          {% endif %}
+
+
+# - alias: "Automatic Theme Change"
+#   trigger: 
+#     - platform: homeassistant 
+#       event: start 
+#     - platform: state
+#       entity_id: switch.sonoff_mainswitch
+#   action: 
+#     - service: frontend.set_theme
+#       data_template: 
+#         name: >  
+#           {% if is_state('switch.sonoff_mainswitch', 'on') %} 
+#             light
+#           {% else %} 
+#             dark
+#           {% endif %}
