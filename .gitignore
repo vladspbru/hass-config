@@ -1,9 +1,14 @@
 *.db
 *.log
-secrets.yaml
 .storage
+.cloud
+deps
+tts
 .directory
 .uuid
 .HA_VERSION
 __pycache__
 .vscode
+secrets.yaml
+secrets
+known_devices.yaml
