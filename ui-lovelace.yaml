@@ -1,0 +1,319 @@
+title: Cottage61
+views:
+  - path: default_view
+    title: Home
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - device_tracker.vlad_nexus
+        title: СемьЯ
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sun.sun
+          - sensor.temp_out
+          - sensor.temp_in
+        title: Сегодня
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - device_tracker.sonoff_95b510
+          - device_tracker.sonoff_26575d
+          - device_tracker.sonoff_f4bc40
+          - device_tracker.sonoff_801e75
+          - device_tracker.sonoff_b2df94
+          - device_tracker.sonoff_68b5c7
+          - device_tracker.sonoff_68ac8d
+        title: NMap
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - script.sonoff_qry_states
+          - binary_sensor.sonoff_95b510_lwt
+          - binary_sensor.sonoff_26575d_lwt
+          - binary_sensor.sonoff_f4bc40_lwt
+          - binary_sensor.sonoff_801e75_lwt
+          - binary_sensor.sonoff_b2df94_lwt
+          - binary_sensor.sonoff_68b5c7_lwt
+          - binary_sensor.sonoff_68ac8d_lwt
+        title: Sonoff/Tasmota workplace
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - input_select.log_level
+        title: debug
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sensor.ha_installed_version
+          - sensor.disk_use_percent_home
+          - sensor.memory_use_percent
+          - sensor.last_boot
+          - sensor.date
+          - sensor.time
+        title: HAss Application
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - binary_sensor.hall_pir
+        title: Движение/Присутствие
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_801e75_ch1
+          - switch.sonoff_801e75_ch2
+          - switch.sonoff_801e75_ch3
+          - switch.sonoff_801e75_ch4
+          - switch.sonoff_801e75_timers
+        title: Свет/Выключатели
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sensor.sonoff_bridge_433
+          - sensor.sonoff_b2df94_wifi
+          - sensor.sonoff_b2df94_uptime
+        title: Шлюз RF433
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_mainswitch
+          - sensor.mqtt_net_datetime_control
+          - sensor.temp_out
+          - sensor.temp_in
+          - sensor.temp_x
+          - switch.sonoff_mainswitch_timers
+        title: Основной выключатель
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_pow
+          - sensor.sonoff_pow_voltage
+          - sensor.sonoff_pow_power
+          - sensor.sonoff_pow_today
+          - sensor.sonoff_pow_total
+          - switch.sonoff_pow_timers
+        title: Розетка-счетчик
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_sauna
+          - sensor.temp1_sauna
+          - sensor.temp2_sauna
+          - switch.sonoff_sauna_timers
+        title: Сауна
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_sonar
+          - switch.sonoff_sonar_timers
+        title: Чердак/Сонар
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_water
+          - sensor.temp_water
+          - switch.sonoff_water_timers
+        title: Подогрев трубы
+        show_header_toggle: true
+      - type: picture-entity
+        entity: camera.weather_radar_temp
+      - type: picture-entity
+        entity: camera.weather_radar_wind
+      - type: picture-entity
+        entity: camera.weather_radar_press
+      - type: picture-entity
+        entity: camera.weather_radar_apcp
+      - type: entities
+        entities:
+          - sensor.weather_yr_symbol
+          - sensor.weather_yr_temperature
+          - sensor.weather_yr_pressure
+          - sensor.weather_yr_humidity
+          - sensor.weather_yr_wind_speed
+          - sensor.weather_yr_wind_direction
+        title: Weather YR
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - automation.disk_use_alarm
+          - automation.alarm_low_temperature_at_home
+          - automation.notification_sauna_heating
+          - automation.notification_early_frosts
+          - automation.alarm_motion_at_home
+          - automation.hall_motion_detection_alarm
+          - automation.notification_of_main_switches
+          - automation.automatic_winter_heating_the_water_pipe
+        title: Automation
+      - type: entities
+        entities:
+          - script.notify_ping_me
+          - script.flash_notify
+        title: Script
+  - path: devices
+    title: Devices
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - switch.sonoff_mainswitch
+          - sensor.mqtt_net_datetime_control
+          - sensor.temp_out
+          - sensor.temp_in
+          - sensor.temp_x
+          - switch.sonoff_mainswitch_timers
+        title: Основной выключатель
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_water
+          - sensor.temp_water
+          - switch.sonoff_water_timers
+        title: Подогрев трубы
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_sauna
+          - sensor.temp1_sauna
+          - sensor.temp2_sauna
+          - switch.sonoff_sauna_timers
+        title: Сауна
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_pow
+          - sensor.sonoff_pow_voltage
+          - sensor.sonoff_pow_power
+          - sensor.sonoff_pow_today
+          - sensor.sonoff_pow_total
+          - switch.sonoff_pow_timers
+        title: Розетка-счетчик
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_801e75_ch1
+          - switch.sonoff_801e75_ch2
+          - switch.sonoff_801e75_ch3
+          - switch.sonoff_801e75_ch4
+          - switch.sonoff_801e75_timers
+        title: Свет/Выключатели
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sensor.sonoff_bridge_433
+          - sensor.sonoff_b2df94_wifi
+          - sensor.sonoff_b2df94_uptime
+        title: Шлюз RF433
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.sonoff_sonar
+          - switch.sonoff_sonar_timers
+        title: Чердак/Сонар
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - binary_sensor.hall_pir
+        title: Движение/Присутствие
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - script.sonoff_qry_states
+          - binary_sensor.sonoff_95b510_lwt
+          - binary_sensor.sonoff_26575d_lwt
+          - binary_sensor.sonoff_f4bc40_lwt
+          - binary_sensor.sonoff_801e75_lwt
+          - binary_sensor.sonoff_b2df94_lwt
+          - binary_sensor.sonoff_68b5c7_lwt
+          - binary_sensor.sonoff_68ac8d_lwt
+        title: Sonoff/Tasmota workplace
+        show_header_toggle: true
+    icon: 'mdi:chip'
+  - path: presence
+    title: Presence
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - device_tracker.sonoff_95b510
+          - device_tracker.sonoff_26575d
+          - device_tracker.sonoff_f4bc40
+          - device_tracker.sonoff_801e75
+          - device_tracker.sonoff_b2df94
+          - device_tracker.sonoff_68b5c7
+          - device_tracker.sonoff_68ac8d
+        title: NMap
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - device_tracker.vlad_nexus
+        title: СемьЯ
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - binary_sensor.hall_pir
+        title: Движение/Присутствие
+        show_header_toggle: true
+    icon: 'mdi:switch'
+  - path: weather
+    title: Weather
+    icon: 'mdi:weather'
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - sensor.weather_yr_symbol
+          - sensor.weather_yr_temperature
+          - sensor.weather_yr_pressure
+          - sensor.weather_yr_humidity
+          - sensor.weather_yr_wind_speed
+          - sensor.weather_yr_wind_direction
+        title: Weather YR
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sun.sun
+          - sensor.temp_out
+          - sensor.temp_in
+        title: Сегодня
+        show_header_toggle: true
+      - type: picture-entity
+        entity: camera.weather_radar_temp
+      - type: picture-entity
+        entity: camera.weather_radar_wind
+      - type: picture-entity
+        entity: camera.weather_radar_press
+      - type: picture-entity
+        entity: camera.weather_radar_apcp
+  - path: system
+    title: System
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - sensor.ha_installed_version
+          - sensor.disk_use_percent_home
+          - sensor.memory_use_percent
+          - sensor.last_boot
+          - sensor.date
+          - sensor.time
+        title: HAss Application
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - script.sonoff_qry_states
+          - binary_sensor.sonoff_95b510_lwt
+          - binary_sensor.sonoff_26575d_lwt
+          - binary_sensor.sonoff_f4bc40_lwt
+          - binary_sensor.sonoff_801e75_lwt
+          - binary_sensor.sonoff_b2df94_lwt
+          - binary_sensor.sonoff_68b5c7_lwt
+          - binary_sensor.sonoff_68ac8d_lwt
+        title: Sonoff/Tasmota workplace
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - input_select.log_level
+        title: debug
+        show_header_toggle: true
+    icon: 'mdi:clippy'
