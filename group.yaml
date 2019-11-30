@@ -10,6 +10,7 @@ Devices:
     - group.sonoff_pow
     - group.sonoff_4pro
     - group.sonoff_bridge
+    - group.tasmota_floodlight
     - group.sonoff_sonar
     - group.motion_detection
     - group.sonoff_workplace
@@ -73,12 +74,13 @@ sonoff_workplace:
     - binary_sensor.sonoff_B2DF94_lwt
     - binary_sensor.sonoff_68B5C7_lwt
     - binary_sensor.sonoff_68AC8D_lwt
+    - binary_sensor.tasmota_AB76C3_lwt
     
 
 
-debug:
-  entities:
-    - input_select.log_level
+#debug:
+#  entities:
+#    - input_select.log_level
 
 #tasmota_utils:
   #entities:
