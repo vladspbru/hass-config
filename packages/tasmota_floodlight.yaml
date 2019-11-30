@@ -1,0 +1,55 @@
+#sonoff-sonar -------------------------------------
+switch:
+  - platform: mqtt
+    name: "tasmota_floodlight"
+    state_topic: "stat/tasmota_AB76C3/POWER"
+    command_topic: "cmnd/tasmota_AB76C3/POWER"
+    availability_topic: "tele/tasmota_AB76C3/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    #retain: false
+  - platform: mqtt
+    name: "tasmota_floodlight_timers"
+    state_topic: "stat/tasmota_AB76C3/TIMERS"
+    command_topic: "cmnd/tasmota_AB76C3/TIMERS"
+    value_template: "{{ value_json.Timers }}"
+    availability_topic: "tele/tasmota_AB76C3/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    
+binary_sensor:
+  - platform: mqtt
+    name: "tasmota_AB76C3 LWT"
+    state_topic: "tele/tasmota_AB76C3/LWT"
+    value_template: "{{ value }}"
+    payload_on: "Online"
+    payload_off: "Offline"
+    device_class: connectivity
+    json_attributes_topic: "tele/tasmota_AB76C3/STATE"
+
+group:
+  tasmota_floodlight:
+    entities:
+        - switch.tasmota_floodlight
+        - switch.tasmota_floodlight_timers
+
+homeassistant:
+  customize:
+    switch.tasmota_floodlight:
+      icon: mdi:power-plug
+      friendly_name: 'Прожектор'
+    switch.tasmota_floodlight_timers:
+      icon: mdi:timer
+      friendly_name: 'Таймеры'
+    group.tasmota_floodlight:
+      friendly_name: 'Улица'
+
+
