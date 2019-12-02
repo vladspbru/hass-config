@@ -76,6 +76,20 @@ binary_sensor:
     json_attributes_topic: "tele/sonoff_801E75/STATE"
 
 
+light:
+  - platform: switch
+    name: Toilet
+    entity_id: switch.sonoff_801e75_ch1
+  - platform: switch
+    name: Father
+    entity_id: switch.sonoff_801e75_ch2
+  - platform: switch
+    name: Mather
+    entity_id: switch.sonoff_801e75_ch3
+  - platform: switch
+    name: Hall
+    entity_id: switch.sonoff_801e75_ch4
+
 group:
   sonoff_4pro:
     entities:

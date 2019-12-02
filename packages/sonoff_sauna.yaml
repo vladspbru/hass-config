@@ -50,6 +50,11 @@ binary_sensor:
     device_class: connectivity
     json_attributes_topic: "tele/sonoff_68AC8D/STATE"
 
+light:
+  - platform: switch
+    name: Sauna
+    entity_id: switch.sonoff_sauna
+
 group:
   sonoff_sauna:
     entities:

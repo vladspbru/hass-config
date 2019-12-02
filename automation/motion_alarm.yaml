@@ -14,3 +14,8 @@
       data_template:
         title: 'Hall PIR:'
         message: "Alarm! Hall motion detected."
+    
+    - service: light.turn_on
+      data:
+        entity_id: group.alarm_lights
+        flash: long

@@ -76,6 +76,14 @@ sonoff_workplace:
     - binary_sensor.sonoff_68AC8D_lwt
     - binary_sensor.tasmota_AB76C3_lwt
     
+alarm_lights:
+  entities:
+    - light.father
+    - light.mather
+    - light.hall
+    - light.toilet
+    - light.floodlight
+    - light.sauna
 
 
 #debug:
