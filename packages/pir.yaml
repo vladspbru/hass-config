@@ -41,7 +41,7 @@ homeassistant:
 ###  Automations 
 ##############################################################################
 automation:
-  - alias: "Motion detection persistent notification"
+  - alias: "PIR persistent notification"
     initial_state: 'off'
     trigger:
       - platform: state
