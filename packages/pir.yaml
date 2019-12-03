@@ -9,10 +9,23 @@ binary_sensor:
         device_class: motion
         friendly_name: "Hall PIR"
 
+
+sensor:
+  - platform: template
+    sensors:
+      hall_pir_last_motion:
+        value_template: >-
+          {% if is_state("sensor.sonoff_bridge_433", "E7EDEE") %}
+            {{ as_timestamp(now()) }}
+          {% endif %}
+        friendly_name: "PIR Last Motion"
+
+
 group:
   motion_detection:
     entities:
       - binary_sensor.hall_pir
+      - sensor.hall_pir_last_motion
         
 
 homeassistant:
@@ -37,6 +50,6 @@ automation:
     action:
       - service: persistent_notification.create
         data:
-          title: "Hall PIR:"
+          title: "PIR:"
           message: "Motion detected"
           notification_id: "Warning"
