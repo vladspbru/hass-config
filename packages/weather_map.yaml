@@ -1,4 +1,12 @@
 
+panel_iframe:
+  weather:
+    title: Weather
+    icon: mdi:weather-pouring
+    url: 'https://embed.windy.com/embed2.html?lat=57.868&lon=30.586&zoom=5&level=surface&overlay=gust&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=true&detailLat=59.898&detailLon=30.262&metricWind=default&metricTemp=default&radarRange'
+
+
+
 camera:
   - platform: generic
     still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_tmp2m_msk_pspb_9.jpg'
@@ -13,7 +21,8 @@ camera:
     still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_apcp_msk_pspb_24.jpg'
     name: "weather radar apcp"
     
-    
+           
+
 group:
   Weather_Map:
     entities:
