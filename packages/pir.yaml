@@ -24,15 +24,12 @@ sensor:
 group:
   motion_detection:
     entities:
-      - binary_sensor.hall_pir
       - sensor.hall_pir_last_changed
+      - binary_sensor.hall_pir
         
 
 homeassistant:
   customize:
-    #binary_sensor.hall_pir:
-      #friendly_name: 'Детектор'
-      #icon: mdi:paw
     group.motion_detection:
       friendly_name: 'Движение/Присутствие'
 
@@ -42,7 +39,7 @@ homeassistant:
 ##############################################################################
 automation:
   - alias: "PIR persistent notification"
-    initial_state: 'off'
+    initial_state: off
     trigger:
       - platform: state
         entity_id: binary_sensor.hall_pir

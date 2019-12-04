@@ -5,13 +5,14 @@ Devices:
   icon: mdi:chip
   entities:
     - group.sonoff_mainswitch
-    - group.sonoff_water
-    - group.sonoff_sauna
-    - group.sonoff_pow
+    - group.control_panel 
     - group.sonoff_4pro
-    - group.sonoff_bridge
+    - group.sonoff_sauna
     - group.tasmota_floodlight
-    - group.sonoff_sonar
+    - group.sonoff_water
+    - group.sonoff_pow
+    - group.sonoff_bridge
+    - group.sonoff_plug
     - group.motion_detection
     - group.sonoff_workplace
     
@@ -25,7 +26,7 @@ Presence:
     
 Weather:
   view: yes
-  icon: mdi:weather-partlycloudy
+  icon: mdi:weather-cloudy
   entities:
     - group.weather_yr
     - group.today
@@ -84,6 +85,15 @@ alarm_lights:
     - light.toilet
     - light.floodlight
     - light.sauna
+
+
+control_panel:
+  entities:
+    - group.alarm 
+    - group.motion_detection
+    - timer.period_timer
+    - timer.looper_timer
+
 
 
 #debug:

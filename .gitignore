@@ -12,3 +12,4 @@ __pycache__
 secrets.yaml
 secrets
 known_devices.yaml
+tmp

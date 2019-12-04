@@ -1,7 +1,7 @@
-#sonoff-sonar -------------------------------------
+#sonoff-plug -------------------------------------
 switch:
   - platform: mqtt
-    name: "sonoff_sonar"
+    name: "sonoff_plug"
     state_topic: "stat/sonoff_68B5C7/POWER"
     command_topic: "cmnd/sonoff_68B5C7/POWER"
     availability_topic: "tele/sonoff_68B5C7/LWT"
@@ -14,7 +14,7 @@ switch:
     optimistic: false
     #retain: false
   - platform: mqtt
-    name: "sonoff_sonar_timers"
+    name: "sonoff_plug_timers"
     state_topic: "stat/sonoff_68B5C7/TIMERS"
     command_topic: "cmnd/sonoff_68B5C7/TIMERS"
     value_template: "{{ value_json.Timers }}"
@@ -39,46 +39,22 @@ binary_sensor:
     json_attributes_topic: "tele/sonoff_68B5C7/STATE"
 
 group:
-  sonoff_sonar:
+  sonoff_plug:
     entities:
-        - switch.sonoff_sonar
-        - switch.sonoff_sonar_timers
+        - switch.sonoff_plug
+        - switch.sonoff_plug_timers
 
 homeassistant:
   customize:
-    switch.sonoff_sonar:
+    switch.sonoff_plug:
       icon: mdi:power-plug
-      friendly_name: 'Сонар'
-    switch.sonoff_sonar_timers:
+      friendly_name: 'Розетка'
+    switch.sonoff_plug_timers:
       icon: mdi:timer
       friendly_name: 'Таймеры'
-    group.sonoff_sonar:
-      friendly_name: 'Чердак/Сонар'
+    group.sonoff_plug:
+      friendly_name: 'Умная розетка'
 
-
-##############################################################################
-###  Automations 
-##############################################################################
-#automation:
-#    
-#  - alias: Automatic switch ON SONAR
-#    hide_entity: False
-#    initial_state: 'off'
-#    trigger:
-#      - platform: state
-#        entity_id: sensor.temp_water
-#    action:
-#      - condition: template
-#        value_template: "{{ states('sensor.temp_water') | float != 10 }}"
-#      - service_template: >-
-#            {% if states("sensor.temp_water") | float < 5 %}
-#            switch.turn_on
-#            {% elif states("sensor.temp_water") | float > 12 %}
-#            switch.turn_off
-#            {% endif %}
-#        entity_id: switch.sonoff_water
-        
-      
       
       
       
