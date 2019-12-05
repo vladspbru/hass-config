@@ -14,10 +14,9 @@ sensor:
   - platform: template
     sensors:
       hall_pir_last_changed:
-        value_template: >-
-          {% if is_state("sensor.sonoff_bridge_433", "E7EDEE") %}
-            {{ as_timestamp(now()) }}
-          {% endif %}
+        # value_template: '{{ as_timestamp(states.binary_sensor.hall_pir.last_changed) | timestamp_local }}'
+        value_template: '{{ states.binary_sensor.hall_pir.last_changed | timestamp_local }}'
+        # device_class: timestamp
         friendly_name: "PIR Last Motion"
 
 
