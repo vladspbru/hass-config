@@ -31,6 +31,9 @@ sonoff_qry_states:
     - service: script.sonoff_qry_state
       data:
         id: "sonoffs"
+    - service: script.sonoff_qry_state
+      data:
+        id: "tasmotas"
 
     - service: script.sonoff_qry_state
       data:
@@ -53,6 +56,9 @@ sonoff_qry_states:
     - service: script.sonoff_qry_state
       data:
         id: "sonoff_68AC8D"
+    - service: script.sonoff_qry_state
+      data:
+        id: "tasmota_AB76C3"
             
             
             

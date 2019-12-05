@@ -22,8 +22,8 @@ frontend:
 # Enables configuration UI
 config:
 
-# lovelace:
-#   mode: yaml
+lovelace:
+  # mode: yaml
 
 # Discover some devices automatically
 #discovery:

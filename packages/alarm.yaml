@@ -125,3 +125,4 @@ homeassistant:
   customize:
     group.alarm:
       friendly_name: 'Security'
+ 
