@@ -2,7 +2,7 @@ title: Cottage61
 views:
   - path: default
     title: Home
-    icon: mdi:home-heart
+    icon: mdi:home
     badges: []
     cards:
       - title: Основной выключатель
@@ -155,8 +155,8 @@ views:
           - sensor.weather_yr_humidity
           - sensor.weather_yr_wind_speed
           - sensor.weather_yr_wind_direction
-  - path: system
-    title: System
+  - path: sys
+    title: Development
     icon: 'mdi:clippy'
     badges: []
     cards:

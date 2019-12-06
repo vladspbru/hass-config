@@ -30,7 +30,7 @@ lovelace:
 #zeroconf:
        
 # Enables a map showing the location of tracked devices
-#map:
+map:
 
 # Track the sun
 sun:
