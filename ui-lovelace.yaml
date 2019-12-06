@@ -6,7 +6,7 @@ views:
     badges: []
     cards:
       - title: Основной выключатель
-        show_header_toggle: true
+        show_header_toggle: false
         type: entities
         entities:
           - switch.sonoff_mainswitch
