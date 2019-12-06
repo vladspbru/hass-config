@@ -21,7 +21,7 @@ frontend:
 config:
 
 lovelace:
-  # mode: yaml
+  mode: yaml
 
 # Discover some devices automatically
 #discovery:
