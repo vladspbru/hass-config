@@ -20,19 +20,6 @@ sensor:
         friendly_name: "PIR Last Motion"
 
 
-group:
-  motion_detection:
-    entities:
-      - sensor.hall_pir_last_changed
-      - binary_sensor.hall_pir
-        
-
-homeassistant:
-  customize:
-    group.motion_detection:
-      friendly_name: 'Движение/Присутствие'
-
-
 ##############################################################################
 ###  Automations 
 ##############################################################################

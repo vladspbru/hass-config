@@ -31,20 +31,3 @@ binary_sensor:
     device_class: connectivity
     json_attributes_topic: "tele/sonoff_B2DF94/STATE"
 
-group:
-  sonoff_bridge:
-    entities:
-        - sensor.sonoff_bridge_433
-        - sensor.sonoff_B2DF94_wifi
-        - sensor.sonoff_B2DF94_uptime
-        #- binary_sensor.sonoff_B2DF94_lwt
-
-
-homeassistant:
-  customize:
-    sensor.sonoff_bridge_433:
-      friendly_name: 'Last cod'
-    group.sonoff_bridge:
-      friendly_name: 'Шлюз RF433'
-        
-

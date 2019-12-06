@@ -59,37 +59,3 @@ binary_sensor:
     json_attributes_topic: "tele/sonoff_26575D/STATE"
 
 
-group:
-  sonoff_pow:
-    entities:
-        - switch.sonoff_pow
-        - sensor.sonoff_pow_voltage
-        - sensor.sonoff_pow_power
-        - sensor.sonoff_pow_today
-        - sensor.sonoff_pow_total
-        - switch.sonoff_pow_timers
-        #- binary_sensor.sonoff_26575d_lwt
-
-homeassistant:
-  customize:
-    switch.sonoff_pow:
-      icon: mdi:power-plug
-      friendly_name: 'Розетки'
-    sensor.sonoff_pow_power:
-      icon: mdi:scale
-      friendly_name: 'Мощьность'
-    sensor.sonoff_pow_voltage:
-      friendly_name: 'Напряжение'
-      icon: mdi:flash-circle
-    sensor.sonoff_pow_today:
-      icon: mdi:chart-timeline
-      friendly_name: 'Сегодня'
-    sensor.sonoff_pow_total:
-      icon: mdi:counter
-      friendly_name: 'Всего'
-    switch.sonoff_pow_timers:
-      icon: mdi:timer
-      friendly_name: 'Таймеры'
-    group.sonoff_pow:
-      friendly_name: 'Розетка-счетчик'
-

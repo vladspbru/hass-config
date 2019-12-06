@@ -44,29 +44,6 @@ binary_sensor:
     device_class: connectivity
     json_attributes_topic: "tele/sonoff_F4BC40/STATE"
 
-group:
-  sonoff_water:
-    entities:
-        - switch.sonoff_water
-        - sensor.temp_water
-        - switch.sonoff_water_timers
-        #- binary_sensor.sonoff_f4bc40_lwt
-
-
-homeassistant:
-  customize:
-    switch.sonoff_water:
-      icon: mdi:power-plug
-      friendly_name: 'Эл.кабель'
-    sensor.temp_water:
-      friendly_name: 'Температура трубы'
-      icon: mdi:oil-temperature
-    switch.sonoff_water_timers:
-      icon: mdi:timer
-      friendly_name: 'Таймеры'
-    group.sonoff_water:
-      friendly_name: 'Подогрев трубы'
-
 
 ##############################################################################
 ###  Automations 

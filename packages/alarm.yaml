@@ -113,16 +113,12 @@ automation:
   - service: timer.start
     entity_id: timer.looper_timer
 
-
 group:
-  alarm:
+  alarm_lights:
     entities:
-      - input_boolean.enable_alarm
-      - automation.alarm_motion_at_home
-      - input_boolean.alarming
-
-homeassistant:
-  customize:
-    group.alarm:
-      friendly_name: 'Security'
- 
+      - light.father
+      - light.mather
+      - light.hall
+      - light.toilet
+      - light.floodlight
+      - light.sauna

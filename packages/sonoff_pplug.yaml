@@ -38,24 +38,3 @@ binary_sensor:
     device_class: connectivity
     json_attributes_topic: "tele/sonoff_68B5C7/STATE"
 
-group:
-  sonoff_plug:
-    entities:
-        - switch.sonoff_plug
-        - switch.sonoff_plug_timers
-
-homeassistant:
-  customize:
-    switch.sonoff_plug:
-      icon: mdi:power-plug
-      friendly_name: 'Розетка'
-    switch.sonoff_plug_timers:
-      icon: mdi:timer
-      friendly_name: 'Таймеры'
-    group.sonoff_plug:
-      friendly_name: 'Умная розетка'
-
-      
-      
-      
-      

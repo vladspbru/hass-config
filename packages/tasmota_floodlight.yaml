@@ -40,21 +40,5 @@ light:
     name: Floodlight
     entity_id: switch.tasmota_floodlight
 
-group:
-  tasmota_floodlight:
-    entities:
-        - switch.tasmota_floodlight
-        - switch.tasmota_floodlight_timers
-
-homeassistant:
-  customize:
-    switch.tasmota_floodlight:
-      icon: mdi:power-plug
-      friendly_name: 'Прожектор'
-    switch.tasmota_floodlight_timers:
-      icon: mdi:timer
-      friendly_name: 'Таймеры'
-    group.tasmota_floodlight:
-      friendly_name: 'Улица'
 
 

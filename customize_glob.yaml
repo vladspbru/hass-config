@@ -1,7 +1,0 @@
-"sensor.sonoff_*_wifi":
-  icon: mdi:wifi
-  
-"sensor.sonoff_*_uptime":
-  icon: mdi:timelapse
-  
-      

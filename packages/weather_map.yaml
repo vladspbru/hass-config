@@ -23,27 +23,3 @@ camera:
     
            
 
-group:
-  Weather_Map:
-    entities:
-      - camera.weather_radar_temp
-      - camera.weather_radar_wind
-      - camera.weather_radar_press
-      - camera.weather_radar_apcp
-
-
-homeassistant:
-  customize:
-    group.weather_map:
-      friendly_name: 'Погодный радар'
-    camera.weather_radar_temp:
-      friendly_name: 'Температура'
-    camera.weather_radar_wind:
-      friendly_name: 'Ветер'
-      icon: mdi:weather-windy
-    camera.weather_radar_press:
-      friendly_name: 'Давление'
-      icon: mdi:gauge
-    camera.weather_radar_apcp:
-      friendly_name: 'Осадки'
-

@@ -55,34 +55,6 @@ light:
     name: Sauna
     entity_id: switch.sonoff_sauna
 
-group:
-  sonoff_sauna:
-    entities:
-        - switch.sonoff_sauna
-        - sensor.temp1_sauna
-        - sensor.temp2_sauna
-        - switch.sonoff_sauna_timers
-        #- binary_sensor.sonoff_f4bc40_lwt
-
-
-homeassistant:
-  customize:
-    switch.sonoff_sauna:
-      icon: mdi:power-plug
-      friendly_name: 'Лампа сауна'
-    sensor.temp1_sauna:
-      friendly_name: 'Температура №1'
-      icon: mdi:oil-temperature
-    sensor.temp2_sauna:
-      friendly_name: 'Температура №2'
-      icon: mdi:oil-temperature
-    switch.sonoff_sauna_timers:
-      icon: mdi:timer
-      friendly_name: 'Таймеры'
-    group.sonoff_sauna:
-      friendly_name: 'Сауна'
-
-
 ##############################################################################
 ###  Automations 
 ##############################################################################

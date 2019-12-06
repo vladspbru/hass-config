@@ -1,0 +1,425 @@
+homeassistant:
+  customize_glob:
+    "input_select.log_*":
+      icon: mdi:bug
+      hidden: False
+    "sensor.sonoff_*_wifi":
+      icon: mdi:wifi
+    "sensor.sonoff_*_uptime":
+      icon: mdi:timelapse
+
+
+
+#-------------------------------------------
+group:
+  hass:
+    entities:
+        - sensor.ha_installed_version
+        #- sensor.external_ip
+        - sensor.disk_use_percent_home
+        - sensor.memory_use_percent
+        - sensor.last_boot
+        - sensor.date
+        - sensor.time
+        
+#-------------------------------------------
+homeassistant:
+  customize:
+    group.hass:
+      friendly_name: 'HAss Application'
+
+
+group:
+  motion_detection:
+    entities:
+      - sensor.hall_pir_last_changed
+      - binary_sensor.hall_pir
+        
+
+homeassistant:
+  customize:
+    group.motion_detection:
+      friendly_name: 'Движение/Присутствие'
+
+
+group:
+  sonoff_4pro:
+    entities:
+      - switch.sonoff_801e75_ch1
+      - switch.sonoff_801e75_ch2
+      - switch.sonoff_801e75_ch3
+      - switch.sonoff_801e75_ch4
+      - switch.sonoff_801e75_timers
+      #- binary_sensor.sonoff_801e75_lwt
+
+
+homeassistant:
+  customize:
+    switch.sonoff_801e75_ch1:
+      friendly_name: 'Туалет'
+      icon: mdi:lamp
+    switch.sonoff_801e75_ch2:
+      friendly_name: 'Мама'
+      icon: mdi:lamp
+    switch.sonoff_801e75_ch3:
+      friendly_name: 'Папа'
+      icon: mdi:white-balance-incandescent
+    switch.sonoff_801e75_ch4:
+      friendly_name: 'Зал'
+      icon: mdi:white-balance-iridescent
+    switch.sonoff_801e75_timers:
+      icon: mdi:timer
+      friendly_name: 'Таймеры'
+    group.sonoff_4pro:
+      friendly_name: 'Свет/Выключатели'
+
+group:
+  sonoff_bridge:
+    entities:
+        - sensor.sonoff_bridge_433
+        - sensor.sonoff_B2DF94_wifi
+        - sensor.sonoff_B2DF94_uptime
+        #- binary_sensor.sonoff_B2DF94_lwt
+
+
+homeassistant:
+  customize:
+    sensor.sonoff_bridge_433:
+      friendly_name: 'Last cod'
+    group.sonoff_bridge:
+      friendly_name: 'Шлюз RF433'
+        
+
+group:
+  sonoff_mainswitch:
+    entities:
+        - switch.sonoff_mainswitch
+        - sensor.mqtt_net_datetime_control
+        - sensor.temp_out
+        - sensor.temp_in
+        - sensor.temp_x
+        - switch.sonoff_mainswitch_timers
+#        - input_number.sonoff_mainswitch_slider
+
+homeassistant:
+  customize:
+    switch.sonoff_mainswitch:
+      icon: mdi:power
+      friendly_name: 'Рубильник'
+    sensor.mqtt_net_datetime_control:
+      friendly_name: 'Временная метка'
+    sensor.temp_out:
+      friendly_name: 'Температура снаружи'
+    sensor.temp_in:
+      friendly_name: 'Температура внутри'
+    sensor.temp_x:
+      friendly_name: 'Температура в углу'
+    switch.sonoff_mainswitch_timers:
+      icon: mdi:timer
+      friendly_name: 'Таймеры'
+      assumed_state: false
+    group.sonoff_mainswitch:
+      friendly_name: 'Основной выключатель'
+
+group:
+  sonoff_pow:
+    entities:
+        - switch.sonoff_pow
+        - sensor.sonoff_pow_voltage
+        - sensor.sonoff_pow_power
+        - sensor.sonoff_pow_today
+        - sensor.sonoff_pow_total
+        - switch.sonoff_pow_timers
+        #- binary_sensor.sonoff_26575d_lwt
+
+homeassistant:
+  customize:
+    switch.sonoff_pow:
+      icon: mdi:power-plug
+      friendly_name: 'Розетки'
+    sensor.sonoff_pow_power:
+      icon: mdi:scale
+      friendly_name: 'Мощьность'
+    sensor.sonoff_pow_voltage:
+      friendly_name: 'Напряжение'
+      icon: mdi:flash-circle
+    sensor.sonoff_pow_today:
+      icon: mdi:chart-timeline
+      friendly_name: 'Сегодня'
+    sensor.sonoff_pow_total:
+      icon: mdi:counter
+      friendly_name: 'Всего'
+    switch.sonoff_pow_timers:
+      icon: mdi:timer
+      friendly_name: 'Таймеры'
+    group.sonoff_pow:
+      friendly_name: 'Розетка-счетчик'
+
+group:
+  sonoff_plug:
+    entities:
+        - switch.sonoff_plug
+        - switch.sonoff_plug_timers
+
+homeassistant:
+  customize:
+    switch.sonoff_plug:
+      icon: mdi:power-plug
+      friendly_name: 'Розетка'
+    switch.sonoff_plug_timers:
+      icon: mdi:timer
+      friendly_name: 'Таймеры'
+    group.sonoff_plug:
+      friendly_name: 'Умная розетка'
+
+group:
+  sonoff_sauna:
+    entities:
+        - switch.sonoff_sauna
+        - sensor.temp1_sauna
+        - sensor.temp2_sauna
+        - switch.sonoff_sauna_timers
+        #- binary_sensor.sonoff_f4bc40_lwt
+
+
+homeassistant:
+  customize:
+    switch.sonoff_sauna:
+      icon: mdi:power-plug
+      friendly_name: 'Лампа сауна'
+    sensor.temp1_sauna:
+      friendly_name: 'Температура №1'
+      icon: mdi:oil-temperature
+    sensor.temp2_sauna:
+      friendly_name: 'Температура №2'
+      icon: mdi:oil-temperature
+    switch.sonoff_sauna_timers:
+      icon: mdi:timer
+      friendly_name: 'Таймеры'
+    group.sonoff_sauna:
+      friendly_name: 'Сауна'
+
+group:
+  sonoff_water:
+    entities:
+        - switch.sonoff_water
+        - sensor.temp_water
+        - switch.sonoff_water_timers
+        #- binary_sensor.sonoff_f4bc40_lwt
+
+
+homeassistant:
+  customize:
+    switch.sonoff_water:
+      icon: mdi:power-plug
+      friendly_name: 'Эл.кабель'
+    sensor.temp_water:
+      friendly_name: 'Температура трубы'
+      icon: mdi:oil-temperature
+    switch.sonoff_water_timers:
+      icon: mdi:timer
+      friendly_name: 'Таймеры'
+    group.sonoff_water:
+      friendly_name: 'Подогрев трубы'
+
+group:
+  tasmota_floodlight:
+    entities:
+        - switch.tasmota_floodlight
+        - switch.tasmota_floodlight_timers
+
+homeassistant:
+  customize:
+    switch.tasmota_floodlight:
+      icon: mdi:power-plug
+      friendly_name: 'Прожектор'
+    switch.tasmota_floodlight_timers:
+      icon: mdi:timer
+      friendly_name: 'Таймеры'
+    group.tasmota_floodlight:
+      friendly_name: 'Улица'
+      
+group:
+  Weather_Map:
+    entities:
+      - camera.weather_radar_temp
+      - camera.weather_radar_wind
+      - camera.weather_radar_press
+      - camera.weather_radar_apcp
+
+homeassistant:
+  customize:
+    group.weather_map:
+      friendly_name: 'Погодный радар'
+    camera.weather_radar_temp:
+      friendly_name: 'Температура'
+    camera.weather_radar_wind:
+      friendly_name: 'Ветер'
+      icon: mdi:weather-windy
+    camera.weather_radar_press:
+      friendly_name: 'Давление'
+      icon: mdi:gauge
+    camera.weather_radar_apcp:
+      friendly_name: 'Осадки'
+
+group:
+  Weather_YR:
+    entities:
+        - sensor.weather_yr_symbol
+        - sensor.weather_yr_temperature
+        - sensor.weather_yr_pressure
+        - sensor.weather_yr_humidity
+        - sensor.weather_yr_wind_speed
+        - sensor.weather_yr_wind_direction
+
+
+homeassistant:
+  customize:
+    group.weather_yr:
+      friendly_name: 'Weather YR'
+    sensor.weather_yr_symbol:
+      friendly_name: ''
+    sensor.weather_yr_temperature:
+      friendly_name: 'Температура'
+    sensor.weather_yr_pressure:
+      friendly_name: 'Давление'
+      icon: mdi:gauge
+    sensor.weather_yr_humidity:
+      friendly_name: 'Влажность'
+      icon: mdi:water-percent
+    sensor.weather_yr_wind_speed:
+      friendly_name: 'Скорость ветра'
+      icon: mdi:weather-windy
+    sensor.weather_yr_wind_direction:
+      friendly_name: 'Направление ветра'
+      icon: mdi:weather-windy
+
+homeassistant:
+  customize:
+    group.family:
+      friendly_name: 'СемьЯ'
+    group.today:
+      friendly_name: 'Сегодня'
+    group.net_nmap:
+      friendly_name: 'NMap'
+    group.sonoff_workplace:
+      friendly_name: 'Sonoff/Tasmota workplace'
+    group.alarm:
+      friendly_name: 'Security'
+    script.sonoff_qry_state:
+      hidden: true 
+    script.notify_engine:
+      hidden: true 
+    script.tweet_engine:
+      hidden: true 
+    script.notify_ping_me:
+      friendly_name: 'Тест. уведомление / Ping me'
+
+
+
+group:
+  Devices:
+    view: yes
+    icon: mdi:chip
+    entities:
+      - group.sonoff_mainswitch
+      - group.control_panel 
+      - group.sonoff_4pro
+      - group.sonoff_sauna
+      - group.tasmota_floodlight
+      - group.sonoff_water
+      - group.sonoff_pow
+      - group.sonoff_bridge
+      - group.sonoff_plug
+      - group.motion_detection
+      - group.sonoff_workplace
+      
+  Presence:
+    view: yes
+    icon: mdi:switch
+    entities:
+      - group.net_nmap
+      - group.family
+      - group.motion_detection
+      
+  Weather:
+    view: yes
+    icon: mdi:weather-cloudy
+    entities:
+      - group.weather_yr
+      - group.today
+      - group.weather_map
+      - camera.wu_doppler_weather
+
+  System:
+    view: yes
+    icon: mdi:clippy
+    entities:
+      - group.hass
+      - group.sonoff_workplace
+      - group.all_automations
+      - group.all_scripts
+      - group.debug
+  #--------------------------------------------
+
+  family:
+    entities:
+      - device_tracker.vlad_nexus
+
+  today:
+    entities:
+      - sun.sun
+      - sensor.temp_out
+      - sensor.temp_in
+      
+  net_nmap:
+    entities:
+      - device_tracker.sonoff_95b510
+      - device_tracker.sonoff_26575d
+      - device_tracker.sonoff_f4bc40
+      - device_tracker.sonoff_801E75
+      - device_tracker.sonoff_B2DF94
+      - device_tracker.sonoff_68B5C7
+      - device_tracker.sonoff_68AC8D
+      
+
+  sonoff_workplace:
+    entities:
+      - script.sonoff_qry_states
+      - binary_sensor.sonoff_95b510_lwt
+      - binary_sensor.sonoff_26575d_lwt
+      - binary_sensor.sonoff_f4bc40_lwt
+      - binary_sensor.sonoff_801e75_lwt
+      - binary_sensor.sonoff_B2DF94_lwt
+      - binary_sensor.sonoff_68B5C7_lwt
+      - binary_sensor.sonoff_68AC8D_lwt
+      - binary_sensor.tasmota_AB76C3_lwt
+
+
+  alarm:
+    entities:
+      - input_boolean.enable_alarm
+      - automation.alarm_motion_at_home
+      - input_boolean.alarming
+
+
+  control_panel:
+    entities:
+      - group.alarm 
+      - group.motion_detection
+      - timer.period_timer
+      - timer.looper_timer
+
+  #debug:
+  #  entities:
+  #    - input_select.log_level
+
+  #tasmota_utils:
+    #entities:
+      #- script.sonoff_qry_states
+      
+
+      
+      
+      
+

@@ -72,35 +72,4 @@ binary_sensor:
 #    max: 6
 #    step: 0.5
 
-group:
-  sonoff_mainswitch:
-    entities:
-        - switch.sonoff_mainswitch
-        - sensor.mqtt_net_datetime_control
-        - sensor.temp_out
-        - sensor.temp_in
-        - sensor.temp_x
-        - switch.sonoff_mainswitch_timers
-#        - input_number.sonoff_mainswitch_slider
-
-homeassistant:
-  customize:
-    switch.sonoff_mainswitch:
-      icon: mdi:power
-      friendly_name: 'Рубильник'
-    sensor.mqtt_net_datetime_control:
-      friendly_name: 'Временная метка'
-    sensor.temp_out:
-      friendly_name: 'Температура снаружи'
-    sensor.temp_in:
-      friendly_name: 'Температура внутри'
-    sensor.temp_x:
-      friendly_name: 'Температура в углу'
-    switch.sonoff_mainswitch_timers:
-      icon: mdi:timer
-      friendly_name: 'Таймеры'
-      assumed_state: false
-    group.sonoff_mainswitch:
-      friendly_name: 'Основной выключатель'
-
 
