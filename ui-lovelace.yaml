@@ -44,7 +44,7 @@ views:
     badges: []
     cards:
       - title: Основной выключатель
-        show_header_toggle: true
+        show_header_toggle: false
         type: entities
         entities:
           - switch.sonoff_mainswitch
@@ -53,65 +53,65 @@ views:
           - sensor.temp_in
           - sensor.temp_x
           - switch.sonoff_mainswitch_timers
-      - title: Движение/Присутствие
-        show_header_toggle: false
+      - title: Свет/Выключатели
+        show_header_toggle: true
         type: entities
         entities:
-          - sensor.hall_pir_last_changed
-          - binary_sensor.hall_pir
-      - entities:
           - switch.sonoff_801e75_ch1
           - switch.sonoff_801e75_ch2
           - switch.sonoff_801e75_ch3
           - switch.sonoff_801e75_ch4
           - switch.sonoff_801e75_timers
-        show_header_toggle: true
-        title: Свет/Выключатели
+      - title: Сауна
+        show_header_toggle: false
         type: entities
-      - entities:
+        entities:
           - switch.sonoff_sauna
           - sensor.temp1_sauna
           - sensor.temp2_sauna
           - switch.sonoff_sauna_timers
-        show_header_toggle: true
-        title: Сауна
+      - title: Улица
+        show_header_toggle: false
         type: entities
-      - entities:
+        entities:
           - switch.tasmota_floodlight
           - switch.tasmota_floodlight_timers
-        show_header_toggle: true
-        title: Улица
+      - title: Подогрев трубы
+        show_header_toggle: false
         type: entities
-      - entities:
+        entities:
           - switch.sonoff_water
           - sensor.temp_water
           - switch.sonoff_water_timers
-        show_header_toggle: true
-        title: Подогрев трубы
+      - title: Розетка-счетчик
         type: entities
-      - entities:
+        show_header_toggle: false
+        entities:
           - switch.sonoff_pow
           - sensor.sonoff_pow_voltage
           - sensor.sonoff_pow_power
           - sensor.sonoff_pow_today
           - sensor.sonoff_pow_total
           - switch.sonoff_pow_timers
-        show_header_toggle: true
-        title: Розетка-счетчик
+      - title: Шлюз RF433
         type: entities
-      - entities:
+        show_header_toggle: false
+        entities:
           - sensor.sonoff_bridge_433
           - sensor.sonoff_b2df94_wifi
           - sensor.sonoff_b2df94_uptime
-        show_header_toggle: true
-        title: Шлюз RF433
+      - title: Движение/Присутствие
+        show_header_toggle: false
         type: entities
-      - entities:
+        entities:
+          - sensor.hall_pir_last_changed
+          - binary_sensor.hall_pir
+      - title: Умная розетка
+        type: entities
+        show_header_toggle: false
+        entities:
           - switch.sonoff_plug
           - switch.sonoff_plug_timers
-        show_header_toggle: true
-        title: Умная розетка
-        type: entities
   - path: net
     title: Net
     icon: 'mdi:switch'
@@ -119,6 +119,7 @@ views:
     cards:
       - title: NMap
         type: entities
+        show_header_toggle: false
         entities:
           - device_tracker.sonoff_95b510
           - device_tracker.sonoff_26575d
@@ -134,6 +135,7 @@ views:
     cards:
       - title: Сегодня
         type: entities
+        show_header_toggle: false
         entities:
           - sun.sun
           - sensor.temp_out
@@ -148,6 +150,7 @@ views:
         type: picture-entity
       - title: Weather YR
         type: entities
+        show_header_toggle: false
         entities:
           - sensor.weather_yr_symbol
           - sensor.weather_yr_temperature
@@ -161,6 +164,7 @@ views:
     badges: []
     cards:
       - title: ПЭВМ
+        show_header_toggle: false
         type: entities
         entities:
           - sensor.last_boot
@@ -177,6 +181,7 @@ views:
           - script.sonoff_qry_states
       - title: Sonoff/Tasmota workplace
         type: entities
+        show_header_toggle: false
         entities:
           - script.sonoff_qry_states
           - binary_sensor.sonoff_95b510_lwt
