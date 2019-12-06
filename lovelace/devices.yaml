@@ -1,0 +1,76 @@
+path: devices
+title: Devices
+icon: 'mdi:chip'
+badges: []
+cards:
+  - title: Основной выключатель
+    show_header_toggle: false
+    type: entities
+    entities:
+      - switch.sonoff_mainswitch
+      - sensor.mqtt_net_datetime_control
+      - sensor.temp_out
+      - sensor.temp_in
+      - sensor.temp_x
+      - switch.sonoff_mainswitch_timers
+  - title: Свет/Выключатели
+    show_header_toggle: true
+    type: entities
+    entities:
+      - switch.sonoff_801e75_ch1
+      - switch.sonoff_801e75_ch2
+      - switch.sonoff_801e75_ch3
+      - switch.sonoff_801e75_ch4
+      - switch.sonoff_801e75_timers
+  - title: Сауна
+    show_header_toggle: false
+    type: entities
+    entities:
+      - switch.sonoff_sauna
+      - sensor.temp1_sauna
+      - sensor.temp2_sauna
+      - switch.sonoff_sauna_timers
+  - title: Улица
+    show_header_toggle: false
+    type: entities
+    entities:
+      - switch.tasmota_floodlight
+      - switch.tasmota_floodlight_timers
+  - title: Подогрев трубы
+    show_header_toggle: false
+    type: entities
+    entities:
+      - switch.sonoff_water
+      - sensor.temp_water
+      - switch.sonoff_water_timers
+  - title: Розетка-счетчик
+    type: entities
+    show_header_toggle: false
+    entities:
+      - switch.sonoff_pow
+      - sensor.sonoff_pow_voltage
+      - sensor.sonoff_pow_power
+      - sensor.sonoff_pow_today
+      - sensor.sonoff_pow_total
+      - switch.sonoff_pow_timers
+  - title: Шлюз RF433
+    type: entities
+    show_header_toggle: false
+    entities:
+      - sensor.sonoff_bridge_433
+      - sensor.sonoff_b2df94_wifi
+      - sensor.sonoff_b2df94_uptime
+  - title: Движение/Присутствие
+    show_header_toggle: false
+    type: entities
+    entities:
+      - sensor.hall_pir_last_changed
+      - type: entity
+        entity: binary_sensor.hall_pir
+        secondary_info: last-changed
+  - title: Умная розетка
+    type: entities
+    show_header_toggle: false
+    entities:
+      - switch.sonoff_plug
+      - switch.sonoff_plug_timers

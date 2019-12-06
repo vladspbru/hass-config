@@ -6,12 +6,15 @@ sensor:
     
   - platform: systemmonitor
     resources:
+      - type: last_boot
+      - type: processor_use
+      - type: memory_free
+      - type: memory_use_percent
       - type: disk_use_percent
         arg: /home
-      - type: disk_use_percent
-        arg: /root
-      - type: memory_use_percent
-      - type: last_boot
+      # !!! not valid on docker
+      # - type: disk_use_percent
+      #   arg: /root
 
   - platform: time_date
     display_options:

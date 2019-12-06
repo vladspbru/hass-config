@@ -52,14 +52,12 @@ mqtt:
     payload: 'Offline'
 
 
-
 device_tracker: !include_dir_merge_list device_tracker
 script:         !include_dir_merge_named script
 automation:     !include_dir_merge_list automation
 #sensor:         !include_dir_merge_list sensor
 #switch:         !include_dir_merge_list switch
-#group:          !include_dir_merge_named group
-# group:          !include group.yaml
+#group:          !include group.yaml
 #shell_command:  !include_dir_merge_named shell_command
 #binary_sensor:  !include_dir_merge_list binary_sensor
 #input_boolean:  !include_dir_merge_named input_boolean
@@ -69,7 +67,16 @@ automation:     !include_dir_merge_list automation
 logger:         !include logger.yaml
 
 
-      
+tts:
+  - platform: google_translate
+
+panel_iframe:
+  chronograf:
+    title: Chronograf
+    icon: mdi:chart-histogram
+    url: 'http://192.168.1.200:8888/sources/1/dashboards/2?lower=now%28%29%20-%207d'
+
+
 # Enables support for tracking state changes over time
 #history:
 #  include:
@@ -81,7 +88,8 @@ logger:         !include logger.yaml
 #       - switch.sonoff_95B510
 #       - sensor.weather_yr_temperature
 #       - sensor.weather_yr_humidity
- 
+
+
 #recorder:
 #  purge_keep_days: 20
 #  purge_interval: 1

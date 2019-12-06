@@ -1,0 +1,51 @@
+path: sys
+title: Development
+icon: 'mdi:clippy'
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+    - type: horizontal-stack
+      cards:
+      - type: gauge
+        entity: sensor.processor_use
+      - type: gauge
+        entity: sensor.disk_use_percent_home
+      - type: gauge
+        entity: sensor.memory_use_percent
+    - type: entities
+      title: ПЭВМ
+      entities:
+        - sensor.last_boot
+  
+  - type: vertical-stack
+    cards:
+    # - type: entities
+    #   title: ПЭВМ
+    #   show_header_toggle: false
+    #   entities:
+    #     - sensor.last_boot
+    #     - sensor.disk_use_percent_home
+    #     # - sensor.disk_use_percent_root
+    #     - sensor.memory_use_percent
+    #     - sensor.date
+    #     - sensor.time
+    - type: entities
+      title: Script
+      show_header_toggle: false
+      entities:
+        - script.notify_ping_me
+        - script.sonoff_qry_states
+    - type: entities
+      title: Sonoff/Tasmota workplace
+      show_header_toggle: false
+      entities:
+        - script.sonoff_qry_states
+        - binary_sensor.sonoff_95b510_lwt
+        - binary_sensor.sonoff_26575d_lwt
+        - binary_sensor.sonoff_f4bc40_lwt
+        - binary_sensor.sonoff_801e75_lwt
+        - binary_sensor.sonoff_b2df94_lwt
+        - binary_sensor.sonoff_68b5c7_lwt
+        - binary_sensor.sonoff_68ac8d_lwt
+        - binary_sensor.tasmota_ab76c3_lwt

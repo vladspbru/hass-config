@@ -1,0 +1,16 @@
+path: net
+title: Net
+icon: 'mdi:switch'
+badges: []
+cards:
+  - title: NMap
+    type: entities
+    show_header_toggle: false
+    entities:
+      - device_tracker.sonoff_95b510
+      - device_tracker.sonoff_26575d
+      - device_tracker.sonoff_f4bc40
+      - device_tracker.sonoff_801e75
+      - device_tracker.sonoff_b2df94
+      - device_tracker.sonoff_68b5c7
+      - device_tracker.sonoff_68ac8d

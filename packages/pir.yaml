@@ -16,8 +16,8 @@ sensor:
       hall_pir_last_changed:
         # value_template: '{{ as_timestamp(states.binary_sensor.hall_pir.last_changed) | timestamp_local }}'
         value_template: '{{ states.binary_sensor.hall_pir.last_changed | timestamp_local }}'
-        # device_class: timestamp
-        friendly_name: "PIR Last Motion"
+        device_class: timestamp
+        friendly_name: "Last Motion"
 
 
 ##############################################################################

@@ -1,0 +1,30 @@
+path: weather
+title: Weather
+icon: 'mdi:weather-cloudy'
+badges: []
+cards:
+  - title: Сегодня
+    type: entities
+    show_header_toggle: false
+    entities:
+      - sun.sun
+      - sensor.temp_out
+      - sensor.temp_in
+  - entity: camera.weather_radar_temp
+    type: picture-entity
+  - entity: camera.weather_radar_wind
+    type: picture-entity
+  - entity: camera.weather_radar_press
+    type: picture-entity
+  - entity: camera.weather_radar_apcp
+    type: picture-entity
+  - title: Weather YR
+    type: entities
+    show_header_toggle: false
+    entities:
+      - sensor.weather_yr_symbol
+      - sensor.weather_yr_temperature
+      - sensor.weather_yr_pressure
+      - sensor.weather_yr_humidity
+      - sensor.weather_yr_wind_speed
+      - sensor.weather_yr_wind_direction

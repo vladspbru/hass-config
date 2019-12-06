@@ -1,0 +1,38 @@
+path: default
+title: Home
+icon: mdi:home
+badges: []
+cards:
+  - title: Основной выключатель
+    show_header_toggle: false
+    type: entities
+    entities:
+      - switch.sonoff_mainswitch
+      - sensor.mqtt_net_datetime_control
+      - sensor.temp_out
+      - sensor.temp_in
+      - sensor.temp_x
+      - switch.sonoff_mainswitch_timers
+  - title: Security
+    type: entities
+    show_header_toggle: false
+    entities:
+      - input_boolean.enable_alarm
+      - automation.alarm_motion_at_home
+      - input_boolean.alarming
+      - sensor.hall_pir_last_changed
+  - title: СемьЯ
+    type: entities
+    show_header_toggle: false
+    entities:
+      - device_tracker.vlad_nexus
+  - title: Automation
+    type: entities
+    entities:
+      - automation.automatic_winter_heating_the_water_pipe
+      - automation.notification_sauna_heating
+      - automation.disk_use_alarm
+      - automation.notification_early_frosts
+      - automation.notification_of_main_switches
+      - automation.pir_persistent_notification
+      - automation.alarm_low_temperature_at_home
