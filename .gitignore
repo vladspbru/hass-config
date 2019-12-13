@@ -3,7 +3,6 @@
 .storage
 .cloud
 deps
-tts
 .directory
 .uuid
 .HA_VERSION
