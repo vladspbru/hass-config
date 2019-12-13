@@ -71,7 +71,7 @@ tts:
   # - platform: google_translate
   - platform: rhvoice
     voice: anna
-    url: http://rhvoice:8081/say   
+    url: http://localhost:8081/say   
 
 panel_iframe:
   chronograf:
