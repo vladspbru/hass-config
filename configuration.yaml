@@ -68,7 +68,10 @@ logger:         !include logger.yaml
 
 
 tts:
-  - platform: google_translate
+  # - platform: google_translate
+  - platform: rhvoice
+    voice: anna
+    url: http://rhvoice:8081/say   
 
 panel_iframe:
   chronograf:
