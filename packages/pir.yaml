@@ -30,6 +30,11 @@ automation:
       - platform: state
         entity_id: binary_sensor.hall_pir
         to: "off"
+    condition: 
+      - condition: state
+        # entity_id: device_tracker.vlad_nexus 
+        entity_id: group.family
+        state: 'not_home'
     action:
       - service: persistent_notification.create
         data:

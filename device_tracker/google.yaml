@@ -1,0 +1,4 @@
+- platform: google_maps
+  username: gadget61spbru@gmail.com
+  max_gps_accuracy: 1000
+  

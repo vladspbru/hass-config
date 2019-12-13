@@ -12,3 +12,4 @@ secrets.yaml
 secrets
 known_devices.yaml
 tmp
+.google_maps_location_sharing.*
