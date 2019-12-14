@@ -6,14 +6,3 @@ group:
       - device_tracker.vlad_nexus
       - device_tracker.eva_honor
 
-  nmap:
-    entities:
-      - device_tracker.sonoff_95b510
-      - device_tracker.sonoff_26575d
-      - device_tracker.sonoff_f4bc40
-      - device_tracker.sonoff_801E75
-      - device_tracker.sonoff_B2DF94
-      - device_tracker.sonoff_68B5C7
-      - device_tracker.sonoff_68AC8D
-      - device_tracker.tasmota_5827_lan
-      - device_tracker.tasmota_6671_lan

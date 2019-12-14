@@ -14,3 +14,5 @@ cards:
       - device_tracker.sonoff_b2df94
       - device_tracker.sonoff_68b5c7
       - device_tracker.sonoff_68ac8d
+      - device_tracker.tasmota_5827_lan
+      - device_tracker.tasmota_6671_lan

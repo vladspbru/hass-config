@@ -14,10 +14,13 @@ timer:
   looper_timer:
     duration: '00:00:01'
 
+
+
+
 automation:
 
-
-- alias: AutoOnOff main switch
+# Включение элобеспечения, если все выключено
+- alias: AutoOnOff MAIN switch
   hide_entity: true
   trigger:
     platform: state
@@ -32,7 +35,7 @@ automation:
     data_template:
       entity_id: switch.sonoff_mainswitch
 
-
+# Тригер включения сигнализации по движению в доме
 - alias: "Alarm: Motion at home"
   hide_entity: false
   initial_state: on
@@ -42,11 +45,14 @@ automation:
       to: "on"
   condition: 
     - condition: state
+      entity_id: input_boolean.enable_alarm 
+      state: 'on'
+    - condition: state
       entity_id: device_tracker.vlad_nexus 
       state: 'not_home'
     - condition: state
-      entity_id: input_boolean.enable_alarm 
-      state: 'on'
+      entity_id: device_tracker.eva_honor 
+      state: 'not_home'
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.alarming
@@ -57,6 +63,7 @@ automation:
     - service: timer.start
       entity_id: timer.period_timer
 
+# автомат выключения сигнализации по таймеру
 - alias: Timed auto end of alarm
   hide_entity: true
   trigger:
