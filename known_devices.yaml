@@ -31,15 +31,6 @@ sonoff_26575d:
   picture:
   track: true
   
-vlad_nexus:
-  hide_if_away: false
-  icon: mdi:human-male
-  mac: 8C:3A:E3:99:43:19
-  name: vlad_nexus
-  picture:
-  track: true
-  vendor: LG Electronics (Mobile Communications)
-
 sonoff_801e75:
   hide_if_away: false
   icon: mdi:chip
@@ -56,17 +47,9 @@ sonoff_68b5c7:
   picture:
   track: true
 
-access_point:
-  hide_if_away: false
-  icon:
-  mac:
-  name: access point
-  picture:
-  track: false
-
 sonoff_b2df94:
   hide_if_away: false
-  icon:
+  icon: mdi:chip
   mac: 60:01:94:B2:DF:94
   name: sonoff B2DF94-8084.lan
   picture:
@@ -74,16 +57,42 @@ sonoff_b2df94:
 
 sonoff_68ac8d:
   hide_if_away: false
-  icon:
+  icon: mdi:chip
   mac: 5C:CF:7F:68:AC:8D
   name: sonoff 68AC8D-3213.lan
   picture:
   track: true
 
-galaxy_j7_2016_lan:
+tasmota_5827_lan:
   hide_if_away: false
-  icon:
-  mac: 88:83:22:C0:17:F4
-  name: Galaxy-J7-2016.lan
+  icon: mdi:chip
+  mac: DC:4F:22:AB:76:C3
+  name: tasmota-5827.lan
+  picture:
+  track: true
+
+tasmota_6671_lan:
+  hide_if_away: false
+  icon: mdi:chip
+  mac: DC:4F:22:A9:9A:0F
+  name: tasmota-6671.lan
+  picture:
+  track: true
+
+
+vlad_nexus:
+  hide_if_away: false
+  icon: mdi:human-male
+  mac: 8C:3A:E3:99:43:19
+  name: vlad_nexus
+  picture:
+  track: true
+
+
+eva_honor:
+  hide_if_away: false
+  icon: mdi:human-male
+  mac: 44:D7:91:10:13:72
+  name: eva_honor
   picture:
   track: false
