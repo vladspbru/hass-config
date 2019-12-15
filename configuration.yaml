@@ -80,6 +80,8 @@ panel_iframe:
     url: 'http://chronograf:8888/sources/1/dashboards/2?lower=now%28%29%20-%207d'
 
 
+mobile_app:
+
 # pi_hole:
 #   host: pihole.local
 #   # host: 
