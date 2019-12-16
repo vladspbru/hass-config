@@ -43,3 +43,16 @@ automation:
           message: "Your harddrive is running out of Space! /home:{{ states.sensor.disk_use_percent_home.state }}%!"
           notification_id: "Critical Alert"
 
+
+
+
+
+shell_command:
+  update_config_from_git: 'cd /config && git pull'
+
+script:
+  git_pull_config:
+    alias: Git pull config & Restart
+    sequence:
+      - service: shell_command.update_config_from_git
+      # - service: homeassistant.restart 
