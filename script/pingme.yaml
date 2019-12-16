@@ -7,4 +7,14 @@ notify_ping_me:
       data:
         title: "Home Assistant"
         message: 'Ping notification'
+
+
+rhvoice_ping_me:
+  alias: Say
+  sequence:
+    - service: tts.rhvoice_say
+      data:
+        message: 'Чего пожелаешь, мой повелитель?'
+        language: 'ru'
  
+

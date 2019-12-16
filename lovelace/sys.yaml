@@ -38,6 +38,7 @@ cards:
         - script.notify_ping_me
         - script.sonoff_qry_states
         - script.git_pull_config
+        - script.rhvoice_ping_me
     - type: entities
       title: Sonoff/Tasmota workplace
       show_header_toggle: false
