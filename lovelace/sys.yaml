@@ -15,6 +15,7 @@ cards:
         entity: sensor.memory_use_percent
     - type: entities
       title: ПЭВМ
+      show_header_toggle: false
       entities:
         - sensor.last_boot
   
@@ -36,6 +37,7 @@ cards:
       entities:
         - script.notify_ping_me
         - script.sonoff_qry_states
+        - script.git_pull_config
     - type: entities
       title: Sonoff/Tasmota workplace
       show_header_toggle: false

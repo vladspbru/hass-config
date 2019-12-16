@@ -1,6 +1,7 @@
 #Test notification chanels
 
 notify_ping_me:
+  alias: Ping me by notification
   sequence:
     - service: notify.pushover
       data:

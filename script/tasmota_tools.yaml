@@ -27,6 +27,7 @@ sonoff_qry_state:
 
             
 sonoff_qry_states:
+  alias: Query states
   sequence:
     - service: script.sonoff_qry_state
       data:
