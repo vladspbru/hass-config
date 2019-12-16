@@ -55,4 +55,4 @@ script:
     alias: Git pull config & Restart
     sequence:
       - service: shell_command.update_config_from_git
-      # - service: homeassistant.restart 
+      - service: homeassistant.restart 
