@@ -1,5 +1,0 @@
-
-git_pull_config:
-  sequence:
-    - service: shell_command.update_config_from_github
-    - service: homeassistant.restart 
