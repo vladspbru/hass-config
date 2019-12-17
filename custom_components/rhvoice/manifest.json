@@ -1,0 +1,8 @@
+{
+    "domain": "rhvoice",
+    "name": "RHVoice TTS",
+    "documentation": "https://github.com/mgarmash/rhvoice-rest",
+    "dependencies": [],
+    "codeowners": [""],
+    "requirements": []
+}
