@@ -12,9 +12,11 @@ notify_ping_me:
 rhvoice_ping_me:
   alias: Say
   sequence:
-    - service: tts.rhvoice_say
+    - service: tts.google_translate_say
+      data:
+        message: 'Helloy. Good day.'
+    - service: tts.rhvoice
       data:
         message: 'Чего пожелаешь, мой повелитель?'
-        language: 'ru'
  
 

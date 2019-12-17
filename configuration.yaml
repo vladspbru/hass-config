@@ -68,7 +68,8 @@ logger:         !include logger.yaml
 
 
 tts:
-  # - platform: google_translate
+  - platform: google_translate
+    language: 'en'
   - platform: rhvoice
     voice: anna
     url: http://localhost:8081/say   
