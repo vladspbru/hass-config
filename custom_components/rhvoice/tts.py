@@ -15,6 +15,9 @@ import homeassistant.helpers.config_validation as cv
 
 _LOGGER = logging.getLogger(__name__)
 
+CONF_VOICE = 'voice'
+CONF_API_URL = 'url'
+
 SUPPORT_VOICES = [
     'aleksandr', 'anna', 'elena', 'irina', # Russian
     'alan', 'bdl', 'clb', 'slt', # English
@@ -25,25 +28,22 @@ SUPPORT_VOICES = [
     'anatol' # Ukrainian
 ]
 
-CONF_VOICE = 'voice'
-CONF_API_URL = 'url'
-
-DEFAULT_VOICE = 'anna'
-DEFAULT_LANG = 'ru-RU'
-
-PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
-    vol.Required(CONF_API_URL): cv.string,
-    vol.Optional(CONF_VOICE, default=DEFAULT_VOICE): vol.In(SUPPORT_VOICES)
-})
-
 SUPPORT_LANGUAGES = [
     'ru-RU'
 ]
 
-
 SUPPORTED_OPTIONS = [
     CONF_VOICE
 ]
+
+DEFAULT_LANG = 'ru-RU'
+DEFAULT_VOICE = 'anna'
+
+PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
+    vol.Required(CONF_API_URL): cv.string,
+    vol.Optional(CONF_LANG, default=DEFAULT_LANG): vol.In(SUPPORT_LANGUAGES),
+    vol.Optional(CONF_VOICE, default=DEFAULT_VOICE): vol.In(SUPPORT_VOICES)
+})
 
 
 @asyncio.coroutine
@@ -63,6 +63,7 @@ class RHVoiceProvider(Provider):
         self._language = DEFAULT_LANG
         self._codec = 'mp3'
         self.name = 'RHVoice'
+        _LOGGER.debug("url: %s", self._url)
 
     @property
     def default_language(self):

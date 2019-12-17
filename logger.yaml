@@ -6,7 +6,7 @@
 
 # Log Severities: notset, debug, info, warn, warning, error, fatal, critical
 
-default: error
+default: info
 logs:
   aiohttp.access: critical
   aiohttp.server: critical
@@ -21,5 +21,7 @@ logs:
   homeassistant.components.mqtt: error
   homeassistant.components.recorder: error
   homeassistant.helpers.script: info
-
+  homeassistant.tts: debug
+  homeassistant.helpers.tts: debug
+  homeassistant.components.tts: debug
  
