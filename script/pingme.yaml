@@ -13,8 +13,9 @@ rhvoice_ping_me:
   alias: Say
   sequence:
     - service: tts.google_translate_say
-      data:
-        message: 'Helloy. Good day.'
+      data_template:
+        entity_id: "all"
+        message: 'Your husband coming home!'
     - service: tts.rhvoice
       data:
         message: 'Чего пожелаешь, мой повелитель?'

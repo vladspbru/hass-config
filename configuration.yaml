@@ -74,6 +74,15 @@ tts:
     voice: anna
     url: http://localhost:8081/say   
 
+media_player:
+  - platform: snapcast
+    host: snapserver
+  # - platform: mpd
+  #   host: 127.0.0.1
+    location: Multi-Room Controller
+#    password:
+    name:  Mopidy
+
 panel_iframe:
   chronograf:
     title: Chronograf
