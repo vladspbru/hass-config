@@ -16,8 +16,11 @@ rhvoice_ping_me:
       data_template:
         entity_id: "all"
         message: 'Your husband coming home!'
-    - service: tts.rhvoice
-      data:
-        message: 'Чего пожелаешь, мой повелитель?'
+    # - service: tts.rhvoice
+    #   data:
+    #     message: 'Чего пожелаешь, мой повелитель?'
+    # - service: rhvoice.say
+    #   data:
+    #     message: 'Чего пожелаешь, мой повелитель?'
  
 
