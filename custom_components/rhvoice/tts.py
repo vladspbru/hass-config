@@ -45,15 +45,12 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_VOICE, default=DEFAULT_VOICE): vol.In(SUPPORT_VOICES)
 })
 
-
-
-
-def setup_platform(hass, config, add_entities, discovery_info=None):
-    """Set up the sensor platform."""
-    add_entities([RHVoiceProvider(hass, config)])
+# def setup_platform(hass, config, add_entities, discovery_info=None):
+#     """Set up the sensor platform."""
+#     add_entities([RHVoiceProvider(hass, config)])
 
 @asyncio.coroutine
-def async_get_engine(hass, config):
+def async_get_engine(hass, config, discovery_info=None):
     """Set up RHVoice speech component."""
     return RHVoiceProvider(hass, config)
 

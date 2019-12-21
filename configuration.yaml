@@ -75,7 +75,7 @@ tts:
     language: 'en'
   - platform: rhvoice
     voice: anna
-    url: http://192.168.2.144:8081/say   
+    url: http://localhost:8081/say   
 
 media_player:
   - platform: snapcast
@@ -85,7 +85,7 @@ panel_iframe:
   chronograf:
     title: Chronograf
     icon: mdi:chart-histogram
-    url: 'http://chronograf:8888/sources/1/dashboards/2?lower=now%28%29%20-%207d'
+    url: 'http://localhost:8888/sources/1/dashboards/2?lower=now%28%29%20-%207d'
 
 
 mobile_app:
