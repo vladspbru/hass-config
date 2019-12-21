@@ -3,16 +3,18 @@ title: Home
 icon: mdi:home
 badges: []
 cards:
-  - title: Основной выключатель
+  - title: Основная панель
     show_header_toggle: false
     type: entities
     entities:
       - switch.sonoff_mainswitch
-      - sensor.mqtt_net_datetime_control
+      - switch.sonoff_mainswitch_timers
       - sensor.temp_out
       - sensor.temp_in
       - sensor.temp_x
-      - switch.sonoff_mainswitch_timers
+      - sensor.temp_watchdog
+      - light.floodlight
+      - light.hall
   - title: Security
     type: entities
     show_header_toggle: false

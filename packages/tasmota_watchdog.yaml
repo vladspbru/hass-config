@@ -1,0 +1,52 @@
+#sonoff-water -------------------------------------
+switch:
+  - platform: mqtt
+    name: "tasmota_watchdog"
+    state_topic: "stat/tasmota_A99A0F/POWER"
+    command_topic: "cmnd/tasmota_A99A0F/POWER"
+    availability_topic: "tele/tasmota_A99A0F/LWT"
+#    json_attributes_topic: "tele/tasmota_A99A0F/STATE"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    #retain: false
+  - platform: mqtt
+    name: "tasmota_watchdog_timers"
+    state_topic: "stat/tasmota_A99A0F/TIMERS"
+    command_topic: "cmnd/tasmota_A99A0F/TIMERS"
+    value_template: "{{ value_json.Timers }}"
+    availability_topic: "tele/tasmota_A99A0F/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    
+sensor:
+  - platform: mqtt
+    name: "temp_watchdog"
+    state_topic: "tele/tasmota_A99A0F/SENSOR"
+    value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer
+
+binary_sensor:
+  - platform: mqtt
+    name: "tasmota_A99A0F LWT"
+    state_topic: "tele/tasmota_A99A0F/LWT"
+    value_template: "{{ value }}"
+    payload_on: "Online"
+    payload_off: "Offline"
+    device_class: connectivity
+    json_attributes_topic: "tele/tasmota_A99A0F/STATE"
+
+
+
+      
+      
+      
+      

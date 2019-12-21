@@ -43,6 +43,13 @@ cards:
       - switch.sonoff_water
       - sensor.temp_water
       - switch.sonoff_water_timers
+  - title: WatchDog
+    show_header_toggle: false
+    type: entities
+    entities:
+      - switch.tasmota_watchdog
+      - sensor.temp_watchdog
+      - switch.tasmota_watchdog_timers
   - title: Розетка-счетчик
     type: entities
     show_header_toggle: false
