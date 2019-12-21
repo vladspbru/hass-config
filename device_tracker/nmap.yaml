@@ -5,5 +5,6 @@
   # consider_home: 900
   exclude:
     - 192.168.2.1
+    - 192.168.2.144
   scan_options: " -sP "
 #  scan_options: " --privileged -sP "
