@@ -66,25 +66,20 @@ automation:     !include_dir_merge_list automation
 #zone:           !include zone.yaml 
 logger:         !include logger.yaml
 
-rhvoice:
-  voice: anna
-  url: http://rhvoice:8081/say   
+# rhvoice:
+#   voice: anna
+#   url: http://rhvoice:8081/say   
 
 tts:
   - platform: google_translate
     language: 'en'
   - platform: rhvoice
     voice: anna
-    url: http://192.168.1.101:8081/say   
+    url: http://192.168.2.144:8081/say   
 
 media_player:
   - platform: snapcast
     host: snapserver
-  # - platform: mpd
-  #   host: 127.0.0.1
-    location: Multi-Room Controller
-#    password:
-    name:  Mopidy
 
 panel_iframe:
   chronograf:

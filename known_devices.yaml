@@ -96,3 +96,11 @@ eva_honor:
   name: eva_honor
   picture:
   track: true
+
+linux_hffm_lan:
+  hide_if_away: false
+  icon:
+  mac: 02:42:0F:55:A2:C4
+  name: linux-hffm.lan
+  picture:
+  track: true
