@@ -68,14 +68,14 @@ logger:         !include logger.yaml
 
 rhvoice:
   voice: anna
-  url: http://localhost:8081/say   
+  url: http://rhvoice:8081/say   
 
 tts:
   - platform: google_translate
     language: 'en'
   - platform: rhvoice
     voice: anna
-    url: http://localhost:8081/say   
+    url: http://192.168.1.101:8081/say   
 
 media_player:
   - platform: snapcast

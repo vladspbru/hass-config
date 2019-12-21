@@ -16,3 +16,4 @@ tmp
 .storage
 .cloud
 .google.token
+tts/*.mp3

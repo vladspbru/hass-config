@@ -12,13 +12,13 @@ notify_ping_me:
 rhvoice_ping_me:
   alias: Say
   sequence:
-    - service: tts.google_translate_say
-      data_template:
-        entity_id: "all"
-        message: 'Your husband coming home!'
-    # - service: tts.rhvoice
-    #   data:
-    #     message: 'Чего пожелаешь, мой повелитель?'
+    # - service: tts.google_translate_say
+    #   data_template:
+    #     entity_id: "all"
+    #     message: 'Your husband coming home!'
+    - service: tts.rhvoice_say
+      data:
+        message: 'Чего пожелаешь, мой повелитель?'
     # - service: rhvoice.say
     #   data:
     #     message: 'Чего пожелаешь, мой повелитель?'
