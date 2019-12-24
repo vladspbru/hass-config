@@ -56,3 +56,27 @@ script:
     sequence:
       - service: shell_command.update_config_from_git
       - service: homeassistant.restart 
+
+
+
+
+
+apcupsd:
+  # host: 192.168.2.144
+
+binary_sensor:
+  - platform: apcupsd
+
+sensor:
+  - platform: apcupsd
+    resources:
+      - bcharge
+      - linev
+      - bcharge
+      - timeleft
+      - mbattchg
+      - mintimel
+      - maxtime
+      - maxlinev
+      - minlinev
+      - outputv
