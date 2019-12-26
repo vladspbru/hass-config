@@ -61,22 +61,22 @@ script:
 
 
 
-apcupsd:
-  # host: 192.168.2.144
+# apcupsd:
+#   # host: 192.168.2.144
 
-binary_sensor:
-  - platform: apcupsd
+# binary_sensor:
+#   - platform: apcupsd
 
-sensor:
-  - platform: apcupsd
-    resources:
-      - bcharge
-      - linev
-      - bcharge
-      - timeleft
-      - mbattchg
-      - mintimel
-      - maxtime
-      - maxlinev
-      - minlinev
-      - outputv
+# sensor:
+#   - platform: apcupsd
+#     resources:
+#       - bcharge
+#       - linev
+#       - bcharge
+#       - timeleft
+#       - mbattchg
+#       - mintimel
+#       - maxtime
+#       - maxlinev
+#       - minlinev
+#       - outputv
