@@ -27,8 +27,10 @@ cards:
     type: entities
     show_header_toggle: false
     entities:
-      - device_tracker.vlad_nexus
-      - device_tracker.eva_honor
+      - person.vladislav
+      - person.eva
+      # - device_tracker.vlad_nexus
+      # - device_tracker.eva_honor
   - title: Automation
     type: entities
     entities:
