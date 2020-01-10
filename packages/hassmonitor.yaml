@@ -3,6 +3,11 @@ sensor:
   - platform: version
     name: HA Installed Version
     scan_interval: 86400
+
+  - platform: time_date
+    display_options:
+        - 'time'
+        - 'date'
     
   - platform: systemmonitor
     resources:
@@ -16,10 +21,6 @@ sensor:
       # - type: disk_use_percent
       #   arg: /root
 
-  # - platform: time_date
-  #   display_options:
-  #       - 'time'
-  #       - 'date'
 
 ##############################################################################
 ###  Automations - Detect when things are not right. Like any Good Watchdog.
