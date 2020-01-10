@@ -1,12 +1,13 @@
 
 person:
   - name: Vladislav 
-    id: vladislav
+    id: vladspbru
     #user_id: 12345678912345678912345678912345
     device_trackers:
-      -  device_tracker.vlad_nexus
+      - device_tracker.vlad_nexus
+      - device_tracker.vlad_hua5
   - name: Eva
-    id: eva
+    id: evaspbru
     device_trackers:
       -  device_tracker.eva_honor
 
@@ -15,5 +16,6 @@ group:
   family:
     entities:
       - device_tracker.vlad_nexus
+      - device_tracker.vlad_hua5
       - device_tracker.eva_honor
 

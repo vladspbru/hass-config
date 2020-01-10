@@ -21,23 +21,13 @@ cards:
   
   - type: vertical-stack
     cards:
-    # - type: entities
-    #   title: ПЭВМ
-    #   show_header_toggle: false
-    #   entities:
-    #     - sensor.last_boot
-    #     - sensor.disk_use_percent_home
-    #     # - sensor.disk_use_percent_root
-    #     - sensor.memory_use_percent
-    #     - sensor.date
-    #     - sensor.time
     - type: entities
       title: Script
       show_header_toggle: false
       entities:
-        - script.notify_ping_me
         - script.sonoff_qry_states
         - script.git_pull_config
+        - script.notify_ping_me
         - script.rhvoice_ping_me
     - type: entities
       title: Sonoff/Tasmota workplace

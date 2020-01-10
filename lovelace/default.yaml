@@ -12,6 +12,8 @@ cards:
       - sensor.temp_out
       - sensor.temp_in
       - sensor.temp_x
+      - sensor.temp1_sauna
+      - sensor.temp2_sauna
       - sensor.temp_watchdog
       - light.floodlight
       - light.hall
@@ -29,8 +31,6 @@ cards:
     entities:
       - person.vladislav
       - person.eva
-      # - device_tracker.vlad_nexus
-      # - device_tracker.eva_honor
   - title: Automation
     type: entities
     entities:
@@ -41,3 +41,13 @@ cards:
       - automation.notification_of_main_switches
       - automation.pir_persistent_notification
       - automation.alarm_low_temperature_at_home
+  - title: Lights
+    type: entities
+    entities:
+      - light.father
+      - light.mather
+      - light.hall
+      - light.toilet
+      - light.floodlight
+      - light.sauna
+

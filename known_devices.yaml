@@ -4,7 +4,7 @@ router1:
   mac: 54:A0:50:CC:70:B6
   name: asus 4g n12 router
   picture:
-  track: true
+  track: false
   vendor: ASUSTek COMPUTER INC.
  
 sonoff_95b510:
@@ -79,15 +79,21 @@ tasmota_6671_lan:
   picture:
   track: true
 
-
 vlad_nexus:
-  hide_if_away: false
+  hide_if_away: true
   icon: mdi:human-male
   mac: 8C:3A:E3:99:43:19
   name: vlad_nexus
   picture:
-  track: true
+  track: false
 
+vlad_hua5:
+  hide_if_away: false
+  icon:
+  mac: EC:3C:BB:8A:94:AB
+  name: vlad_hua5
+  picture:
+  track: true
 
 eva_honor:
   hide_if_away: false
@@ -98,9 +104,18 @@ eva_honor:
   track: true
 
 linux_hffm_lan:
-  hide_if_away: false
+  hide_if_away: true
   icon:
   mac: 02:42:0F:55:A2:C4
   name: linux-hffm.lan
   picture:
-  track: true
+  track: false
+
+beaglebone_lan:
+  hide_if_away: true
+  icon:
+  mac: 6C:EC:EB:A5:22:81
+  name: beaglebone.lan
+  picture:
+  track: false
+
