@@ -104,3 +104,35 @@ linux_hffm_lan:
   name: linux-hffm.lan
   picture:
   track: true
+
+c0_38_96_6d_30_6f:
+  hide_if_away: false
+  icon:
+  mac: C0:38:96:6D:30:6F
+  name: c0 38 96 6d 30 6f
+  picture:
+  track: true
+
+6c_ec_eb_a5_22_81:
+  hide_if_away: false
+  icon:
+  mac: 6C:EC:EB:A5:22:81
+  name: 6c ec eb a5 22 81
+  picture:
+  track: true
+
+ec_3c_bb_8a_94_ab:
+  hide_if_away: false
+  icon:
+  mac: EC:3C:BB:8A:94:AB
+  name: ec 3c bb 8a 94 ab
+  picture:
+  track: true
+
+94_4a_0c_ca_58_10:
+  hide_if_away: false
+  icon:
+  mac: 94:4A:0C:CA:58:10
+  name: 94 4a 0c ca 58 10
+  picture:
+  track: true
