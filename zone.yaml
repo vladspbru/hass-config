@@ -1,18 +1,23 @@
-- name: School
+- name: school
   latitude: 60.023350
   longitude: 30.254764
   radius: 100
   icon: mdi:school
 
-- name: GTSS
+- name: gtss
   latitude: 59.912511
   longitude: 30.341699
   radius: 150
   icon: mdi:office
 
-# This will override the default home zone
-- name: Home2
-  latitude: 60.013701
-  longitude: 30.283220
+- name: home2
+  latitude:  !secret home2_latitude
+  longitude: !secret home2_longitude
   radius: 300
   icon: mdi:home-modern
+
+- name: region61
+  latitude:  !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  radius: 500
+  icon: mdi:home
