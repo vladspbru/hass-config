@@ -1,19 +1,24 @@
 
 person:
   - name: Vladislav 
-    id: vladislav
+    id: vladspbru
     #user_id: 12345678912345678912345678912345
     device_trackers:
-      -  device_tracker.vlad_nexus
+      # - device_tracker.vlad_nexus
+      - device_tracker.vlad_hua5
+      - device_tracker.google_maps_105866556313657272597
   - name: Eva
-    id: eva
+    id: evaspbru
     device_trackers:
-      -  device_tracker.eva_honor
+      - device_tracker.eva_honor
+      - device_tracker.google_maps_101280843312171463984
 
 
+#todo: remove or modity by person
 group:
   family:
     entities:
       - device_tracker.vlad_nexus
+      - device_tracker.vlad_hua5
       - device_tracker.eva_honor
 
