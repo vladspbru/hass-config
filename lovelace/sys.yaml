@@ -5,6 +5,11 @@ badges: []
 cards:
   - type: vertical-stack
     cards:
+    - type: entities
+      title: ПЭВМ
+      show_header_toggle: false
+      entities:
+        - sensor.last_boot
     - type: horizontal-stack
       cards:
       - type: gauge
@@ -13,11 +18,12 @@ cards:
         entity: sensor.disk_use_percent_home
       - type: gauge
         entity: sensor.memory_use_percent
-    - type: entities
-      title: ПЭВМ
-      show_header_toggle: false
+    - type: glance
+      title: UPS
       entities:
-        - sensor.last_boot
+        - binary_sensor.ups_online_status
+        - sensor.ups_battery
+        - sensor.ups_time_left
   
   - type: vertical-stack
     cards:
