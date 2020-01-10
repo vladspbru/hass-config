@@ -1,7 +1,7 @@
 - name: School
   latitude: 60.023350
   longitude: 30.254764
-  radius: 70
+  radius: 100
   icon: mdi:school
 
 - name: GTSS

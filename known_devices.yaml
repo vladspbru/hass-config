@@ -119,3 +119,19 @@ beaglebone_lan:
   picture:
   track: false
 
+
+google_maps_101280843312171463984:
+  hide_if_away: false
+  icon:
+  mac:
+  name: google maps 101280843312171463984
+  picture: https://lh3.googleusercontent.com/a-/AAuE7mD_lcRCSi24XmyMhcPIn3lHQmNEZBnEtkFscT6MzA
+  track: true
+
+google_maps_105866556313657272597:
+  hide_if_away: false
+  icon:
+  mac:
+  name: google maps 105866556313657272597
+  picture: https://lh3.googleusercontent.com/a-/AAuE7mC4tKtdTLcAqoQLIOE_984_IBoG41u8RBrvU25JLQ
+  track: true

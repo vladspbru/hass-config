@@ -4,12 +4,14 @@ person:
     id: vladspbru
     #user_id: 12345678912345678912345678912345
     device_trackers:
-      - device_tracker.vlad_nexus
+      # - device_tracker.vlad_nexus
       - device_tracker.vlad_hua5
+      - device_tracker.google_maps_105866556313657272597
   - name: Eva
     id: evaspbru
     device_trackers:
-      -  device_tracker.eva_honor
+      - device_tracker.eva_honor
+      - device_tracker.google_maps_101280843312171463984
 
 
 group:
