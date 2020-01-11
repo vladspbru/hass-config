@@ -37,12 +37,12 @@ cards:
     entities:
       - automation.automatic_winter_heating_the_water_pipe
       - automation.notification_sauna_heating
-      - automation.disk_use_alarm
+      - automation.notification_hdd_use_alarm
       - automation.notification_early_frosts
       - automation.notification_of_main_switches
       - automation.pir_persistent_notification
       - automation.alarm_low_temperature_at_home
-      - automation.ups_status_notification
+      - automation.notification_ups_online
   - title: Lights
     type: entities
     entities:
