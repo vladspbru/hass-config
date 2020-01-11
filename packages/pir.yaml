@@ -24,7 +24,7 @@ sensor:
 ###  Automations 
 ##############################################################################
 automation:
-  - alias: "PIR persistent notification"
+  - alias: "PIR - persistent notification"
     initial_state: off
     trigger:
       - platform: state

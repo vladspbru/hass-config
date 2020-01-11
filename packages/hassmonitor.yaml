@@ -27,16 +27,17 @@ sensor:
 ##############################################################################
 automation:
 
-  - alias: "Disk Use Alarm"
+  - alias: "Notification: HDD use Alarm"
+    initial_state: on
     trigger:
       - platform: numeric_state
         entity_id: sensor.disk_use_percent_home
         above: 80
     action:
-#      - service: script.notify_engine
-#        data_template:
-#          title: 'Hard Drive Monitor:'
-#          message: "Your harddrive is running out of Space! /dev/root:{{ states.sensor.disk_use_percent_home.state }}%!"
+     - service: script.notify_engine
+       data_template:
+         title: 'HDD:'
+         message: "Your harddrive is running out of Space! /home:{{ states.sensor.disk_use_percent_home.state }}%!"
 
       - service: persistent_notification.create
         data:
