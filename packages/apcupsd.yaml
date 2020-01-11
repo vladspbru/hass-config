@@ -9,15 +9,15 @@ sensor:
   - platform: apcupsd
     resources:
       - bcharge
-      - linev
+      # - linev
       - bcharge
       - timeleft
       - mbattchg
       - mintimel
       - maxtime
-      - maxlinev
-      - minlinev
-      - outputv
+      # - maxlinev
+      # - minlinev
+      # - outputv
 
 
 
