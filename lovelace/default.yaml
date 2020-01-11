@@ -25,6 +25,7 @@ cards:
       - automation.alarm_motion_at_home
       - input_boolean.alarming
       - sensor.hall_pir_last_changed
+      - binary_sensor.ups_online_status
   - title: СемьЯ
     type: entities
     show_header_toggle: false
