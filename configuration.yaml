@@ -73,9 +73,9 @@ tts:
     voice: anna
     url: http://box61:8081/say   
 
-media_player:
-  - platform: snapcast
-    host: snapserver
+#media_player:
+#  - platform: snapcast
+#    host: snapserver
 
 panel_iframe:
   chronograf:
