@@ -90,7 +90,8 @@ automation:
       {{ 'timer.start' if trigger.to_state.state == 'on' else 'timer.finish' }}
     data_template:
       entity_id: timer.looper_timer
-      duration: "{{ 1 if trigger.to_state.state == 'on' else 0 }}"
+      # duration: >-
+      #   '{{ 1 if trigger.to_state.state == 'on' else 0 }}'
 
 
 - alias: 'Looper service'
