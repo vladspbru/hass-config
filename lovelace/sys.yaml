@@ -21,11 +21,11 @@ cards:
     - type: glance
       title: UPS
       entities:
-        - binary_sensor.ups_online_status
-        - sensor.ups_battery
-        - sensor.ups_time_left
         - sensor.ups_status_date
         - sensor.ups_status
+        - binary_sensor.ups_online_status
+        - sensor.ups_time_left
+        - sensor.ups_battery
   
   - type: vertical-stack
     cards:
