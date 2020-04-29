@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+        "files.exclude": {
+            "**/*.log": true,
+			"**/.*project": true,
+			"**/.metadata": true,
+			"**/.settings": true,
+			"**/*.tests": true,
+			"**/*.user": true,
+			"**/*build": true,
+			"**/RemoteSystemsTempFiles": true
+			},
+			"files.associations": {
+				"*.yaml": "home-assistant"
+			}
+	}
+}
