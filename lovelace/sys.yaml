@@ -24,6 +24,8 @@ cards:
         - binary_sensor.ups_online_status
         - sensor.ups_battery
         - sensor.ups_time_left
+        - sensor.ups_date
+        - sensor.ups_status
   
   - type: vertical-stack
     cards:

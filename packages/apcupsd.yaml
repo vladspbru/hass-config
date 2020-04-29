@@ -9,6 +9,8 @@ sensor:
   - platform: apcupsd
     resources:
       - bcharge
+      - status
+      - date
       # - linev
       - bcharge
       - timeleft
