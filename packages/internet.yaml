@@ -1,0 +1,11 @@
+
+panel_iframe:
+  weather:
+    title: WwwLink
+    icon: mdi:switch
+    url: 'http://192.168.8.1'
+
+
+
+        
+

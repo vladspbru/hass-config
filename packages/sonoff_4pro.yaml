@@ -81,10 +81,10 @@ light:
     name: Toilet
     entity_id: switch.sonoff_801e75_ch1
   - platform: switch
-    name: Father
+    name: Mather
     entity_id: switch.sonoff_801e75_ch2
   - platform: switch
-    name: Mather
+    name: Father
     entity_id: switch.sonoff_801e75_ch3
   - platform: switch
     name: Hall
