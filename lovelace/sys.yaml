@@ -30,9 +30,11 @@ cards:
       title: Ресурсы
       show_header_toggle: false
       entities:
-        - name: Router
+        - type: entity
+          name: Router
           url: http://192.168.2.2
-        - name: LTE modem
+        - type: weblink
+          name: LTE modem
           url: http://192.168.8.1/html/home.html
     
 
