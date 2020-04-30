@@ -51,7 +51,6 @@ binary_sensor:
 automation:
     
   - alias: Automatic winter heating the water pipe
-    hide_entity: False
     initial_state: 'off'
     trigger:
       - platform: state

@@ -61,7 +61,6 @@ light:
 #automation:
 #    
 #  - alias: Automatic winter heating the sauna pipe
-#    hide_entity: False
 #    initial_state: 'off'
 #    trigger:
 #      - platform: state

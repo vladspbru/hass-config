@@ -1,5 +1,4 @@
 - alias: "Person is now home"
-  hide_entity: False
   trigger:
     platform: state
     entity_id: 

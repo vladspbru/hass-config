@@ -72,9 +72,7 @@ cards:
     type: entities
     entities:
       - sensor.hall_pir_last_changed
-      - type: entity
-        entity: binary_sensor.hall_pir
-        secondary_info: last-changed
+      - binary_sensor.hall_pir
   - title: Умная розетка
     type: entities
     show_header_toggle: false

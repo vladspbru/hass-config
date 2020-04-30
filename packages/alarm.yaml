@@ -21,7 +21,6 @@ automation:
 
 # Включение элобеспечения, если все выключено
 - alias: AutoOnOff MAIN switch
-  hide_entity: true
   trigger:
     platform: state
     entity_id: input_boolean.alarming
@@ -37,7 +36,6 @@ automation:
 
 # Тригер включения сигнализации по движению в доме
 - alias: "Alarm: Motion at home"
-  hide_entity: false
   initial_state: on
   trigger:
     - platform: state
@@ -65,7 +63,6 @@ automation:
 
 # автомат выключения сигнализации по таймеру
 - alias: Timed auto end of alarm
-  hide_entity: true
   trigger:
     platform: event
     event_type: timer.finished
@@ -81,7 +78,6 @@ automation:
 
 
 - alias: Control alarm loop
-  hide_entity: true
   trigger:
     platform: state
     entity_id: input_boolean.alarming
@@ -95,7 +91,6 @@ automation:
 
 
 - alias: 'Looper service'
-  hide_entity: true
   trigger:
   - platform: event
     event_type: timer.started
@@ -107,7 +102,6 @@ automation:
 
 
 - alias: 'Looper timer finished'
-  hide_entity: true
   trigger:
   - platform: event
     event_type: timer.finished

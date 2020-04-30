@@ -26,6 +26,16 @@ cards:
         - binary_sensor.ups_online_status
         - sensor.ups_time_left
         - sensor.ups_battery
+    - type: entities
+      title: Ресурсы
+      show_header_toggle: false
+      entities:
+        - name: Router
+          url: http://192.168.2.2
+        - name: LTE modem
+          url: http://192.168.8.1/html/home.html
+    
+
   
   - type: vertical-stack
     cards:

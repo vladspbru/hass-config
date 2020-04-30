@@ -1,5 +1,4 @@
 - alias: "Notification: Home Assistant on start event"
-  hide_entity: True
   trigger:
     - platform: homeassistant
       event: start
@@ -14,7 +13,6 @@
 
 
 #- alias: "Database Purge"
-  ##hide_entity: True
   #trigger:
     #platform: time
     #at: '12:00:00'
