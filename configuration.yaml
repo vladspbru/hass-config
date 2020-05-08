@@ -85,11 +85,11 @@ panel_iframe:
   portainer:
     title: Portainer
     icon: mdi:portainer
-    url: http://192.168.2.144:9000
+    url: http://box61:9000
   pihole:
     title: Pihole
     icon: mdi:pihole
-    url: http://192.168.2.144/admin/network.php
+    url: http://box61/admin/network.php
 
 
 mobile_app:
