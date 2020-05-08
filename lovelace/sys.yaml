@@ -42,8 +42,9 @@ cards:
         - type: weblink
           name: Portainer
           url: http://192.168.2.144:9000
-    
-
+        - type: weblink
+          name: Pihole
+          url: http://192.168.2.144/admin/network.php
   
   - type: vertical-stack
     cards:
@@ -55,18 +56,3 @@ cards:
         - script.git_pull_config
         - script.notify_ping_me
         - script.rhvoice_ping_me
-    - type: entities
-      title: Sonoff/Tasmota workplace
-      show_header_toggle: false
-      entities:
-        - script.sonoff_qry_states
-        - binary_sensor.sonoff_95b510_lwt
-        - binary_sensor.sonoff_26575d_lwt
-        - binary_sensor.sonoff_f4bc40_lwt
-        - binary_sensor.sonoff_801e75_lwt
-        - binary_sensor.sonoff_b2df94_lwt
-        - binary_sensor.sonoff_68b5c7_lwt
-        - binary_sensor.sonoff_68ac8d_lwt
-        - binary_sensor.tasmota_ab76c3_lwt
-        - binary_sensor.tasmota_a99a0f_lwt
-
