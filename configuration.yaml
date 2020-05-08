@@ -86,22 +86,11 @@ panel_iframe:
     title: Portainer
     icon: mdi:docker
     url: http://box61:9000
-  pihole:
-    title: Pihole
-    icon: mdi:food-apple
-    url: http://box61.lan
 
-mobile_app:
+#mobile_app:
 
-
-# pi_hole:
-#   host: pihole.local
-#   # host: 
-#   #   - 192.168.2.75
-#   #   - 192.168.1.75
-#   location: admin
-#   ssl: true
-#   verify_ssl: false
+pi_hole:
+  host: box61.lan
 
 
 # Enables support for tracking state changes over time
