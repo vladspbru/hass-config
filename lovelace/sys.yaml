@@ -31,6 +31,12 @@ cards:
       show_header_toggle: false
       entities:
         - type: weblink
+          name: Portainer
+          url: http://192.168.2.144:9000
+        - type: weblink
+          name: Pihole
+          url: http://192.168.2.144/admin/network.php
+        - type: weblink
           name: Router
           url: http://192.168.2.2
         - type: weblink
@@ -39,12 +45,6 @@ cards:
         - type: weblink
           name: LTE Antenna
           url: http://192.168.8.1/html/antennapointing.html
-        - type: weblink
-          name: Portainer
-          url: http://192.168.2.144:9000
-        - type: weblink
-          name: Pihole
-          url: http://192.168.2.144/admin/network.php
 
   - type: vertical-stack
     cards:

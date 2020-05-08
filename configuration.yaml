@@ -84,11 +84,11 @@ panel_iframe:
     url: 'http://box61:8888/sources/1/dashboards/1?lower=now%28%29%20-%207d'
   portainer:
     title: Portainer
-    icon: mdi:portainer
+    icon: mdi:docker
     url: http://box61:9000
   pihole:
     title: Pihole
-    icon: mdi:pihole
+    icon: mdi:food-apple
     url: http://box61.lan
 
 mobile_app:
