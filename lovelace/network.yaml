@@ -3,6 +3,24 @@ title: Net
 icon: 'mdi:switch'
 badges: []
 cards:
+  # Pi-Hole
+  - type: vertical-stack
+    cards:
+      - type: entities
+        show_header_toggle: false
+        title: Pi-Hole      
+        entities:
+          - entity: switch.pi_hole
+            name: Primary DNS
+            icon: mdi:pi-hole
+          - entity: sensor.pi_hole_dns_unique_clients
+            name: Clients
+            icon: mdi:account
+          - entity: sensor.pi_hole_dns_queries_today
+            name: Requests
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+            name: Blocked
+
   - title: NMap
     type: entities
     show_header_toggle: false
@@ -16,6 +34,7 @@ cards:
       - device_tracker.sonoff_68ac8d
       - device_tracker.tasmota_5827_lan
       - device_tracker.tasmota_6671_lan
+
   - type: entities
     title: Sonoff/Tasmota workplace
     show_header_toggle: false
@@ -31,43 +50,3 @@ cards:
       - binary_sensor.tasmota_ab76c3_lwt
       - binary_sensor.tasmota_a99a0f_lwt
 
-  # Pi-Hole
-  - type: vertical-stack
-    cards:
-      - type: entities
-        entities:
-          - entity: switch.pi_hole
-            name: Primary DNS
-            icon: mdi:pi-hole
-          - entity: sensor.pi_hole_dns_unique_clients
-            name: Clients
-            icon: mdi:account
-          - entity: sensor.pi_hole_dns_queries_today
-            name: Requests
-          - entity: sensor.pi_hole_ads_percentage_blocked_today
-            name: Blocked
-      - type: divider
-      - type: entities 
-        show_header_toggle: false
-        title: Pi-Hole      
-        entities:
-          - entity: switch.pi_hole
-            icon: mdi:server-network
-            name: Pi-Hole Server - Ubuntu 18.04.2 LTS 
-          - type: bar-card
-            title: Ads Blocked Today
-            title_position: inside
-            entity: sensor.pi_hole_ads_blocked_today
-            decimal: 0
-            max: 10000
-          - type: bar-card
-            title: DNS Queries
-            title_position: inside
-            entity: sensor.pi_hole_dns_queries_today
-            decimal: 0
-            max: 100000
-          - type: bar-card
-            title: Pi-Hole DNS Unique Clients
-            title_position: inside
-            entity: sensor.pi_hole_dns_unique_clients
-            decimal: 0
