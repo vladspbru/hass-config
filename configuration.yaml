@@ -82,6 +82,14 @@ panel_iframe:
     title: Chronograf
     icon: mdi:chart-histogram
     url: 'http://box61:8888/sources/1/dashboards/1?lower=now%28%29%20-%207d'
+  portainer:
+    title: Portainer
+    icon: mdi:portainer
+    url: http://192.168.2.144:9000
+  pihole
+    title: Pihole
+    icon: mdi:pihole
+    url: http://192.168.2.144/admin/network.php
 
 
 mobile_app:
