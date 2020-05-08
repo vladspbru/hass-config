@@ -21,33 +21,5 @@ views:
     icon: 'mdi:lan'
     badges: []
     cards:
-      - type: entities
-        title: Ресурсы
-        show_header_toggle: false
-        entities:
-          - type: weblink
-            name: Router
-            url: http://192.168.2.2
-          - type: weblink
-            name: LTE modem
-            url: http://192.168.8.1/html/home.html
-          - type: weblink
-            name: LTE Antenna
-            url: http://192.168.8.1/html/antennapointing.html
-          - type: weblink
-            name: Portainer
-            url: http://192.168.2.144:9000
-          - type: weblink
-            name: Pihole
-            url: http://192.168.2.144/admin/network.php
+      - !include lovelace/_links.yaml
   
-  - panel_iframe:
-    router:
-      title: 'Router'
-      url: 'http://192.168.1.1'
-    fridge:
-      title: 'Fridge'
-      url: 'http://192.168.1.5'
-    otherapp:
-      title: 'Other App'
-      url: '/otherapp'
