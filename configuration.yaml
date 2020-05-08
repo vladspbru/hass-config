@@ -87,6 +87,11 @@ panel_iframe:
     icon: mdi:docker
     url: http://box61.lan:9000/#/containers
 
+  # pihole:
+  #   title: Pi-hole
+  #   icon: mdi:pi-hole
+  #   url: http://192.168.2.144
+
 #mobile_app:
 
 pi_hole:
