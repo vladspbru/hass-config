@@ -86,7 +86,7 @@ panel_iframe:
     title: Portainer
     icon: mdi:portainer
     url: http://192.168.2.144:9000
-  pihole
+  pihole:
     title: Pihole
     icon: mdi:pihole
     url: http://192.168.2.144/admin/network.php
