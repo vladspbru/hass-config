@@ -17,3 +17,4 @@ tmp
 .cloud
 .google.token
 tts/*.mp3
+known_devices.yaml
