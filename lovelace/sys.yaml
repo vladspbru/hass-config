@@ -34,11 +34,11 @@ cards:
           name: Portainer
           url: http://192.168.2.144:9000
         - type: weblink
-          name: Pihole
-          url: http://192.168.2.144/admin/network.php
-        - type: weblink
           name: Router
           url: http://192.168.2.2
+        - type: weblink
+          name: Pihole
+          url: http://192.168.2.144/admin/network.php
         - type: weblink
           name: LTE modem
           url: http://192.168.8.1/html/home.html
