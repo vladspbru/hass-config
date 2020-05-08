@@ -10,26 +10,14 @@ cards:
         show_header_toggle: false
         title: Pi-Hole      
         entities:
-          - entity: switch.pi_hole
-            name: Primary DNS
-            icon: mdi:pi-hole
           - entity: sensor.pi_hole_dns_unique_clients
             name: Clients
-            icon: mdi:account
-          - cards:
-            type: horizontal-stack
-            - entity: sensor.pi_hole_dns_queries_today
-              name: Requests
-              graph: line
-              type: sensor
-            - entity: sensor.pi_hole_ads_percentage_blocked_today
-              name: Blocked
-              graph: line
-              type: sensor
-            - entity: sensor.pi_hole_domains_blocked
-              name: Domains on Blocklist
-              graph: line
-              type: sensor
+          - entity: sensor.pi_hole_dns_queries_today
+            name: Requests
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+            name: Blocked
+          - entity: sensor.pi_hole_domains_blocked
+            name: Domains on Blocklist
 
   - title: NMap
     type: entities
