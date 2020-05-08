@@ -10,14 +10,15 @@ cards:
       show_header_toggle: false
       entities:
         - sensor.last_boot
-    - type: horizontal-stack
-      cards:
-      - type: gauge
-        entity: sensor.processor_use
-      - type: gauge
-        entity: sensor.disk_use_percent_home
-      - type: gauge
-        entity: sensor.memory_use_percent
+        - type: divider
+        - type: horizontal-stack
+          cards:
+          - type: gauge
+            entity: sensor.processor_use
+          - type: gauge
+            entity: sensor.disk_use_percent_home
+          - type: gauge
+            entity: sensor.memory_use_percent
     - type: glance
       title: UPS
       entities:
