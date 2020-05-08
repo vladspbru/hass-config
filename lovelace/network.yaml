@@ -26,6 +26,10 @@ cards:
               name: Blocked
               graph: line
               type: sensor
+            - entity: sensor.pi_hole_domains_blocked
+              name: Domains on Blocklist
+              graph: line
+              type: sensor
 
   - title: NMap
     type: entities
