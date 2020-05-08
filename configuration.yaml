@@ -89,8 +89,7 @@ panel_iframe:
   pihole:
     title: Pihole
     icon: mdi:pihole
-    url: http://box61/admin/network.php
-
+    url: http://box61:80
 
 mobile_app:
 
