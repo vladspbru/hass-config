@@ -31,20 +31,20 @@ cards:
       show_header_toggle: false
       entities:
         - type: weblink
-            name: Router
-            url: http://192.168.2.2
+          name: Router
+          url: http://192.168.2.2
         - type: weblink
-            name: LTE modem
-            url: http://192.168.8.1/html/home.html
+          name: LTE modem
+          url: http://192.168.8.1/html/home.html
         - type: weblink
-            name: LTE Antenna
-            url: http://192.168.8.1/html/antennapointing.html
+          name: LTE Antenna
+          url: http://192.168.8.1/html/antennapointing.html
         - type: weblink
-            name: Portainer
-            url: http://192.168.2.144:9000
+          name: Portainer
+          url: http://192.168.2.144:9000
         - type: weblink
-            name: Pihole
-            url: http://192.168.2.144/admin/network.php
+          name: Pihole
+          url: http://192.168.2.144/admin/network.php
 
   - type: vertical-stack
     cards:
