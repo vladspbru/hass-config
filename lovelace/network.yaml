@@ -31,3 +31,27 @@ cards:
       - binary_sensor.tasmota_ab76c3_lwt
       - binary_sensor.tasmota_a99a0f_lwt
 
+  # Pi-Hole
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: custom:button-card
+        color_type: label-card
+        color: var(--paper-item-icon-color)
+        name: Pi-hole
+        styles:
+          card:
+            - border-radius: 0px
+            - height: 10px
+      - type: entities
+        entities:
+          - entity: switch.pihole_primary
+            name: Primary DNS
+            icon: mdi:pi-hole
+          - entity: sensor.pi_hole_dns_unique_clients
+            name: Clients
+            icon: mdi:account
+          - entity: sensor.pi_hole_dns_queries_today
+            name: Requests
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+            name: Blocked
+

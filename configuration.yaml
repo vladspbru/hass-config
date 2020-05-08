@@ -90,7 +90,9 @@ panel_iframe:
 #mobile_app:
 
 pi_hole:
-  host: box61.lan
+  - host: box61.lan
+    ssl: false
+    verify_ssl: false
 
 
 # Enables support for tracking state changes over time
