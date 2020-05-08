@@ -26,7 +26,7 @@ cards:
         - binary_sensor.ups_online_status
         - sensor.ups_time_left
         - sensor.ups_battery
-    - !include lovelace/_links.yaml
+    - !include _links.yaml
 
   - type: vertical-stack
     cards:

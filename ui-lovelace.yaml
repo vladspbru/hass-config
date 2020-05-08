@@ -5,6 +5,12 @@ views:
   - !include lovelace/devices.yaml
   - !include lovelace/weather.yaml
   - !include lovelace/network.yaml
+  - path: links
+    title: Ресурсы
+    icon: 'mdi:lan'
+    badges: []
+    cards:
+      - !include _links.yaml
   - path: test
     title: Test
     icon: 'mdi:bug'
@@ -16,10 +22,4 @@ views:
             entities:
               - timer.looper_timer
               - timer.period_timer
-  - path: links
-    title: Ресурсы
-    icon: 'mdi:lan'
-    badges: []
-    cards:
-      - !include lovelace/_links.yaml
   
