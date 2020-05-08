@@ -36,36 +36,5 @@ sonoff_qry_states:
       data:
         id: "tasmotas"
 
-    # - service: script.sonoff_qry_state
-    #   data:
-    #     id: "sonoff_95B510"
-    # - service: script.sonoff_qry_state
-    #   data:
-    #     id: "sonoff_26575D"
-    # - service: script.sonoff_qry_state
-    #   data:
-    #     id: "sonoff_F4BC40"
-    # - service: script.sonoff_qry_state
-    #   data:
-    #     id: "sonoff_801E75"
-    # - service: script.sonoff_qry_state
-    #   data:
-    #     id: "sonoff_68B5C7"
-    # - service: script.sonoff_qry_state
-    #   data:
-    #     id: "sonoff_B2DF94"
-    # - service: script.sonoff_qry_state
-    #   data:
-    #     id: "sonoff_68AC8D"
-    # - service: script.sonoff_qry_state
-    #   data:
-    #     id: "tasmota_ab76c3"
-    # - service: script.sonoff_qry_state
-    #   data:
-    #     id: "tasmota_a99a0f"
-            
-            
-            
-            
 #---------------------------------------------
     

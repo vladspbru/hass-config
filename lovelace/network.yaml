@@ -32,9 +32,9 @@ cards:
       - binary_sensor.tasmota_a99a0f_lwt
 
   # Pi-Hole
-  - type: custom:vertical-stack-in-card
+  - type: vertical-stack
     cards:
-      - type: custom:button-card
+      - type: button-card
         color_type: label-card
         color: var(--paper-item-icon-color)
         name: Pi-hole

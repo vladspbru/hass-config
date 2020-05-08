@@ -47,9 +47,8 @@ automation:
 
 
 
-
 shell_command:
-  update_config_from_git: 'cd /config && git pull'
+  update_config_from_git: 'git -C /config pull'
 
 script:
   git_pull_config:
