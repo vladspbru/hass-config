@@ -2,10 +2,9 @@ router1:
   hide_if_away: true
   icon: mdi:router-wireless
   mac: 54:A0:50:CC:70:B6
-  name: asus 4g n12 router
+  name: 4g n12
   picture:
   track: false
-  vendor: ASUSTek COMPUTER INC.
  
 sonoff_95b510:
   hide_if_away: false
@@ -79,14 +78,6 @@ tasmota_6671_lan:
   picture:
   track: true
 
-vlad_nexus:
-  hide_if_away: true
-  icon: mdi:human-male
-  mac: 8C:3A:E3:99:43:19
-  name: vlad_nexus
-  picture:
-  track: false
-
 vlad_hua5:
   hide_if_away: false
   icon:
@@ -102,23 +93,6 @@ eva_honor:
   name: eva_honor
   picture:
   track: true
-
-linux_hffm_lan:
-  hide_if_away: true
-  icon:
-  mac: 02:42:0F:55:A2:C4
-  name: linux-hffm.lan
-  picture:
-  track: false
-
-beaglebone_lan:
-  hide_if_away: true
-  icon:
-  mac: 6C:EC:EB:A5:22:81
-  name: beaglebone.lan
-  picture:
-  track: false
-
 
 google_maps_101280843312171463984:
   hide_if_away: false
@@ -136,24 +110,47 @@ google_maps_105866556313657272597:
   picture: https://lh3.googleusercontent.com/a-/AAuE7mC4tKtdTLcAqoQLIOE_984_IBoG41u8RBrvU25JLQ
   track: true
 
-
-94_4a_0c_ca_58_10:
-  icon:
+router_telekom:
+  icon: mdi:router-wireless
   mac: 94:4A:0C:CA:58:10
-  name: 94_4a_0c_ca_58_10
+  name: Router Telekom
+  picture:
+  track: false
+ 
+pc_think:
+  icon: mdi:desktop-mac
+  mac: F8:75:A4:53:10:F2
+  name: ThinkCentre
   picture:
   track: true
 
-f8_75_a4_53_10_f2:
+pc_hpbook:
+  icon: mdi:laptop
+  mac: C0:38:96:6D:30:6F
+  name: HpBook
+  picture:
+  track: true
+
+pc_linux_hffm_lan:
+  hide_if_away: true
   icon:
-  mac: F8:75:A4:53:10:F2
-  name: f8_75_a4_53_10_f2
+  mac: 02:42:0F:55:A2:C4
+  name: linux-hffm.lan
+  picture:
+  track: false
+
+pc_beaglebone_lan:
+  hide_if_away: true
+  icon:
+  mac: 6C:EC:EB:A5:22:81
+  name: beaglebone.lan
   picture:
   track: true
 
 88_83_22_c0_17_f4:
-  icon:
+  icon: 
   mac: 88:83:22:C0:17:F4
   name: 88_83_22_c0_17_f4
   picture:
   track: true
+
