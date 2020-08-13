@@ -22,7 +22,11 @@ notify_engine:
         data:
           device: pixel
           sound:  falling
-
+    - service: notify.telegram2me
+      data_template:
+        title: "{{ title }}"
+        message: "{{ message }}"
+    
 
 tweet_engine:
    sequence:

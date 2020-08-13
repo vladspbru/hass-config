@@ -125,12 +125,26 @@ pc_think:
   track: true
 
 pc_hpbook:
+  icon:
+  mac: 38:63:BB:CC:F8:FE
+  name: hpbook
+  picture:
+  track: true
+
+pc_hpbook_wifi:
   icon: mdi:laptop
   mac: C0:38:96:6D:30:6F
   name: HpBook
   picture:
   track: true
 
+pc_x120e:
+  icon:
+  mac: 68:A3:C4:95:4C:79
+  name: x120e
+  picture:
+  track: true
+  
 pc_linux_hffm_lan:
   hide_if_away: true
   icon:
@@ -147,10 +161,40 @@ pc_beaglebone_lan:
   picture:
   track: true
 
-88_83_22_c0_17_f4:
+galaxy_j7_lan:
   icon: 
   mac: 88:83:22:C0:17:F4
-  name: 88_83_22_c0_17_f4
+  name: Galaxy-J7.lan
   picture:
   track: true
 
+galaxy_a20_lan:
+  icon:
+  mac: 2A:ED:49:B4:87:80
+  name: Galaxy-A20.lan
+  picture:
+  track: true
+
+
+cam_ipcam1:
+  icon:
+  mac: 00:51:85:04:35:DF
+  name: cam_ipcam1
+  picture:
+  track: true
+
+valery_p30:
+  icon:
+  mac: 74:0A:E1:3A:A9:56
+  name: valery_p30
+  picture:
+  track: true
+
+e8_9a_8f_19_29_b6:
+  icon:
+  mac: E8:9A:8F:19:29:B6
+  name: e8_9a_8f_19_29_b6
+  picture:
+  track: true
+
+  
