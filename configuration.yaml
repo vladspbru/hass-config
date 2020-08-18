@@ -86,12 +86,11 @@ panel_iframe:
     title: Portainer
     icon: mdi:docker
     url: http://box61.lan:9000/#/containers
-
-  # pihole:
-  #   title: Pi-hole
-  #   icon: mdi:pi-hole
-  #   url: http://192.168.2.144
-
+  esphome:
+    title: ESPHome
+    icon: mdi:xbox
+    url: http://box61.lan:6052
+  
 #mobile_app:
 
 pi_hole:

@@ -1,0 +1,15 @@
+
+panel_iframe:
+  cams:
+    title: Camera
+    icon: mdi:video
+
+
+camera:
+  - platform: generic
+    name: "Camera1"
+    still_image_url: http://194.168.3.14/tmpfs/auto.jpg
+    stream_source: rtsp://194.168.3.14:554
+    
+           
+
