@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../../../docker/esphome"
 		}
 	],
 	"settings": {
@@ -21,6 +24,6 @@
 			"vscode-home-assistant.hostUrl": "http://box61.lan:8123",
 			"vscode-home-assistant.ignoreCertificates": true,
 			"vscode-home-assistant.longLivedAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJlMjFlYTQ2YzFmMDg0OTJjODY4YzJiZTZjOTI4NGJkYiIsImlhdCI6MTU4ODk2OTcyMCwiZXhwIjoxOTA0MzI5NzIwfQ.9O8CyPSJqNo6QEdluMyWNiOVIVSEkYclVN0m65qqpcg",
-			"git.githubAuthentication": false
+			"github.gitAuthentication": false
 	}
 }
