@@ -67,6 +67,12 @@ cards:
       - sensor.sonoff_bridge_433
       - sensor.sonoff_b2df94_wifi
       - sensor.sonoff_b2df94_uptime
+  - title: Шлюз ZbBridge
+    type: entities
+    show_header_toggle: false
+    entities:
+      - sensor.tasmota_d7f50b_wifi
+      - sensor.tasmota_d7f50b_uptime
   - title: Движение/Присутствие
     show_header_toggle: false
     type: entities

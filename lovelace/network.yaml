@@ -32,6 +32,8 @@ cards:
       - device_tracker.sonoff_68ac8d
       - device_tracker.tasmota_5827_lan
       - device_tracker.tasmota_6671_lan
+      - device_tracker.tasmota_d7f50b_lan
+
 
   - type: entities
     title: Sonoff/Tasmota workplace
@@ -47,4 +49,5 @@ cards:
       - binary_sensor.sonoff_68ac8d_lwt
       - binary_sensor.tasmota_ab76c3_lwt
       - binary_sensor.tasmota_a99a0f_lwt
+      - binary_sensor.tasmota_d7f50b_lwt
 

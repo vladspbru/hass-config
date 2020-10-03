@@ -108,8 +108,6 @@ pi_hole:
 #       - sensor.temp_x
 #       - switch.sonoff_F4BC40
 #       - switch.sonoff_95B510
-#       - sensor.weather_yr_temperature
-#       - sensor.weather_yr_humidity
 
 
 #recorder:
