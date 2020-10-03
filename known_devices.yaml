@@ -78,6 +78,14 @@ tasmota_6671_lan:
   picture:
   track: true
 
+tasmota_D7F50B_lan:
+  name: tasmota_D7F50B.lan
+  mac: A4:CF:12:D7:F5:0B
+  icon: mdi:chip
+  picture:
+  track: true
+  
+
 vlad_hua5:
   hide_if_away: false
   icon:
@@ -194,5 +202,19 @@ valery_p30:
   icon:
   mac: 74:0A:E1:3A:A9:56
   name: valery_p30
+  picture:
+  track: true
+
+50_ff_20_35_1c_2b:
+  name: 50_ff_20_35_1c_2b
+  mac: 50:FF:20:35:1C:2B
+  icon:
+  picture:
+  track: true
+
+e8_9a_8f_19_29_b6:
+  name: e8_9a_8f_19_29_b6
+  mac: E8:9A:8F:19:29:B6
+  icon:
   picture:
   track: true
