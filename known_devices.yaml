@@ -178,23 +178,21 @@ galaxy_a20_lan:
 
 cam_ipcam1:
   icon:
-  mac: 00:51:85:04:35:DF
+  mac: 5A:58:F6:3D:FE:35
   name: cam_ipcam1
   picture:
   track: true
 
+cam_ipcam2:
+  icon:
+  mac: 00:51:85:04:35:DF
+  name: cam_ipcam2
+  picture:
+  track: true
+    
 valery_p30:
   icon:
   mac: 74:0A:E1:3A:A9:56
   name: valery_p30
   picture:
   track: true
-
-e8_9a_8f_19_29_b6:
-  icon:
-  mac: E8:9A:8F:19:29:B6
-  name: e8_9a_8f_19_29_b6
-  picture:
-  track: true
-
-  
