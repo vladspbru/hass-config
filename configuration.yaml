@@ -81,14 +81,14 @@ panel_iframe:
   chronograf:
     title: Chronograf
     icon: mdi:chart-histogram
-    url: 'http://box61.lan:8888/sources/1/dashboards/1?lower=now%28%29%20-%207d'
+    url: http://box61.lan:8888/sources/1/dashboards/1?lower=now%28%29%20-%207d
   portainer:
     title: Portainer
     icon: mdi:docker
     url: http://box61.lan:9000/#/containers
   esphome:
     title: ESPHome
-    icon: mdi:xbox
+    icon: mdi:factory
     url: http://box61.lan:6052
   
 #mobile_app:

@@ -3,7 +3,7 @@ panel_iframe:
   cams:
     title: Camera
     icon: mdi:video
-    url: 'http://192.168.3.14'
+    url: http://192.168.3.15/main.html
 
 camera:
   - platform: generic
