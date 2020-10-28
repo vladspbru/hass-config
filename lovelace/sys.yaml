@@ -46,6 +46,9 @@ cards:
       show_header_toggle: false
       entities:
         - type: weblink
+          name: Chronograf
+          url: http://192.168.2.144:8888/sources/1/dashboards/1?lower=now%28%29%20-%207d
+        - type: weblink
           name: Portainer
           url: http://192.168.2.144:9000
         - type: weblink

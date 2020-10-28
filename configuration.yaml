@@ -66,35 +66,36 @@ automation:     !include_dir_merge_list automation
 zone:           !include zone.yaml 
 logger:         !include logger.yaml
 
+
 tts:
   - platform: google_translate
     language: 'en'
   - platform: rhvoice
     voice: anna
-    url: http://box61:8081/say   
+    url: http://192.168.2.144:8081/say   
 
 #media_player:
 #  - platform: snapcast
 #    host: snapserver
 
 panel_iframe:
-  chronograf:
-    title: Chronograf
-    icon: mdi:chart-histogram
-    url: http://box61.lan:8888/sources/1/dashboards/1?lower=now%28%29%20-%207d
+  # chronograf:
+  #   title: Chronograf
+  #   icon: mdi:chart-histogram
+  #   url: http://192.168.2.144:8888/sources/1/dashboards/1?lower=now%28%29%20-%207d
   portainer:
     title: Portainer
     icon: mdi:docker
-    url: http://box61.lan:9000/#/containers
+    url: http://192.168.2.144:9000/#/containers
   esphome:
     title: ESPHome
     icon: mdi:factory
-    url: http://box61.lan:6052
+    url: http://192.168.2.144:6052
   
 #mobile_app:
 
 pi_hole:
-  - host: box61.lan
+  - host: 192.168.2.144
     ssl: false
     verify_ssl: false
 
