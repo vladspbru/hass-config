@@ -92,7 +92,7 @@ panel_iframe:
     icon: mdi:factory
     url: http://192.168.2.144:6052
   
-#mobile_app:
+mobile_app:
 
 pi_hole:
   - host: 192.168.2.144
