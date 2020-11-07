@@ -14,6 +14,8 @@ cards:
       - sensor.temp_x
       - sensor.temp1_sauna
       - sensor.temp2_sauna
+      - sensor.ewelink_th01_2fd3841f_temperature
+      - sensor.ewelink_th01_2fd3841f_humidity
       - sensor.temp_watchdog
       - light.floodlight
       - light.hall
@@ -26,6 +28,7 @@ cards:
       - input_boolean.alarming
       - sensor.hall_pir_last_changed
       - binary_sensor.ups_online_status
+      - binary_sensor.ewelink_ms01_80d3901f_ias_zone
   - title: СемьЯ
     type: entities
     show_header_toggle: false
