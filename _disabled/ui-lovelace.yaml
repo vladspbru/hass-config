@@ -1,0 +1,8 @@
+title: Cottage61 
+views:
+  - !include lovelace/default.yaml
+  - !include lovelace/devices.yaml
+  - !include lovelace/weather.yaml
+  - !include lovelace/sys.yaml
+  - !include lovelace/network.yaml
+  
