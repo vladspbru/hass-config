@@ -9,30 +9,24 @@ homeassistant:
   whitelist_external_dirs: 
     - /tmp
 
-# Show links to resources in log and frontend
-#introduction:
-
 system_health:
 
-# Enables the frontend
 frontend:
 
-# Enables configuration UI
 config:
 
 lovelace:
-  mode: yaml
+
+mobile_app:
+
 
 # Discover some devices automatically
 #discovery:
-
 #Zeroconf/Avahi/Bonjour
 #zeroconf:
        
-# Enables a map showing the location of tracked devices
 map:
 
-# Track the sun
 sun:
 
 #MQTT
@@ -92,13 +86,10 @@ panel_iframe:
     icon: mdi:factory
     url: http://192.168.2.144:6052
   
-mobile_app:
-
-pi_hole:
-  - host: 192.168.2.144
-    ssl: false
-    verify_ssl: false
-
+# pi_hole:
+#   - host: 192.168.2.144
+#     ssl: false
+#     verify_ssl: false
 
 # Enables support for tracking state changes over time
 #history:
