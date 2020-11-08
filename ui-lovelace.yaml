@@ -5,15 +5,4 @@ views:
   - !include lovelace/weather.yaml
   - !include lovelace/sys.yaml
   - !include lovelace/network.yaml
-  - path: test
-    title: Test
-    icon: 'mdi:bug'
-    badges: []
-    cards:
-      - type: vertical-stack
-        cards:
-          - type: entities
-            entities:
-              - timer.looper_timer
-              - timer.period_timer
   
