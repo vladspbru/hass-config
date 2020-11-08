@@ -26,13 +26,13 @@ automation:
     entity_id: input_boolean.alarming
   condition: 
     - condition: state
-      entity_id: switch.sonoff_mainswitch 
+      entity_id: switch.sw_main 
       state: 'off'
   action:
     service_template: >-
       {{ 'switch.turn_on' if trigger.to_state.state == 'on' else 'switch.turn_off' }}
     data_template:
-      entity_id: switch.sonoff_mainswitch
+      entity_id: switch.sw_main
 
 # Тригер включения сигнализации по движению в доме
 - alias: "Alarm: Motion at home"

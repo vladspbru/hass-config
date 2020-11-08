@@ -7,72 +7,58 @@ cards:
     show_header_toggle: false
     type: entities
     entities:
-      - switch.sonoff_mainswitch
+      - switch.sw_main
       - sensor.mqtt_net_datetime_control
-      - sensor.temp_out
-      - sensor.temp_in
-      - sensor.temp_x
-      - switch.sonoff_mainswitch_timers
+      # - sensor.temp_out
+      # - sensor.temp_in
+      # - sensor.temp_x
+      - switch.sw_main_timers
   - title: Свет/Выключатели
     show_header_toggle: true
     type: entities
     entities:
-      - switch.sonoff_801e75_ch1
-      - switch.sonoff_801e75_ch2
-      - switch.sonoff_801e75_ch3
-      - switch.sonoff_801e75_ch4
-      - switch.sonoff_801e75_timers
+      - switch.sw_4ch_lights_ch1
+      - switch.sw_4ch_lights_ch2
+      - switch.sw_4ch_lights_ch3
+      - switch.sw_4ch_lights_ch4
+      - switch.sw_4ch_lights_timers
   - title: Сауна
     show_header_toggle: false
     type: entities
     entities:
-      - switch.sonoff_sauna
+      - switch.sw_sauna
       - sensor.temp1_sauna
       - sensor.temp2_sauna
-      - switch.sonoff_sauna_timers
+      - switch.sw_sauna_timers
   - title: Улица
     show_header_toggle: false
     type: entities
     entities:
-      - switch.tasmota_floodlight
-      - switch.tasmota_floodlight_timers
-  - title: Подогрев трубы
-    show_header_toggle: false
-    type: entities
-    entities:
-      - switch.sonoff_water
-      - sensor.temp_water
-      - switch.sonoff_water_timers
-  - title: WatchDog
-    show_header_toggle: false
-    type: entities
-    entities:
-      - switch.tasmota_watchdog
-      - sensor.temp_watchdog
-      - switch.tasmota_watchdog_timers
-  - title: Розетка-счетчик
-    type: entities
-    show_header_toggle: false
-    entities:
-      - switch.sonoff_pow
-      - sensor.sonoff_pow_voltage
-      - sensor.sonoff_pow_power
-      - sensor.sonoff_pow_today
-      - sensor.sonoff_pow_total
-      - switch.sonoff_pow_timers
+      - switch.sw_floodlight
+      - switch.sw_floodlight_timers
+  # - title: Розетка-счетчик
+  #   type: entities
+  #   show_header_toggle: false
+  #   entities:
+  #     - switch.sonoff_pow
+  #     - sensor.sonoff_pow_voltage
+  #     - sensor.sonoff_pow_power
+  #     - sensor.sonoff_pow_today
+  #     - sensor.sonoff_pow_total
+  #     - switch.sonoff_pow_timers
   - title: Шлюз RF433
     type: entities
     show_header_toggle: false
     entities:
-      - sensor.sonoff_bridge_433
-      - sensor.sonoff_b2df94_wifi
-      - sensor.sonoff_b2df94_uptime
+      - sensor.ha_bridge_rf
+      - sensor.ha_bridge_rf_wifi
+      - sensor.ha_bridge_rf_uptime
   - title: Шлюз ZbBridge
     type: entities
     show_header_toggle: false
     entities:
-      - sensor.tasmota_d7f50b_wifi
-      - sensor.tasmota_d7f50b_uptime
+      - sensor.ha_bridge_zb_wifi
+      - sensor.ha_bridge_zb_uptime
   - title: Движение/Присутствие
     show_header_toggle: false
     type: entities
@@ -83,5 +69,5 @@ cards:
     type: entities
     show_header_toggle: false
     entities:
-      - switch.sonoff_plug
-      - switch.sonoff_plug_timers
+      - switch.sw_plug2
+      - switch.sw_plug2_timers

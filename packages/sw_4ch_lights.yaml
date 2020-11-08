@@ -2,10 +2,10 @@
 
 switch:
   - platform: mqtt
-    name: "sonoff_801E75 ch1"
-    state_topic: "stat/sonoff_801E75/POWER1"
-    command_topic: "cmnd/sonoff_801E75/POWER1"
-    availability_topic: "tele/sonoff_801E75/LWT"
+    name: "sw_4ch_lights ch1"
+    state_topic: "stat/sw_4ch_lights/POWER1"
+    command_topic: "cmnd/sw_4ch_lights/POWER1"
+    availability_topic: "tele/sw_4ch_lights/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -14,10 +14,10 @@ switch:
     optimistic: false
     retain: false
   - platform: mqtt
-    name: "sonoff_801E75 ch2"
-    state_topic: "stat/sonoff_801E75/POWER2"
-    command_topic: "cmnd/sonoff_801E75/POWER2"
-    availability_topic: "tele/sonoff_801E75/LWT"
+    name: "sw_4ch_lights ch2"
+    state_topic: "stat/sw_4ch_lights/POWER2"
+    command_topic: "cmnd/sw_4ch_lights/POWER2"
+    availability_topic: "tele/sw_4ch_lights/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -26,10 +26,10 @@ switch:
     optimistic: false
     retain: false
   - platform: mqtt
-    name: "sonoff_801E75 ch3"
-    state_topic: "stat/sonoff_801E75/POWER3"
-    command_topic: "cmnd/sonoff_801E75/POWER3"
-    availability_topic: "tele/sonoff_801E75/LWT"
+    name: "sw_4ch_lights ch3"
+    state_topic: "stat/sw_4ch_lights/POWER3"
+    command_topic: "cmnd/sw_4ch_lights/POWER3"
+    availability_topic: "tele/sw_4ch_lights/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -38,10 +38,10 @@ switch:
     optimistic: false
     retain: false
   - platform: mqtt
-    name: "sonoff_801E75 ch4"
-    state_topic: "stat/sonoff_801E75/POWER4"
-    command_topic: "cmnd/sonoff_801E75/POWER4"
-    availability_topic: "tele/sonoff_801E75/LWT"
+    name: "sw_4ch_lights ch4"
+    state_topic: "stat/sw_4ch_lights/POWER4"
+    command_topic: "cmnd/sw_4ch_lights/POWER4"
+    availability_topic: "tele/sw_4ch_lights/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -51,11 +51,11 @@ switch:
     retain: false
     
   - platform: mqtt
-    name: "sonoff_801E75_timers"
-    state_topic: "stat/sonoff_801E75/TIMERS"
-    command_topic: "cmnd/sonoff_801E75/TIMERS"
+    name: "sw_4ch_lights_timers"
+    state_topic: "stat/sw_4ch_lights/TIMERS"
+    command_topic: "cmnd/sw_4ch_lights/TIMERS"
     value_template: "{{ value_json.Timers }}"
-    availability_topic: "tele/sonoff_801E75/LWT"
+    availability_topic: "tele/sw_4ch_lights/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -67,25 +67,25 @@ switch:
         
 binary_sensor:
   - platform: mqtt
-    name: "sonoff_801E75 LWT"
-    state_topic: "tele/sonoff_801E75/LWT"
+    name: "sw_4ch_lights LWT"
+    state_topic: "tele/sw_4ch_lights/LWT"
     value_template: "{{ value }}"
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
-    json_attributes_topic: "tele/sonoff_801E75/STATE"
+    json_attributes_topic: "tele/sw_4ch_lights/STATE"
 
 
 light:
   - platform: switch
     name: Toilet
-    entity_id: switch.sonoff_801e75_ch1
+    entity_id: switch.sw_4ch_lights_ch1
   - platform: switch
     name: Mather
-    entity_id: switch.sonoff_801e75_ch2
+    entity_id: switch.sw_4ch_lights_ch2
   - platform: switch
     name: Father
-    entity_id: switch.sonoff_801e75_ch3
+    entity_id: switch.sw_4ch_lights_ch3
   - platform: switch
     name: Hall
-    entity_id: switch.sonoff_801e75_ch4
+    entity_id: switch.sw_4ch_lights_ch4

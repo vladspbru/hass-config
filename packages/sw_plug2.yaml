@@ -1,11 +1,11 @@
 #sonoff-plug -------------------------------------
 switch:
   - platform: mqtt
-    name: "sonoff_plug"
-    state_topic: "stat/sonoff_68B5C7/POWER"
-    command_topic: "cmnd/sonoff_68B5C7/POWER"
-    availability_topic: "tele/sonoff_68B5C7/LWT"
-#    json_attributes_topic: "tele/sonoff_68B5C7/STATE"
+    name: "sw_plug2"
+    state_topic: "stat/sw_plug2/POWER"
+    command_topic: "cmnd/sw_plug2/POWER"
+    availability_topic: "tele/sw_plug2/LWT"
+#    json_attributes_topic: "tele/sw_plug2/STATE"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -14,11 +14,11 @@ switch:
     optimistic: false
     #retain: false
   - platform: mqtt
-    name: "sonoff_plug_timers"
-    state_topic: "stat/sonoff_68B5C7/TIMERS"
-    command_topic: "cmnd/sonoff_68B5C7/TIMERS"
+    name: "sw_plug2_timers"
+    state_topic: "stat/sw_plug2/TIMERS"
+    command_topic: "cmnd/sw_plug2/TIMERS"
     value_template: "{{ value_json.Timers }}"
-    availability_topic: "tele/sonoff_68B5C7/LWT"
+    availability_topic: "tele/sw_plug2/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -30,11 +30,11 @@ switch:
 
 binary_sensor:
   - platform: mqtt
-    name: "sonoff_68B5C7 LWT"
-    state_topic: "tele/sonoff_68B5C7/LWT"
+    name: "sw_plug2 LWT"
+    state_topic: "tele/sw_plug2/LWT"
     value_template: "{{ value }}"
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
-    json_attributes_topic: "tele/sonoff_68B5C7/STATE"
+    json_attributes_topic: "tele/sw_plug2/STATE"
 

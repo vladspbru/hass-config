@@ -1,10 +1,10 @@
 #sonoff-sonar -------------------------------------
 switch:
   - platform: mqtt
-    name: "tasmota_floodlight"
-    state_topic: "stat/tasmota_AB76C3/POWER"
-    command_topic: "cmnd/tasmota_AB76C3/POWER"
-    availability_topic: "tele/tasmota_AB76C3/LWT"
+    name: "sw_floodlight"
+    state_topic: "stat/sw_floodlight/POWER"
+    command_topic: "cmnd/sw_floodlight/POWER"
+    availability_topic: "tele/sw_floodlight/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -13,11 +13,11 @@ switch:
     optimistic: false
     #retain: false
   - platform: mqtt
-    name: "tasmota_floodlight_timers"
-    state_topic: "stat/tasmota_AB76C3/TIMERS"
-    command_topic: "cmnd/tasmota_AB76C3/TIMERS"
+    name: "sw_floodlight_timers"
+    state_topic: "stat/sw_floodlight/TIMERS"
+    command_topic: "cmnd/sw_floodlight/TIMERS"
     value_template: "{{ value_json.Timers }}"
-    availability_topic: "tele/tasmota_AB76C3/LWT"
+    availability_topic: "tele/sw_floodlight/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -27,18 +27,18 @@ switch:
     
 binary_sensor:
   - platform: mqtt
-    name: "tasmota_AB76C3 LWT"
-    state_topic: "tele/tasmota_AB76C3/LWT"
+    name: "sw_floodlight LWT"
+    state_topic: "tele/sw_floodlight/LWT"
     value_template: "{{ value }}"
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
-    json_attributes_topic: "tele/tasmota_AB76C3/STATE"
+    json_attributes_topic: "tele/sw_floodlight/STATE"
 
 light:
   - platform: switch
     name: Floodlight
-    entity_id: switch.tasmota_floodlight
+    entity_id: switch.sw_floodlight
 
 
 

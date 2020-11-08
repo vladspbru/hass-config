@@ -1,90 +1,3 @@
-router1:
-  hide_if_away: true
-  icon: mdi:router-wireless
-  mac: 54:A0:50:CC:70:B6
-  name: 4g n12
-  picture:
-  track: false
- 
-sonoff_95b510:
-  hide_if_away: false
-  icon: mdi:chip
-  mac: 68:C6:3A:95:B5:10
-  name: sonoff_95B510-5392.local
-  picture:
-  track: true
-  
-sonoff_f4bc40:
-  hide_if_away: false
-  icon: mdi:chip
-  mac: 5C:CF:7F:F4:BC:40
-  name: sonoff_F4BC40-7232.local
-  picture:
-  track: true
-
-sonoff_26575d:
-  hide_if_away: false
-  icon: mdi:chip
-  mac: 2C:3A:E8:26:57:5D
-  name: sonoff_26575D-5981.local
-  picture:
-  track: true
-  
-sonoff_801e75:
-  hide_if_away: false
-  icon: mdi:chip
-  mac: DC:4F:22:80:1E:75
-  name: sonoff_801E75-7797.local
-  picture:
-  track: true
-
-sonoff_68b5c7:
-  hide_if_away: false
-  icon: mdi:chip
-  mac: 5C:CF:7F:68:B5:C7
-  name: sonoff_68B5C7-5575.lan
-  picture:
-  track: true
-
-sonoff_b2df94:
-  hide_if_away: false
-  icon: mdi:chip
-  mac: 60:01:94:B2:DF:94
-  name: sonoff B2DF94-8084.lan
-  picture:
-  track: true
-
-sonoff_68ac8d:
-  hide_if_away: false
-  icon: mdi:chip
-  mac: 5C:CF:7F:68:AC:8D
-  name: sonoff 68AC8D-3213.lan
-  picture:
-  track: true
-
-tasmota_5827_lan:
-  hide_if_away: false
-  icon: mdi:chip
-  mac: DC:4F:22:AB:76:C3
-  name: tasmota-5827.lan
-  picture:
-  track: true
-
-tasmota_6671_lan:
-  hide_if_away: false
-  icon: mdi:chip
-  mac: DC:4F:22:A9:9A:0F
-  name: tasmota-6671.lan
-  picture:
-  track: true
-
-tasmota_D7F50B_lan:
-  name: tasmota_D7F50B.lan
-  mac: A4:CF:12:D7:F5:0B
-  icon: mdi:chip
-  picture:
-  track: true
-  
 
 vlad_hua5:
   hide_if_away: false
@@ -99,6 +12,13 @@ eva_honor:
   icon: mdi:human-male
   mac: 44:D7:91:10:13:72
   name: eva_honor
+  picture:
+  track: true
+
+valery_p30:
+  icon: mdi:human-male
+  mac: 74:0A:E1:3A:A9:56
+  name: valery_p30
   picture:
   track: true
 
@@ -118,13 +38,6 @@ google_maps_105866556313657272597:
   picture: https://lh3.googleusercontent.com/a-/AAuE7mC4tKtdTLcAqoQLIOE_984_IBoG41u8RBrvU25JLQ
   track: true
 
-router_telekom:
-  icon: mdi:router-wireless
-  mac: 94:4A:0C:CA:58:10
-  name: Router Telekom
-  picture:
-  track: false
- 
 pc_think:
   icon: mdi:desktop-mac
   mac: F8:75:A4:53:10:F2
@@ -153,68 +66,51 @@ pc_x120e:
   picture:
   track: true
   
-pc_linux_hffm_lan:
-  hide_if_away: true
-  icon:
-  mac: 02:42:0F:55:A2:C4
-  name: linux-hffm.lan
-  picture:
-  track: false
-
-pc_beaglebone_lan:
-  hide_if_away: true
-  icon:
-  mac: 6C:EC:EB:A5:22:81
-  name: beaglebone.lan
-  picture:
-  track: true
-
-galaxy_j7_lan:
-  icon: 
-  mac: 88:83:22:C0:17:F4
-  name: Galaxy-J7.lan
-  picture:
-  track: true
-
-galaxy_a20_lan:
-  icon:
-  mac: 2A:ED:49:B4:87:80
-  name: Galaxy-A20.lan
-  picture:
-  track: true
-
-
-cam_ipcam1:
-  icon:
-  mac: 5A:58:F6:3D:FE:35
-  name: cam_ipcam1
-  picture:
-  track: true
-
-cam_ipcam2:
-  icon:
-  mac: 00:51:85:04:35:DF
-  name: cam_ipcam2
-  picture:
-  track: true
-    
-valery_p30:
-  icon:
-  mac: 74:0A:E1:3A:A9:56
-  name: valery_p30
-  picture:
-  track: true
-
-50_ff_20_35_1c_2b:
-  name: 50_ff_20_35_1c_2b
-  mac: 50:FF:20:35:1C:2B
+60_01_94_b2_df_94:
+  name: ha_bridge_rf
+  mac: 60:01:94:B2:DF:94
   icon:
   picture:
   track: true
 
-e8_9a_8f_19_29_b6:
-  name: e8_9a_8f_19_29_b6
-  mac: E8:9A:8F:19:29:B6
+a4_cf_12_d7_f5_0b:
+  name: ha_bridge_zb
+  mac: A4:CF:12:D7:F5:0B
+  icon:
+  picture:
+  track: true
+  
+dc_4f_22_80_1e_75:
+  name: sw_4ch_lights
+  mac: DC:4F:22:80:1E:75
+  icon:
+  picture:
+  track: true
+
+5c_cf_7f_68_b5_c7:
+  name: sw_plug2
+  mac: 5C:CF:7F:68:B5:C7
+  icon:
+  picture:
+  track: true
+
+dc_4f_22_a9_59_f0:
+  name: sw_main
+  mac: DC:4F:22:A9:59:F0
+  icon:
+  picture:
+  track: true
+
+5c_cf_7f_68_ac_8d:
+  name: sw_sauna
+  mac: 5C:CF:7F:68:AC:8D
+  icon:
+  picture:
+  track: true
+
+dc_4f_22_ab_76_c3:
+  name: sw_floodlight
+  mac: DC:4F:22:AB:76:C3
   icon:
   picture:
   track: true

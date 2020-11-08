@@ -12,28 +12,28 @@ homeassistant:
   customize:
     group.motion_detection:
       friendly_name: 'Движение/Присутствие'
-    switch.sonoff_801e75_ch1:
+    switch.sw_4ch_lights_ch1:
       friendly_name: 'Туалет'
       icon: mdi:lamp
-    switch.sonoff_801e75_ch2:
+    switch.sw_4ch_lights_ch2:
       friendly_name: 'Мама'
       icon: mdi:lamp
-    switch.sonoff_801e75_ch3:
+    switch.sw_4ch_lights_ch3:
       friendly_name: 'Папа'
       icon: mdi:white-balance-incandescent
-    switch.sonoff_801e75_ch4:
+    switch.sw_4ch_lights_ch4:
       friendly_name: 'Зал'
       icon: mdi:white-balance-iridescent
-    switch.sonoff_801e75_timers:
+    switch.sw_4ch_lights_timers:
       icon: mdi:timer
       friendly_name: 'Таймеры'
     group.sonoff_4pro:
       friendly_name: 'Свет/Выключатели'
-    sensor.sonoff_bridge_433:
+    sensor.ha_bridge_rf:
       friendly_name: 'Last cod'
     group.sonoff_bridge:
       friendly_name: 'Шлюз RF433'
-    switch.sonoff_mainswitch:
+    switch.sw_main:
       icon: mdi:power
       friendly_name: 'Рубильник'
     sensor.mqtt_net_datetime_control:
@@ -44,11 +44,11 @@ homeassistant:
       friendly_name: 'Температура внутри'
     sensor.temp_x:
       friendly_name: 'Температура в углу'
-    switch.sonoff_mainswitch_timers:
+    switch.sw_main_timers:
       icon: mdi:timer
       friendly_name: 'Таймеры'
       assumed_state: false
-    group.sonoff_mainswitch:
+    group.sw_main:
       friendly_name: 'Основной выключатель'
     switch.sonoff_pow:
       icon: mdi:power-plug
@@ -70,15 +70,15 @@ homeassistant:
       friendly_name: 'Таймеры'
     group.sonoff_pow:
       friendly_name: 'Розетка-счетчик'
-    switch.sonoff_plug:
+    switch.sw_plug2:
       icon: mdi:power-plug
       friendly_name: 'Розетка'
-    switch.sonoff_plug_timers:
+    switch.sw_plug2_timers:
       icon: mdi:timer
       friendly_name: 'Таймеры'
-    group.sonoff_plug:
+    group.sw_plug2:
       friendly_name: 'Умная розетка'
-    switch.sonoff_sauna:
+    switch.sw_sauna:
       icon: mdi:power-plug
       friendly_name: 'Лампа сауна'
     sensor.temp1_sauna:
@@ -87,10 +87,10 @@ homeassistant:
     sensor.temp2_sauna:
       friendly_name: 'Температура №2'
       icon: mdi:oil-temperature
-    switch.sonoff_sauna_timers:
+    switch.sw_sauna_timers:
       icon: mdi:timer
       friendly_name: 'Таймеры'
-    group.sonoff_sauna:
+    group.sw_sauna:
       friendly_name: 'Сауна'
     switch.sonoff_water:
       icon: mdi:power-plug
@@ -103,13 +103,13 @@ homeassistant:
       friendly_name: 'Таймеры'
     group.sonoff_water:
       friendly_name: 'Подогрев трубы'
-    switch.tasmota_floodlight:
+    switch.sw_floodlight:
       icon: mdi:power-plug
       friendly_name: 'Прожектор'
-    switch.tasmota_floodlight_timers:
+    switch.sw_floodlight_timers:
       icon: mdi:timer
       friendly_name: 'Таймеры'
-    group.tasmota_floodlight:
+    group.sw_floodlight:
       friendly_name: 'Улица'
   #--------------------------------------------
 

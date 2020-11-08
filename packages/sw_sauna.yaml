@@ -1,11 +1,11 @@
 #sonoff-sauna -------------------------------------
 switch:
   - platform: mqtt
-    name: "sonoff_sauna"
-    state_topic: "stat/sonoff_68AC8D/POWER"
-    command_topic: "cmnd/sonoff_68AC8D/POWER"
-    availability_topic: "tele/sonoff_68AC8D/LWT"
-#    json_attributes_topic: "tele/sonoff_68AC8D/STATE"
+    name: "sw_sauna"
+    state_topic: "stat/sw_sauna/POWER"
+    command_topic: "cmnd/sw_sauna/POWER"
+    availability_topic: "tele/sw_sauna/LWT"
+#    json_attributes_topic: "tele/sw_sauna/STATE"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -14,11 +14,11 @@ switch:
     optimistic: false
     #retain: false
   - platform: mqtt
-    name: "sonoff_sauna_timers"
-    state_topic: "stat/sonoff_68AC8D/TIMERS"
-    command_topic: "cmnd/sonoff_68AC8D/TIMERS"
+    name: "sw_sauna_timers"
+    state_topic: "stat/sw_sauna/TIMERS"
+    command_topic: "cmnd/sw_sauna/TIMERS"
     value_template: "{{ value_json.Timers }}"
-    availability_topic: "tele/sonoff_68AC8D/LWT"
+    availability_topic: "tele/sw_sauna/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -29,31 +29,31 @@ switch:
 sensor:
   - platform: mqtt
     name: "temp1_sauna"
-    state_topic: "tele/sonoff_68AC8D/SENSOR"
+    state_topic: "tele/sw_sauna/SENSOR"
     value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
   - platform: mqtt
     name: "temp2_sauna"
-    state_topic: "tele/sonoff_68AC8D/SENSOR"
+    state_topic: "tele/sw_sauna/SENSOR"
     value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
 
 binary_sensor:
   - platform: mqtt
-    name: "sonoff_68AC8D LWT"
-    state_topic: "tele/sonoff_68AC8D/LWT"
+    name: "sw_sauna LWT"
+    state_topic: "tele/sw_sauna/LWT"
     value_template: "{{ value }}"
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
-    json_attributes_topic: "tele/sonoff_68AC8D/STATE"
+    json_attributes_topic: "tele/sw_sauna/STATE"
 
 light:
   - platform: switch
     name: Sauna
-    entity_id: switch.sonoff_sauna
+    entity_id: switch.sw_sauna
 
 ##############################################################################
 ###  Automations 
@@ -74,7 +74,7 @@ light:
 #            {% elif states("sensor.temp_sauna") | float > 12 %}
 #            switch.turn_off
 #            {% endif %}
-#        entity_id: switch.sonoff_sauna
+#        entity_id: switch.sw_sauna
         
       
       

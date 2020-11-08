@@ -70,9 +70,9 @@ logger:         !include logger.yaml
 tts:
   - platform: google_translate
     language: 'en'
-  - platform: rhvoice
-    voice: anna
-    url: http://192.168.2.144:8081/say   
+  # - platform: rhvoice
+  #   voice: anna
+  #   url: http://192.168.2.144:8081/say   
 
 #media_player:
 #  - platform: snapcast
@@ -108,7 +108,7 @@ pi_hole:
 #       - sensor.temp_in
 #       - sensor.temp_x
 #       - switch.sonoff_F4BC40
-#       - switch.sonoff_95B510
+#       - switch.sw_main
 
 
 #recorder:

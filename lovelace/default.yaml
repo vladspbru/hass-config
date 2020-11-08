@@ -7,16 +7,13 @@ cards:
     show_header_toggle: false
     type: entities
     entities:
-      - switch.sonoff_mainswitch
-      - switch.sonoff_mainswitch_timers
-      - sensor.temp_out
-      - sensor.temp_in
-      - sensor.temp_x
+      - switch.sw_main
+      - switch.sw_main_timers
+      # - sensor.temp_out
+      # - sensor.temp_in
+      # - sensor.temp_x
       - sensor.temp1_sauna
       - sensor.temp2_sauna
-      - sensor.ewelink_th01_2fd3841f_temperature
-      - sensor.ewelink_th01_2fd3841f_humidity
-      - sensor.temp_watchdog
       - light.floodlight
       - light.hall
   - title: Security
@@ -38,7 +35,6 @@ cards:
   - title: Automation
     type: entities
     entities:
-      - automation.automatic_winter_heating_the_water_pipe
       - automation.notification_sauna_heating
       - automation.notification_hdd_use_alarm
       - automation.notification_early_frosts

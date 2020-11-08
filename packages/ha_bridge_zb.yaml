@@ -1,25 +1,25 @@
 #sonoff-zbridge -------------------------------------
 sensor:
   - platform: mqtt
-    name: "tasmota_D7F50B wifi"
-    state_topic: "tele/tasmota_D7F50B/STATE"
+    name: "ha_bridge_zb wifi"
+    state_topic: "tele/ha_bridge_zb/STATE"
     value_template: "{{ value_json.Wifi.RSSI }}"
     unit_of_measurement: "%"
     expire_after: 200
   - platform: mqtt
-    name: "tasmota_D7F50B uptime"
-    state_topic: "tele/tasmota_D7F50B/STATE"
+    name: "ha_bridge_zb uptime"
+    state_topic: "tele/ha_bridge_zb/STATE"
     value_template: "{{ value_json.Uptime }}"
     unit_of_measurement: ""
     expire_after: 200
     
 binary_sensor:
   - platform: mqtt
-    name: "tasmota_D7F50B LWT"
-    state_topic: "tele/tasmota_D7F50B/LWT"
+    name: "ha_bridge_zb LWT"
+    state_topic: "tele/ha_bridge_zb/LWT"
     value_template: "{{ value }}"
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
-    json_attributes_topic: "tele/tasmota_D7F50B/STATE"
+    json_attributes_topic: "tele/ha_bridge_zb/STATE"
 

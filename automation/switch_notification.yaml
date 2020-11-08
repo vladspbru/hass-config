@@ -3,9 +3,9 @@
   trigger:
     - platform: state
       entity_id:
-        - switch.sonoff_mainswitch
-#        - switch.sonoff_water
-        - switch.sonoff_pow
+        - switch.sw_main
+        - switch.sw_sauna
+        - switch.sw_floodlight
   action:
     - service: script.notify_engine
       data_template:
@@ -22,12 +22,12 @@
 #     - platform: homeassistant 
 #       event: start 
 #     - platform: state
-#       entity_id: switch.sonoff_mainswitch
+#       entity_id: switch.sw_main
 #   action: 
 #     - service: frontend.set_theme
 #       data_template: 
 #         name: >  
-#           {% if is_state('switch.sonoff_mainswitch', 'on') %} 
+#           {% if is_state('switch.sw_main', 'on') %} 
 #             light
 #           {% else %} 
 #             dark

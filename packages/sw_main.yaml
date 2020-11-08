@@ -1,11 +1,11 @@
 #sonoff-mainswitch -------------------------------------
 switch:
   - platform: mqtt
-    name: "sonoff_mainswitch"
-    state_topic: "stat/sonoff_95B510/POWER"
-    command_topic: "cmnd/sonoff_95B510/POWER"
-    availability_topic: "tele/sonoff_95B510/LWT"
-#    json_attributes_topic: "tele/sonoff_95B510/STATE"
+    name: "sw_main"
+    state_topic: "stat/sw_main/POWER"
+    command_topic: "cmnd/sw_main/POWER"
+    availability_topic: "tele/sw_main/LWT"
+#    json_attributes_topic: "tele/sw_main/STATE"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -14,11 +14,11 @@ switch:
     optimistic: false
     #retain: false
   - platform: mqtt
-    name: "sonoff_mainswitch_timers"
-    state_topic: "stat/sonoff_95B510/TIMERS"
-    command_topic: "cmnd/sonoff_95B510/TIMERS"
+    name: "sw_main_timers"
+    state_topic: "stat/sw_main/TIMERS"
+    command_topic: "cmnd/sw_main/TIMERS"
     value_template: "{{ value_json.Timers }}"
-    availability_topic: "tele/sonoff_95B510/LWT"
+    availability_topic: "tele/sw_main/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
@@ -29,43 +29,43 @@ switch:
 sensor:
   - platform: mqtt
     name: "mqtt_net_datetime_control"
-    state_topic: "tele/sonoff_95B510/STATE"
+    state_topic: "tele/sw_main/STATE"
     value_template: "{{ value_json.Time }}"
     unit_of_measurement: ""
     icon: mdi:timer
 
   - platform: mqtt
     name: "temp_out"
-    state_topic: "tele/sonoff_95B510/SENSOR"
+    state_topic: "tele/sw_main/SENSOR"
     #value_template:"{{ value_json.DS18B20.Temperature }}" # когда один датчик
     value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
   - platform: mqtt
     name: "temp_in"
-    state_topic: "tele/sonoff_95B510/SENSOR"
+    state_topic: "tele/sw_main/SENSOR"
     value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
   - platform: mqtt
     name: "temp_x"
-    state_topic: "tele/sonoff_95B510/SENSOR"
+    state_topic: "tele/sw_main/SENSOR"
     value_template: '{{ value_json["DS18B20-3"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
 
 binary_sensor:
   - platform: mqtt
-    name: "sonoff_95B510 LWT"
-    state_topic: "tele/sonoff_95B510/LWT"
+    name: "sw_main LWT"
+    state_topic: "tele/sw_main/LWT"
     value_template: "{{ value }}"
     payload_on: "Online"
     payload_off: "Offline"
     device_class: connectivity
-    json_attributes_topic: "tele/sonoff_95B510/STATE"
+    json_attributes_topic: "tele/sw_main/STATE"
 
 #input_number:
-#  sonoff_mainswitch_slider:
+#  sw_main_slider:
 #    name: dT Interval
 #    initial: 6
 #    min: 0
