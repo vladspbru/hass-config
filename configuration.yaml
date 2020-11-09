@@ -84,21 +84,20 @@ panel_iframe:
     url: http://192.168.2.144:6052
   
 
-# Enables support for tracking state changes over time
-#history:
-#  include:
-#    entities:
-#       - sensor.temp_out
-#       - sensor.temp_in
-#       - sensor.temp_x
-#       - switch.sonoff_F4BC40
-#       - switch.sw_main
+history:
+  include:
+    domains:
+      - switch    
+    entities:
+      - sensor.ups_status
+    entity_globs:
+      - sensor.temp_*
+      - sensor.*_temperature
+      
+  exclude:
+    entity_globs:
+      - switch.*_timers    
 
 
-#recorder:
-#  purge_keep_days: 20
-#  purge_interval: 1
-#  include:
-#    domains:
-#      - sensor
-#      - switch
+recorder:
+  purge_keep_days: 20
