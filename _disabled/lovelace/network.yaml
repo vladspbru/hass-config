@@ -24,7 +24,7 @@ cards:
   #   show_header_toggle: false
   #   entities:
   #     - device_tracker.sw_main
-  #     - device_tracker.sonoff_26575d
+  #     - device_tracker.sw_plug
   #     - device_tracker.sonoff_f4bc40
   #     - device_tracker.sw_4ch_lights
   #     - device_tracker.ha_bridge_rf

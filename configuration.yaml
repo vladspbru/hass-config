@@ -35,7 +35,6 @@ mqtt:
   username:  !secret mqtt_username
   password:  !secret mqtt_password
   keepalive: 30
-  protocol:  3.1
   birth_message:
     topic: 'hass/LWT'
     payload: 'Online'

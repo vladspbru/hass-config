@@ -40,12 +40,12 @@ cards:
   #   type: entities
   #   show_header_toggle: false
   #   entities:
-  #     - switch.sonoff_pow
-  #     - sensor.sonoff_pow_voltage
-  #     - sensor.sonoff_pow_power
-  #     - sensor.sonoff_pow_today
-  #     - sensor.sonoff_pow_total
-  #     - switch.sonoff_pow_timers
+  #     - switch.sw_plug
+  #     - sensor.sw_plug_voltage
+  #     - sensor.sw_plug_power
+  #     - sensor.sw_plug_today
+  #     - sensor.sw_plug_total
+  #     - switch.sw_plug_timers
   - title: Шлюз RF433
     type: entities
     show_header_toggle: false
