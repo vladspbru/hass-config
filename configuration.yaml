@@ -98,6 +98,11 @@ history:
     entity_globs:
       - switch.*_timers    
 
-
 recorder:
   purge_keep_days: 20
+
+logbook:
+  include:
+    domains:
+      - automation
+      - sun
