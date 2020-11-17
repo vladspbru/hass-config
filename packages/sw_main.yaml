@@ -34,26 +34,6 @@ sensor:
     unit_of_measurement: ""
     icon: mdi:timer
 
-  - platform: mqtt
-    name: "temp_out"
-    state_topic: "tele/sw_main/SENSOR"
-    #value_template:"{{ value_json.DS18B20.Temperature }}" # когда один датчик
-    value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'
-    unit_of_measurement: "°C"
-    icon: mdi:thermometer
-  - platform: mqtt
-    name: "temp_in"
-    state_topic: "tele/sw_main/SENSOR"
-    value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
-    unit_of_measurement: "°C"
-    icon: mdi:thermometer
-  - platform: mqtt
-    name: "temp_x"
-    state_topic: "tele/sw_main/SENSOR"
-    value_template: '{{ value_json["DS18B20-3"]["Temperature"] }}'
-    unit_of_measurement: "°C"
-    icon: mdi:thermometer
-
 binary_sensor:
   - platform: mqtt
     name: "sw_main LWT"
@@ -63,13 +43,4 @@ binary_sensor:
     payload_off: "Offline"
     device_class: connectivity
     json_attributes_topic: "tele/sw_main/STATE"
-
-#input_number:
-#  sw_main_slider:
-#    name: dT Interval
-#    initial: 6
-#    min: 0
-#    max: 6
-#    step: 0.5
-
 

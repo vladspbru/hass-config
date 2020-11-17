@@ -16,7 +16,7 @@ sensor:
     # RF Bridge as sensor - "Data" is the truncated (unique) hex address of the transmitter
   - platform: mqtt
     name: "ha_bridge_rf"
-    state_topic: 'tele/ha_bridge_rf/RFRECEIVED'
+    state_topic: 'tele/ha_bridge_rf/RESULT'
     value_template: "{{ value_json.RfReceived.Data }}"
     expire_after: 15
     icon: mdi:remote

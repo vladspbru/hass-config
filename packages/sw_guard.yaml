@@ -1,0 +1,75 @@
+#sonoff-mainswitch -------------------------------------
+switch:
+  - platform: mqtt
+    name: "sw_guard"
+    state_topic: "stat/sw_guard/POWER"
+    command_topic: "cmnd/sw_guard/POWER"
+    availability_topic: "tele/sw_guard/LWT"
+#    json_attributes_topic: "tele/sw_guard/STATE"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    #retain: false
+  - platform: mqtt
+    name: "sw_guard_timers"
+    state_topic: "stat/sw_guard/TIMERS"
+    command_topic: "cmnd/sw_guard/TIMERS"
+    value_template: "{{ value_json.Timers }}"
+    availability_topic: "tele/sw_guard/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    optimistic: false
+    
+sensor:
+  - platform: mqtt
+    name: "mqtt_net_datetime_control"
+    state_topic: "tele/sw_guard/STATE"
+    value_template: "{{ value_json.Time }}"
+    unit_of_measurement: ""
+    icon: mdi:timer
+
+  - platform: mqtt
+    name: "temp_1"
+    state_topic: "tele/sw_guard/SENSOR"
+    #value_template:"{{ value_json.DS18B20.Temperature }}" # когда один датчик
+    value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer
+  - platform: mqtt
+    name: "temp_2"
+    state_topic: "tele/sw_guard/SENSOR"
+    value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer
+  - platform: mqtt
+    name: "temp_3"
+    state_topic: "tele/sw_guard/SENSOR"
+    value_template: '{{ value_json["DS18B20-3"]["Temperature"] }}'
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer
+
+binary_sensor:
+  - platform: mqtt
+    name: "sw_guard LWT"
+    state_topic: "tele/sw_guard/LWT"
+    value_template: "{{ value }}"
+    payload_on: "Online"
+    payload_off: "Offline"
+    device_class: connectivity
+    json_attributes_topic: "tele/sw_guard/STATE"
+
+#input_number:
+#  sw_guard_slider:
+#    name: dT Interval
+#    initial: 6
+#    min: 0
+#    max: 6
+#    step: 0.5
+
+
