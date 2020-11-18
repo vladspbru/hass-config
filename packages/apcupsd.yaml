@@ -11,14 +11,14 @@ sensor:
       - bcharge
       - status
       - date
-      # - linev
+      - linev
       - bcharge
       - timeleft
       - mbattchg
       - mintimel
       - maxtime
-      # - maxlinev
-      # - minlinev
+      - maxlinev
+      - minlinev
       # - outputv
 
 

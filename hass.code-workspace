@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "../../../docker/esphome"
+		},
+		{
+			"path": "../../influxdb"
+		},
+		{
+			"path": "../../mqtt"
 		}
 	],
 	"settings": {
