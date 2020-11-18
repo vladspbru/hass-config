@@ -2,17 +2,17 @@
 switch:
   - platform: mqtt
     name: "sw_main"
+    unique_id: "sw_main"
     state_topic: "stat/sw_main/POWER"
     command_topic: "cmnd/sw_main/POWER"
     availability_topic: "tele/sw_main/LWT"
-#    json_attributes_topic: "tele/sw_main/STATE"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
     payload_available: "Online"
     payload_not_available: "Offline"
     optimistic: false
-    #retain: false
+
   - platform: mqtt
     name: "sw_main_timers"
     state_topic: "stat/sw_main/TIMERS"

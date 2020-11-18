@@ -41,18 +41,21 @@ sensor:
     value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
+    expire_after: 300
   - platform: mqtt
     name: "temp_2"
     state_topic: "tele/sw_guard/SENSOR"
     value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
+    expire_after: 300
   - platform: mqtt
     name: "temp_3"
     state_topic: "tele/sw_guard/SENSOR"
     value_template: '{{ value_json["DS18B20-3"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
+    expire_after: 300
 
 binary_sensor:
   - platform: mqtt

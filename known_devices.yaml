@@ -121,3 +121,10 @@ dc_4f_22_ab_76_c3:
   icon:
   picture:
   track: true
+
+dc_4f_22_a9_9a_0f:
+  name: sw_guard
+  mac: DC:4F:22:A9:9A:0F
+  icon:
+  picture:
+  track: true

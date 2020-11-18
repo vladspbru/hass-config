@@ -2,17 +2,17 @@
 switch:
   - platform: mqtt
     name: "sw_sauna"
+    unique_id: "sw_sauna"
     state_topic: "stat/sw_sauna/POWER"
     command_topic: "cmnd/sw_sauna/POWER"
     availability_topic: "tele/sw_sauna/LWT"
-#    json_attributes_topic: "tele/sw_sauna/STATE"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
     payload_available: "Online"
     payload_not_available: "Offline"
     optimistic: false
-    #retain: false
+
   - platform: mqtt
     name: "sw_sauna_timers"
     state_topic: "stat/sw_sauna/TIMERS"
@@ -33,12 +33,14 @@ sensor:
     value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
+    expire_after: 300
   - platform: mqtt
     name: "temp2_sauna"
     state_topic: "tele/sw_sauna/SENSOR"
     value_template: '{{ value_json["DS18B20-2"]["Temperature"] }}'
     unit_of_measurement: "°C"
     icon: mdi:thermometer
+    expire_after: 300
 
 binary_sensor:
   - platform: mqtt
@@ -49,6 +51,7 @@ binary_sensor:
     payload_off: "Offline"
     device_class: connectivity
     json_attributes_topic: "tele/sw_sauna/STATE"
+    off_delay: 10
 
 light:
   - platform: switch
