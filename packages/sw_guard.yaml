@@ -15,7 +15,7 @@ switch:
     #retain: false
   - platform: mqtt
     name: "sw_guard_timers"
-    state_topic: "stat/sw_guard/TIMERS"
+    state_topic: "stat/sw_guard/RESULT"
     command_topic: "cmnd/sw_guard/TIMERS"
     value_template: "{{ value_json.Timers }}"
     availability_topic: "tele/sw_guard/LWT"

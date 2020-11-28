@@ -52,7 +52,7 @@ switch:
     
   - platform: mqtt
     name: "sw_4ch_lights_timers"
-    state_topic: "stat/sw_4ch_lights/TIMERS"
+    state_topic: "stat/sw_4ch_lights/RESULT"
     command_topic: "cmnd/sw_4ch_lights/TIMERS"
     value_template: "{{ value_json.Timers }}"
     availability_topic: "tele/sw_4ch_lights/LWT"

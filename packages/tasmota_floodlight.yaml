@@ -14,7 +14,7 @@ switch:
     #retain: false
   - platform: mqtt
     name: "sw_floodlight_timers"
-    state_topic: "stat/sw_floodlight/TIMERS"
+    state_topic: "stat/sw_floodlight/RESULT"
     command_topic: "cmnd/sw_floodlight/TIMERS"
     value_template: "{{ value_json.Timers }}"
     availability_topic: "tele/sw_floodlight/LWT"

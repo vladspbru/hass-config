@@ -15,7 +15,7 @@ switch:
     #retain: false
   - platform: mqtt
     name: "sonoff_water_timers"
-    state_topic: "stat/sonoff_F4BC40/TIMERS"
+    state_topic: "stat/sonoff_F4BC40/RESULT"
     command_topic: "cmnd/sonoff_F4BC40/TIMERS"
     value_template: "{{ value_json.Timers }}"
     availability_topic: "tele/sonoff_F4BC40/LWT"

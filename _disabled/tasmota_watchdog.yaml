@@ -15,7 +15,7 @@ switch:
     #retain: false
   - platform: mqtt
     name: "tasmota_watchdog_timers"
-    state_topic: "stat/tasmota_A99A0F/TIMERS"
+    state_topic: "stat/tasmota_A99A0F/RESULT"
     command_topic: "cmnd/tasmota_A99A0F/TIMERS"
     value_template: "{{ value_json.Timers }}"
     availability_topic: "tele/tasmota_A99A0F/LWT"

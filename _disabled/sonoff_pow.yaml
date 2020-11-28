@@ -15,7 +15,7 @@ switch:
 #    retain: false
   - platform: mqtt
     name: "sw_plug_timers"
-    state_topic: "stat/sw_plug/TIMERS"
+    state_topic: "stat/sw_plug/RESULT"
     command_topic: "cmnd/sw_plug/TIMERS"
     value_template: "{{ value_json.Timers }}"
     availability_topic: "tele/sw_plug/LWT"

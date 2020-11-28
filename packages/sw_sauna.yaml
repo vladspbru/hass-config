@@ -15,7 +15,7 @@ switch:
 
   - platform: mqtt
     name: "sw_sauna_timers"
-    state_topic: "stat/sw_sauna/TIMERS"
+    state_topic: "stat/sw_sauna/RESULT"
     command_topic: "cmnd/sw_sauna/TIMERS"
     value_template: "{{ value_json.Timers }}"
     availability_topic: "tele/sw_sauna/LWT"
