@@ -1,0 +1,35 @@
+- alias: Automatic winter heating ON
+  initial_state: true
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temp_1
+      below: 2
+      for: "00:10:00"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.sw_main
+
+
+
+- alias: Automatic FloodLight ON 
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: device_tracker.google_maps_105866556313657272597, device_tracker.google_maps_101280843312171463984
+      from: "not_home"
+      to: "region61"
+      for: "00:01:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state  
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: state
+        entity_id: group.family  
+        state: 'not_home'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.sw_floodlight
+
+      

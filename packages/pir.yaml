@@ -18,26 +18,3 @@ sensor:
         value_template: '{{ states.binary_sensor.hall_pir.last_changed | timestamp_local }}'
         device_class: timestamp
         friendly_name: "Last Motion"
-
-
-##############################################################################
-###  Automations 
-##############################################################################
-automation:
-  - alias: "PIR persistent notification"
-    initial_state: off
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.hall_pir
-        to: "off"
-    condition: 
-      - condition: state
-        # entity_id: device_tracker.vlad_nexus 
-        entity_id: group.family
-        state: 'not_home'
-    action:
-      - service: persistent_notification.create
-        data:
-          title: "PIR:"
-          message: "Motion detected"
-          notification_id: "Warning"

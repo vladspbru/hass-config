@@ -1,0 +1,6 @@
+switch_turn_off_all:
+  sequence:
+    - service: switch.turn_off
+      entity_id: 
+        - switch.sw_sauna
+        - switch.sw_floodlight

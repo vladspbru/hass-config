@@ -1,0 +1,22 @@
+##############################################################################
+###  Detect when things are on and forgotten about. Like any Good Watchdog.
+##############################################################################
+
+- alias: Automated Power Off
+  id: 57a921ca-6009-46e7-9ba6-699eee6cf733
+  trigger:
+    - platform: time
+      at: "23:55:00"
+    - platform: state
+      entity_id: group.family  
+      to: 'not_home'
+      for: "00:30:00"
+
+  condition:
+      - condition: state
+        entity_id: group.family  
+        state: 'not_home'
+    
+  action:
+    - service: script.turn_on
+      entity_id: script.switch_turn_off_all

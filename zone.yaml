@@ -19,5 +19,5 @@
 - name: region61
   latitude:  !secret homeassistant_latitude
   longitude: !secret homeassistant_longitude
-  radius: 1000
+  radius: 1500
   icon: mdi:home

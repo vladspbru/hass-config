@@ -11,11 +11,6 @@ sonoff_qry_state:
       data_template:
         topic: 'cmnd/{{id}}/POWER'
         payload: "?"
-    #hak query tele
-    #- service: mqtt.publish
-    #  data_template:
-    #    topic: 'cmnd/{{id}}/TelePeriod'
-    #    payload: "0"
     - service: mqtt.publish
       data_template:
         topic: 'cmnd/{{id}}/TelePeriod'
