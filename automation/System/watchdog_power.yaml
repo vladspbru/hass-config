@@ -6,11 +6,11 @@
   id: 57a921ca-6009-46e7-9ba6-699eee6cf733
   trigger:
     - platform: time
-      at: "23:55:00"
+      at: "23:40:00"
     - platform: state
       entity_id: group.family  
       to: 'not_home'
-      for: "00:30:00"
+      for: "00:15:00"
 
   condition:
       - condition: state

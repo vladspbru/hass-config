@@ -52,8 +52,8 @@
     - platform: state
       entity_id:
         - switch.sw_main
-        - switch.sw_sauna
-        - switch.sw_floodlight
+        # - switch.sw_sauna
+        # - switch.sw_floodlight
   action:
     - service: script.notify_engine
       data_template:
