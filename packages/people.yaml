@@ -20,4 +20,6 @@ group:
       - device_tracker.vlad_hua5
       - device_tracker.eva_honor
       - device_tracker.valery_p30
+      - person.eva
+      - person.vladislav
 

@@ -29,7 +29,7 @@ automation:
       entity_id: switch.sw_main 
       state: 'off'
   action:
-    service_template: >-
+    service: >-
       {{ 'switch.turn_on' if trigger.to_state.state == 'on' else 'switch.turn_off' }}
     data_template:
       entity_id: switch.sw_main
@@ -39,17 +39,17 @@ automation:
   initial_state: on
   trigger:
     - platform: state
-      entity_id: binary_sensor.hall_pir
+      entity_id: 
+        - binary_sensor.hall_pir
+        - binary_sensor.ewelink_ms01_80d3901f_ias_zone
+      from: "off"
       to: "on"
   condition: 
     - condition: state
       entity_id: input_boolean.enable_alarm 
       state: 'on'
     - condition: state
-      entity_id: device_tracker.vlad_nexus 
-      state: 'not_home'
-    - condition: state
-      entity_id: device_tracker.eva_honor 
+      entity_id: group.family 
       state: 'not_home'
   action:
     - service: input_boolean.turn_on
@@ -82,7 +82,7 @@ automation:
     platform: state
     entity_id: input_boolean.alarming
   action:
-    service_template: >-
+    service: >-
       {{ 'timer.start' if trigger.to_state.state == 'on' else 'timer.finish' }}
     data_template:
       entity_id: timer.looper_timer

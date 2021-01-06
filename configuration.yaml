@@ -6,7 +6,7 @@ homeassistant:
   longitude: !secret homeassistant_longitude
   elevation: !secret homeassistant_elevation
   packages:       !include_dir_named packages
-  whitelist_external_dirs: 
+  allowlist_external_dirs: 
     - /tmp
 
 system_health:
