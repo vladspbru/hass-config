@@ -41,7 +41,7 @@ automation:
     - platform: state
       entity_id: 
         - binary_sensor.hall_pir
-        - binary_sensor.ewelink_ms01_80d3901f_ias_zone
+        # - binary_sensor.ewelink_ms01_80d3901f_ias_zone
       from: "off"
       to: "on"
   condition: 
@@ -121,6 +121,6 @@ group:
       - light.father
       - light.mather
       - light.hall
-      - light.toilet
+      # - light.toilet
       - light.floodlight
       - light.sauna
