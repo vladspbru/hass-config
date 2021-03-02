@@ -70,10 +70,10 @@ tts:
 #    host: snapserver
 
 panel_iframe:
-  # chronograf:
-  #   title: Chronograf
-  #   icon: mdi:chart-histogram
-  #   url: http://192.168.2.144:8888/sources/1/dashboards/1?lower=now%28%29%20-%207d
+  influxdb:
+    title: InfluxDB
+    icon: mdi:chart-histogram
+    url: http://192.168.2.144:8086
   portainer:
     title: Portainer
     icon: mdi:docker
