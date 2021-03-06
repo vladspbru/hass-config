@@ -73,7 +73,7 @@ panel_iframe:
   influxdb:
     title: InfluxDB
     icon: mdi:chart-histogram
-    url: http://192.168.2.144:8086
+    url: http://192.168.2.144:8086/orgs/b8b1ee6f80edfe0d/dashboards/072549ffff927000?lower=now%28%29%20-%207d
   portainer:
     title: Portainer
     icon: mdi:docker
