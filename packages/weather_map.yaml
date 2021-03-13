@@ -23,3 +23,22 @@ camera:
     
            
 
+sensor:
+  - platform: template
+    sensors:
+      solar_angle:
+        friendly_name: "Sun angle"
+        unit_of_measurement: "degrees"
+        value_template: "{{ state_attr('sun.sun', 'elevation') }}"
+      sunrise:
+        value_template: "{{ state_attr('sun.sun', 'next_rising') }}"
+
+  - platform: template
+    sensors:
+      g61_temperature:
+        friendly_name: "met.no Temperature"
+        unit_of_measurement: '°C'
+        value_template: "{{ state_attr('weather.home', 'temperature') }}"
+      g61_weather:
+        friendly_name: "met.no Weather"
+        value_template: "{{ states('weather.home') }}"
