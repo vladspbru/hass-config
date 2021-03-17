@@ -3,8 +3,9 @@
   trigger:
     - platform: numeric_state
       entity_id:
-        - sensor.temp_in
-        - sensor.temp_x
+        - sensor.temp_1
+        - sensor.temp_2
+        - sensor.temp_3
         - sensor.temp1_sauna
         - sensor.temp2_sauna
       below: 4

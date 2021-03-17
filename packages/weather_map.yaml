@@ -55,9 +55,9 @@ automation:
     action:
       - service: mqtt.publish
         data_template:
-          topic: "tele/{{ trigger.event.data.entity_id }}/SENSOR"
+          topic: "tele/{{ trigger.entity_id }}/SENSOR"
           payload: >-
             {
-              "Outdoor": { "{{ trigger.event.data.entity_id }}":{{ states(trigger.entity_id) }} }
+              "Outdoor": { "{{ trigger.entity_id }}":{{ states(trigger.entity_id) }} }
             }
           
