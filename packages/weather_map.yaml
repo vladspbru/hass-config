@@ -44,7 +44,8 @@ sensor:
         value_template: "{{ states('weather.home') }}"
 
 automation:
-  - alias: publish outdoor temperature
+  - alias: publish outdoor sensors
+    initial_state: True
     trigger:
       - platform: state
         entity_id:
@@ -54,9 +55,9 @@ automation:
     action:
       - service: mqtt.publish
         data_template:
-          topic: "tele/{{ trigger.to_state.name }}/SENSOR"
+          topic: "tele/{{ trigger.event.data.entity_id }}/SENSOR"
           payload: >-
             {
-              "Outdoor": { {{ trigger.to_state.name | string }}:{{ states(trigger.entity_id) }} }
+              "Outdoor": { "{{ trigger.event.data.entity_id }}":{{ states(trigger.entity_id) }} }
             }
           
