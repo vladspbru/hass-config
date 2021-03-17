@@ -14,12 +14,12 @@ camera:
   - platform: generic
     still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_wind_msk_pspb_9.jpg'
     name: "weather radar wind"
-  - platform: generic
-    still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_press_msk_pspb_24.jpg'
-    name: "weather radar press"
-  - platform: generic
-    still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_apcp_msk_pspb_24.jpg'
-    name: "weather radar apcp"
+  # - platform: generic
+  #   still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_press_msk_pspb_24.jpg'
+  #   name: "weather radar press"
+  # - platform: generic
+  #   still_image_url: 'http://www.pogoda.spb.ru/maps/rus_nw_apcp_msk_pspb_24.jpg'
+  #   name: "weather radar apcp"
     
            
 
@@ -35,10 +35,24 @@ sensor:
 
   - platform: template
     sensors:
-      g61_temperature:
+      temp_outdoor:
         friendly_name: "met.no Temperature"
         unit_of_measurement: '°C'
         value_template: "{{ state_attr('weather.home', 'temperature') }}"
-      g61_weather:
+      weather_g61:
         friendly_name: "met.no Weather"
         value_template: "{{ states('weather.home') }}"
+
+automation:
+  - alias: publish outdoor temperature
+    trigger:
+      - platform: state
+        entity_id:
+          - sensor.temp_outdoor
+          - sensor.solar_angle
+          - sensor.sunrise
+    action:
+      - service: mqtt.publish
+        data_template:
+          topic: "tele/{{ trigger.to_state.name }}/SENSOR"
+          value: "{{ states(trigger.entity_id) }}"
