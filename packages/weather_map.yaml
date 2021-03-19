@@ -28,20 +28,15 @@ sensor:
     sensors:
       solar_angle:
         friendly_name: "Sun angle"
-        unit_of_measurement: "degrees"
+        unit_of_measurement: "°"
         value_template: "{{ state_attr('sun.sun', 'elevation') }}"
       sunrise:
+        friendly_name: "Sun Rise"
         value_template: "{{ state_attr('sun.sun', 'next_rising') }}"
-
-  - platform: template
-    sensors:
       temp_outdoor:
-        friendly_name: "met.no Temperature"
-        unit_of_measurement: '°C'
+        friendly_name: "Outdoor temperature"
+        unit_of_measurement: "°C"
         value_template: "{{ state_attr('weather.home', 'temperature') }}"
-      weather_g61:
-        friendly_name: "met.no Weather"
-        value_template: "{{ states('weather.home') }}"
 
 automation:
   - alias: publish outdoor sensors
@@ -49,9 +44,9 @@ automation:
     trigger:
       - platform: state
         entity_id:
-          - sensor.temp_outdoor
           - sensor.solar_angle
           - sensor.sunrise
+          - sensor.temp_outdoor
     action:
       - service: mqtt.publish
         data_template:
