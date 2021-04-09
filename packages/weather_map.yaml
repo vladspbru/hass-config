@@ -37,6 +37,12 @@ sensor:
         friendly_name: "Outdoor temperature"
         unit_of_measurement: "°C"
         value_template: "{{ state_attr('weather.home', 'temperature') }}"
+      temp_outdoor2:
+        friendly_name: "Outdoor temperature 2"
+        unit_of_measurement: "°C"
+        value_template: "{{ state_attr('weather.smhi_garden61', 'temperature') }}"
+
+        
 
 automation:
   - alias: publish outdoor sensors
