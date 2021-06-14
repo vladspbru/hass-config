@@ -35,7 +35,7 @@ sensor:
     icon: mdi:timer
 
   - platform: mqtt
-    name: "temp_1"
+    name: "temp_out"
     state_topic: "tele/sw_guard/SENSOR"
     #value_template:"{{ value_json.DS18B20.Temperature }}" # когда один датчик
     value_template: '{{ value_json["DS18B20-1"]["Temperature"] }}'

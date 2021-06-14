@@ -4,7 +4,7 @@ input_boolean:
     name: Alarming 
     icon: mdi:shield-sun
   enable_alarm:
-    initial: on
+    initial: off
     name: Enable alarm on motion
     icon: mdi:shield-key
 

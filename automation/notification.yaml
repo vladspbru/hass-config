@@ -3,7 +3,7 @@
   trigger:
     - platform: numeric_state
       entity_id:
-        - sensor.temp_1
+        # - sensor.temp_1
         - sensor.temp_2
         - sensor.temp_3
         - sensor.temp1_sauna
@@ -39,6 +39,7 @@
     - platform: numeric_state
       entity_id:
         - sensor.temp_out
+        - sensor.tasmota_ds18b20_temperature
       below: 0
       for: "00:10:00"
   action:

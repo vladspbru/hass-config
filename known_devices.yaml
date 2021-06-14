@@ -156,3 +156,24 @@ dc_4f_22_a9_9a_0f:
   icon:
   picture:
   track: true
+
+00_5c_ef_80_5b_f9:
+  name: 00_5c_ef_80_5b_f9
+  mac: 00:5C:EF:80:5B:F9
+  icon:
+  picture:
+  track: true
+
+e0_09_bf_75_66_81:
+  name: e0_09_bf_75_66_81
+  mac: E0:09:BF:75:66:81
+  icon:
+  picture:
+  track: true
+
+74_12_b3_d0_9f_ef:
+  name: 74_12_b3_d0_9f_ef
+  mac: 74:12:B3:D0:9F:EF
+  icon:
+  picture:
+  track: true

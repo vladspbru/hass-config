@@ -2,8 +2,8 @@
   initial_state: true
   trigger:
     - platform: numeric_state
-      entity_id: sensor.temp_1
-      below: 2
+      entity_id: sensor.temp_2
+      below: 3
       for: "00:10:00"
   action:
     - service: switch.turn_on
